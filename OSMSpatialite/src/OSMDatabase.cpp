@@ -22,7 +22,7 @@ namespace OSM
     
     void OSMDatabase::_initDB()
     {
-//        _db.beginTransaction();
+        _db.beginTransaction();
         
         // OSM XML Node (one per OSM XML file)
         _db.executeSQL("CREATE TABLE IF NOT EXISTS osm(version TEXT, generator TEXT);");
@@ -55,7 +55,7 @@ namespace OSM
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
         
-//        _db.commitTransaction();
+        _db.commitTransaction();
     }
     
     void OSMDatabase::addOSM(const std::string &version, const std::string &generator)
