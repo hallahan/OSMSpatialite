@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* OSMNode.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; settings = {ASSET_TAGS = (); }; };
+		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; settings = {ASSET_TAGS = (); }; };
+		01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA901BBDF49B001E656D /* libcharset.1.dylib */; };
+		01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */; };
+		01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */; };
+		01B2DA9D1BBDF49B001E656D /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA931BBDF49B001E656D /* libiconv.2.dylib */; };
+		01B2DA9E1BBDF49B001E656D /* libproj.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA941BBDF49B001E656D /* libproj.9.dylib */; };
+		01B2DA9F1BBDF49B001E656D /* libspatialite.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */; };
+		01B2DAA01BBDF49B001E656D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */; };
+		01B2DAA11BBDF49B001E656D /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA971BBDF49B001E656D /* libxml2.2.dylib */; };
+		01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA981BBDF49B001E656D /* libz.1.dylib */; };
+		01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BF3D9D1BBDF40D000520AE /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		01BF3D981BBDF40D000520AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0166F6721BBDFD8B00517ACC /* OSMElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMElement.cpp; path = src/OSMElement.cpp; sourceTree = "<group>"; };
+		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
+		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
+		0166F6761BBDFDCB00517ACC /* OSMWay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMWay.hpp; path = src/OSMWay.hpp; sourceTree = "<group>"; };
+		0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMDatabase.cpp; path = src/OSMDatabase.cpp; sourceTree = "<group>"; };
+		0166F6791BBDFE4400517ACC /* OSMDatabase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMDatabase.hpp; path = src/OSMDatabase.hpp; sourceTree = "<group>"; };
+		0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMRelation.cpp; path = src/OSMRelation.cpp; sourceTree = "<group>"; };
+		0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMRelation.hpp; path = src/OSMRelation.hpp; sourceTree = "<group>"; };
+		0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMXmlParser.cpp; path = src/OSMXmlParser.cpp; sourceTree = "<group>"; };
+		0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMXmlParser.hpp; path = src/OSMXmlParser.hpp; sourceTree = "<group>"; };
+		0166F6811BBDFE9800517ACC /* OSMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMNode.cpp; path = src/OSMNode.cpp; sourceTree = "<group>"; };
+		0166F6821BBDFE9800517ACC /* OSMNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMNode.hpp; path = src/OSMNode.hpp; sourceTree = "<group>"; };
+		0166F6841BBE004E00517ACC /* AmigoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AmigoError.h; path = src/AmigoCloud/AmigoError.h; sourceTree = "<group>"; };
+		0166F6851BBE007800517ACC /* Database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Database.cpp; path = src/AmigoCloud/Database.cpp; sourceTree = "<group>"; };
+		0166F6861BBE007800517ACC /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = src/AmigoCloud/Database.h; sourceTree = "<group>"; };
+		0166F6881BBE008B00517ACC /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = src/AmigoCloud/Logger.cpp; sourceTree = "<group>"; };
+		0166F6891BBE008B00517ACC /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = src/AmigoCloud/Logger.h; sourceTree = "<group>"; };
+		0166F68B1BBE00A400517ACC /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/Thread.cpp; sourceTree = "<group>"; };
+		0166F68C1BBE00A400517ACC /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = src/AmigoCloud/Thread.h; sourceTree = "<group>"; };
+		0166F68E1BBE00C300517ACC /* Timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timestamp.h; path = src/AmigoCloud/Timestamp.h; sourceTree = "<group>"; };
+		01B2DA901BBDF49B001E656D /* libcharset.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcharset.1.dylib; path = OSMSpatialite/lib/libcharset.1.dylib; sourceTree = "<group>"; };
+		01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = OSMSpatialite/lib/libgeos_c.1.dylib; sourceTree = "<group>"; };
+		01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "OSMSpatialite/lib/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
+		01B2DA931BBDF49B001E656D /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = OSMSpatialite/lib/libiconv.2.dylib; sourceTree = "<group>"; };
+		01B2DA941BBDF49B001E656D /* libproj.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libproj.9.dylib; path = OSMSpatialite/lib/libproj.9.dylib; sourceTree = "<group>"; };
+		01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libspatialite.7.dylib; path = OSMSpatialite/lib/libspatialite.7.dylib; sourceTree = "<group>"; };
+		01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = OSMSpatialite/lib/libsqlite3.0.dylib; sourceTree = "<group>"; };
+		01B2DA971BBDF49B001E656D /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = OSMSpatialite/lib/libxml2.2.dylib; sourceTree = "<group>"; };
+		01B2DA981BBDF49B001E656D /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = OSMSpatialite/lib/libz.1.dylib; sourceTree = "<group>"; };
+		01B2DA991BBDF49B001E656D /* mod_spatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.bundle"; name = mod_spatialite.7.dylib; path = OSMSpatialite/lib/mod_spatialite.7.dylib; sourceTree = "<group>"; };
+		01BF3D9A1BBDF40D000520AE /* OSMSpatialite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSMSpatialite; sourceTree = BUILT_PRODUCTS_DIR; };
+		01BF3D9D1BBDF40D000520AE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01BF3D971BBDF40D000520AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */,
+				01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */,
+				01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */,
+				01B2DA9D1BBDF49B001E656D /* libiconv.2.dylib in Frameworks */,
+				01B2DA9E1BBDF49B001E656D /* libproj.9.dylib in Frameworks */,
+				01B2DA9F1BBDF49B001E656D /* libspatialite.7.dylib in Frameworks */,
+				01B2DAA01BBDF49B001E656D /* libsqlite3.0.dylib in Frameworks */,
+				01B2DAA11BBDF49B001E656D /* libxml2.2.dylib in Frameworks */,
+				01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01BF3D911BBDF40D000520AE = {
+			isa = PBXGroup;
+			children = (
+				01B2DA901BBDF49B001E656D /* libcharset.1.dylib */,
+				01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */,
+				01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */,
+				01B2DA931BBDF49B001E656D /* libiconv.2.dylib */,
+				01B2DA941BBDF49B001E656D /* libproj.9.dylib */,
+				01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */,
+				01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */,
+				01B2DA971BBDF49B001E656D /* libxml2.2.dylib */,
+				01B2DA981BBDF49B001E656D /* libz.1.dylib */,
+				01B2DA991BBDF49B001E656D /* mod_spatialite.7.dylib */,
+				01BF3D9C1BBDF40D000520AE /* OSMSpatialite */,
+				01BF3D9B1BBDF40D000520AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01BF3D9B1BBDF40D000520AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01BF3D9A1BBDF40D000520AE /* OSMSpatialite */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01BF3D9C1BBDF40D000520AE /* OSMSpatialite */ = {
+			isa = PBXGroup;
+			children = (
+				01F966D21BBDF65D00864D82 /* AmigoCloud */,
+				01BF3D9D1BBDF40D000520AE /* main.cpp */,
+				0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */,
+				0166F6791BBDFE4400517ACC /* OSMDatabase.hpp */,
+				0166F6721BBDFD8B00517ACC /* OSMElement.cpp */,
+				0166F6731BBDFD8B00517ACC /* OSMElement.hpp */,
+				0166F6811BBDFE9800517ACC /* OSMNode.cpp */,
+				0166F6821BBDFE9800517ACC /* OSMNode.hpp */,
+				0166F6751BBDFDCB00517ACC /* OSMWay.cpp */,
+				0166F6761BBDFDCB00517ACC /* OSMWay.hpp */,
+				0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */,
+				0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */,
+				0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */,
+				0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */,
+			);
+			path = OSMSpatialite;
+			sourceTree = "<group>";
+		};
+		01F966D21BBDF65D00864D82 /* AmigoCloud */ = {
+			isa = PBXGroup;
+			children = (
+				0166F6841BBE004E00517ACC /* AmigoError.h */,
+				0166F6851BBE007800517ACC /* Database.cpp */,
+				0166F6861BBE007800517ACC /* Database.h */,
+				0166F6881BBE008B00517ACC /* Logger.cpp */,
+				0166F6891BBE008B00517ACC /* Logger.h */,
+				0166F68B1BBE00A400517ACC /* Thread.cpp */,
+				0166F68C1BBE00A400517ACC /* Thread.h */,
+				0166F68E1BBE00C300517ACC /* Timestamp.h */,
+			);
+			name = AmigoCloud;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01BF3D991BBDF40D000520AE /* OSMSpatialite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01BF3DA11BBDF40D000520AE /* Build configuration list for PBXNativeTarget "OSMSpatialite" */;
+			buildPhases = (
+				01BF3D961BBDF40D000520AE /* Sources */,
+				01BF3D971BBDF40D000520AE /* Frameworks */,
+				01BF3D981BBDF40D000520AE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSMSpatialite;
+			productName = OSMSpatialite;
+			productReference = 01BF3D9A1BBDF40D000520AE /* OSMSpatialite */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01BF3D921BBDF40D000520AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = theoutpost;
+				TargetAttributes = {
+					01BF3D991BBDF40D000520AE = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 01BF3D951BBDF40D000520AE /* Build configuration list for PBXProject "OSMSpatialite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01BF3D911BBDF40D000520AE;
+			productRefGroup = 01BF3D9B1BBDF40D000520AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01BF3D991BBDF40D000520AE /* OSMSpatialite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01BF3D961BBDF40D000520AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */,
+				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
+				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
+				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
+				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
+				0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */,
+				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
+				0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */,
+				0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */,
+				0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		01BF3D9F1BBDF40D000520AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		01BF3DA01BBDF40D000520AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		01BF3DA21BBDF40D000520AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/OSMSpatialite/lib/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSMSpatialite/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01BF3DA31BBDF40D000520AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/OSMSpatialite/lib/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSMSpatialite/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01BF3D951BBDF40D000520AE /* Build configuration list for PBXProject "OSMSpatialite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01BF3D9F1BBDF40D000520AE /* Debug */,
+				01BF3DA01BBDF40D000520AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01BF3DA11BBDF40D000520AE /* Build configuration list for PBXNativeTarget "OSMSpatialite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01BF3DA21BBDF40D000520AE /* Debug */,
+				01BF3DA31BBDF40D000520AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01BF3D921BBDF40D000520AE /* Project object */;
+}
