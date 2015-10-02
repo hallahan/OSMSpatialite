@@ -9,29 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OSMSpatialite/src/OSMDatabase.hpp"
-            timestampString = "465439066.967279"
+            filePath = "OSMSpatialite/src/OSMXmlParser.cpp"
+            timestampString = "465502039.798449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "class OSMDatabase"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OSMSpatialite/src/OSMDatabase.cpp"
-            timestampString = "465439797.05897"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "OSMDatabase::addOSM(const std::string &amp;version, const std::string &amp;generator)"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "OSMXmlParser::_readOsm()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OSMSpatialite/src/OSMXmlParser.cpp"
-            timestampString = "465440337.806929"
+            filePath = "OSMSpatialite/src/OSMDatabase.cpp"
+            timestampString = "465502039.798449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "OSMXmlParser::_readOsm()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "OSMDatabase::addNode(const std::string&amp; idStr, const std::string&amp; latStr, const std::string&amp; lonStr, const std::string&amp; versionStr, const std::string&amp; timestampStr, const std::string&amp; changesetStr, const std::string&amp; uidStr, const std::string&amp; userStr, const std::string&amp; actionStr, const std::string&amp; visibleStr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

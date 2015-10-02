@@ -98,20 +98,21 @@ namespace OSM
     }
     
     void OSMXmlParser::_readOsm() {
-        std::string version;
-        std::string generator;
+        std::string versionStr;
+        std::string generatorStr;
+        // Read attributes
         if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
             while (xmlTextReaderMoveToNextAttribute(_reader)) {
                 std::string k = (char*) xmlTextReaderConstName(_reader);
                 std::string v = (char*) xmlTextReaderConstValue(_reader);
                 if (k == "version") {
-                    version = v;
+                    versionStr = v;
                 } else if (k == "generator") {
-                    generator = v;
+                    generatorStr = v;
                 }
             }
         }
-        _osmdb.addOSM(version, generator);
+        _osmdb.addOSM(versionStr, generatorStr);
     }
     
     void OSMXmlParser::_readNote() {
@@ -123,13 +124,46 @@ namespace OSM
     }
     
     void OSMXmlParser::_readNode() {
+        std::string idStr;
+        std::string latStr;
+        std::string lonStr;
+        std::string versionStr;
+        std::string timestampStr;
+        std::string changesetStr;
+        std::string uidStr;
+        std::string userStr;
+        std::string actionStr;
+        std::string visibleStr;
         // Read attributes
         if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
             while (xmlTextReaderMoveToNextAttribute(_reader)) {
-                
+                std::string k = (char*) xmlTextReaderConstName(_reader);
+                std::string v = (char*) xmlTextReaderConstValue(_reader);
+                if (k == "id") {
+                    idStr = v;
+                } else if (k == "lat") {
+                    latStr = v;
+                } else if (k == "lon") {
+                    lonStr = v;
+                } else if (k == "version") {
+                    versionStr = v;
+                } else if (k == "timestamp") {
+                    timestampStr = v;
+                } else if (k == "changeset") {
+                    changesetStr = v;
+                } else if (k == "uid") {
+                    uidStr = v;
+                } else if (k == "user") {
+                    userStr = v;
+                } else if (k == "action") {
+                    actionStr = v;
+                } else if (k == "visible") {
+                    visibleStr = v;
+                }
             }
         }
-        
+        _osmdb.addNode(idStr, latStr, lonStr, versionStr, timestampStr,
+                       changesetStr, uidStr, userStr, actionStr, visibleStr);
         // Read tags
     }
     

@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* OSMNode.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; settings = {ASSET_TAGS = (); }; };
+		011BF3621BBEF6DC00B68AFE /* OSMUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */; };
+		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; };
+		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; };
+		0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */; };
+		0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */; };
+		0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */; };
+		0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* OSMNode.cpp */; };
+		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; };
+		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; };
+		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; };
 		01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA901BBDF49B001E656D /* libcharset.1.dylib */; };
 		01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */; };
 		01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */; };
@@ -41,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMUtil.cpp; path = src/OSMUtil.cpp; sourceTree = "<group>"; };
+		011BF3611BBEF6DC00B68AFE /* OSMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSMUtil.h; path = src/OSMUtil.h; sourceTree = "<group>"; };
 		0166F6721BBDFD8B00517ACC /* OSMElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMElement.cpp; path = src/OSMElement.cpp; sourceTree = "<group>"; };
 		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
 		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */,
 				0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */,
 				0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */,
+				011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */,
+				011BF3611BBEF6DC00B68AFE /* OSMUtil.h */,
 			);
 			path = OSMSpatialite;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			files = (
 				0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
+				011BF3621BBEF6DC00B68AFE /* OSMUtil.cpp in Sources */,
 				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
