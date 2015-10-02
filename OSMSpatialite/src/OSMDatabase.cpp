@@ -81,8 +81,11 @@ void OSMDatabase::addNode(const std::string& idStr, const std::string& latStr, c
     std::string action = "NULL";
     std::string visible = "NULL";
     
-    // need to have an id
-    if (!Util::isLong(idStr)) {
+    
+    if (Util::isLong(idStr)) {
+        id = idStr;
+    } else {
+        // need to have an id
         return;
     }
     if (Util::isDouble(latStr)) {
