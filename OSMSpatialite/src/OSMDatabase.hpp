@@ -11,11 +11,9 @@
 
 #include "AmigoCloud/Database.h"
 
-namespace OSM
-{
+namespace OSM {
     
-class OSMDatabase
-{
+class OSMDatabase {
 public:
     explicit OSMDatabase(const std::string& dbPath);
     
@@ -25,6 +23,10 @@ public:
     void addNode(const std::string& idStr, const std::string& latStr, const std::string& lonStr, const std::string& versionStr,
                  const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                  const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
+    
+    void addNodeTag(const std::string& idStr, const std::string& k, const std::string& v);
+    void addWayTag(const std::string& idStr, const std::string& k, const std::string& v);
+    void addRelationTag(const std::string& idStr, const std::string& k, const std::string& v);
     
 private:
     // Initializes DB to have OSM Schema if needed.

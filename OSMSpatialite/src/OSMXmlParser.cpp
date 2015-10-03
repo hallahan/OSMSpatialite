@@ -36,26 +36,21 @@ namespace OSM
     
     OSMXmlParser::OSMXmlParser(const std::string& dbPath, const std::string& filePath) :
     _osmdb(dbPath),
-    _filePath(filePath)
-    {
+    _filePath(filePath) {
         _reader = xmlReaderForFile(_filePath.c_str(), NULL, 0);
     }
     
     
-    void OSMXmlParser::parse()
-    {
+    void OSMXmlParser::parse() {
         if (_reader != NULL) {
             int ret = xmlTextReaderRead(_reader);
             while (ret == 1) {
                 _processXmlNode();
                 ret = xmlTextReaderRead(_reader);
-            }
-        }
+            }        }
     }
     
-    
-    void OSMXmlParser::_processXmlNode()
-    {
+    void OSMXmlParser::_processXmlNode() {
         const int nodeType       = xmlTextReaderNodeType(_reader);
         const int isEmptyElement = xmlTextReaderIsEmptyElement(_reader);
         const int hasTextValue   = xmlTextReaderHasValue(_reader);
@@ -92,8 +87,13 @@ namespace OSM
                 _readWay();
             } else if (name == "relation") {
                 _readRelation();
+            } else if (name == "tag") {
+                _readTag();
+            } else if (name == "nd") {
+                _readNd();
+            } else if (name == "member") {
+                _readMember();
             }
-            
         }
     }
     
@@ -162,9 +162,10 @@ namespace OSM
                 }
             }
         }
+        _parentElementType = ParentElementType::NODE;
+        _parentElementId = idStr;
         _osmdb.addNode(idStr, latStr, lonStr, versionStr, timestampStr,
                        changesetStr, uidStr, userStr, actionStr, visibleStr);
-        // Read tags
     }
     
     void OSMXmlParser::_readWay() {
@@ -175,4 +176,40 @@ namespace OSM
         
     }
     
+    void OSMXmlParser::_readTag() {
+        std::string k;
+        std::string v;
+        // Read attributes
+        if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
+            while (xmlTextReaderMoveToNextAttribute(_reader)) {
+                std::string key = (char*) xmlTextReaderConstName(_reader);
+                std::string val = (char*) xmlTextReaderConstValue(_reader);
+                if (key == "k") {
+                    k = val;
+                } else if (key == "v") {
+                    v = val;
+                }
+            }
+        }
+        // There is a tag table for each OSM Element type.
+        switch (_parentElementType) {
+            case ParentElementType::NODE:
+                
+                break;
+            case ParentElementType::WAY:
+                
+                break;
+            case ParentElementType::RELATION:
+                
+                break;
+        }
+    }
+    
+    void OSMXmlParser::_readNd() {
+        
+    }
+    
+    void OSMXmlParser::_readMember() {
+        
+    }
 }

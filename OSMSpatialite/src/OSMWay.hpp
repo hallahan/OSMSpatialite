@@ -11,11 +11,9 @@
 
 #include "OSMElement.hpp"
 
-namespace OSM
-{
+namespace OSM {
     
-class OSMWay : public OSMElement
-{
+class OSMWay : public OSMElement {
 public:
     
 private:

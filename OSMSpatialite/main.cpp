@@ -5,8 +5,7 @@
 
 #include "OSMXmlParser.hpp"
 
-void testSqlite()
-{
+void testSqlite() {
     sqlite3 *db;
     char *zErr;
     int rc;
@@ -39,15 +38,13 @@ void testSqlite()
     sqlite3_close(db);
 }
 
-void testSpatialite()
-{
+void testSpatialite() {
     spatialite_init (0);
     const char* version = spatialite_version();
     std::cout << "Spatialite version: " << version << std::endl << std::endl;
 }
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
     testSqlite();
     testSpatialite();
     

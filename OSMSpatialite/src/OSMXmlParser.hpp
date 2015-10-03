@@ -14,12 +14,10 @@
 
 #include "OSMDatabase.hpp"
 
-namespace OSM
-{
+namespace OSM {
     
     
-class OSMXmlParser
-{
+class OSMXmlParser {
 public:
     explicit OSMXmlParser(const std::string& dbPath, const std::string& filePath);
     
@@ -33,12 +31,16 @@ private:
     void _readNode();
     void _readWay();
     void _readRelation();
+    void _readTag();
+    void _readNd();
+    void _readMember();
     
     xmlTextReaderPtr _reader;
     std::string _filePath;
-    
     OSMDatabase _osmdb;
     
+    enum class ParentElementType { NODE, WAY, RELATION } _parentElementType;
+    std::string _parentElementId;
 };
     
 }

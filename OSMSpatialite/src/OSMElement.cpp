@@ -8,7 +8,6 @@
 
 #include "OSMElement.hpp"
 
-namespace OSM
-{
+namespace OSM {
     
 }

@@ -9,11 +9,9 @@
 #ifndef OSMElement_hpp
 #define OSMElement_hpp
 
-namespace OSM
-{
+namespace OSM {
     
-class OSMElement
-{
+class OSMElement {
 public:
     
 protected:
