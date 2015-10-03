@@ -260,12 +260,28 @@ namespace OSM {
                 }
             }
         }
-        
         _osmdb.addTag(_parentElementType, _parentElementId, k, v);
     }
     
     void OSMXmlParser::_readNd() {
-        
+        if (_prevParentElementId == _parentElementId) {
+            ++_ndPosCount;
+        } else {
+            _prevParentElementId = _parentElementId;
+            _ndPosCount = 0;
+        }
+        std::string ref;
+        // Read attributes
+        if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
+            while (xmlTextReaderMoveToNextAttribute(_reader)) {
+                std::string k = (char*) xmlTextReaderConstName(_reader);
+                std::string v = (char*) xmlTextReaderConstValue(_reader);
+                if (k == "ref") {
+                    ref = v;
+                }
+            }
+        }
+        _osmdb.addNd(_parentElementId, ref, _ndPosCount);
     }
     
     void OSMXmlParser::_readMember() {

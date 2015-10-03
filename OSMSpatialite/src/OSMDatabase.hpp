@@ -35,6 +35,8 @@ public:
     
     void addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr);
     
+    void addNd(const std::string& idStr, const std::string& refStr, unsigned int pos);
+    
 private:
     // Initializes DB to have OSM Schema if needed.
     void _initDB();

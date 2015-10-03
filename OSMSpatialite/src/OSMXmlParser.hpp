@@ -42,6 +42,11 @@ private:
     
     ElementType _parentElementType;
     std::string _parentElementId;
+    
+    // This is used internally for incrementing way_pos as we are reading nds in a way.
+    // This should ONLY be referenced by _readNd.
+    std::string _prevParentElementId;
+    unsigned int _ndPosCount = 0; // only use in _readNd
 };
     
 }

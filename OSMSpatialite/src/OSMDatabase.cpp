@@ -260,5 +260,28 @@ namespace OSM
         
         _db.executeSQL(sql.c_str());
     }
+    
+    void OSMDatabase::addNd(const std::string& idStr, const std::string& refStr, unsigned int pos) {
+        std::string wayId = "NULL";
+        std::string nodeId = "NULL";
+        
+        if (Util::isLong(idStr)) {
+            wayId = idStr;
+        } else {
+            // need to have an id
+            return;
+        }
+        if (Util::isLong(refStr)) {
+            nodeId = refStr;
+        } else {
+            // need to have an id
+            return;
+        }
+        
+        std::string sql = "INSERT INTO ways_nodes VALUES (" +
+                            wayId + ',' + nodeId + ',' + std::to_string(pos) + ");";
+        
+        _db.executeSQL(sql.c_str());
+    }
 
 }
