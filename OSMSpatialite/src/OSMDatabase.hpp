@@ -10,6 +10,7 @@
 #define OSMDatabase_hpp
 
 #include "AmigoCloud/Database.h"
+#include "OSMElement.hpp"
 
 namespace OSM {
     
@@ -24,9 +25,7 @@ public:
                  const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                  const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
     
-    void addNodeTag(const std::string& idStr, const std::string& k, const std::string& v);
-    void addWayTag(const std::string& idStr, const std::string& k, const std::string& v);
-    void addRelationTag(const std::string& idStr, const std::string& k, const std::string& v);
+    void addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr);
     
 private:
     // Initializes DB to have OSM Schema if needed.

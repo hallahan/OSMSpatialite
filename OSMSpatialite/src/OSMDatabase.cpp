@@ -9,7 +9,7 @@
 #include "OSMDatabase.hpp"
 
 #include <iostream>
-#include "OSMUtil.h"
+#include "Util.h"
 
 namespace OSM
 {
@@ -45,6 +45,13 @@ namespace OSM
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
+        // Indexes on k and v will be useful for typeahead.
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_v ON nodes_tags (v);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_v ON ways_tags (v);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_v ON relations_tags (v);");
         
         // Member tables
         _db.executeSQL("CREATE TABLE IF NOT EXISTS ways_nodes(way_id  INTEGER, node_id INTEGER, way_pos INTEGER);");
@@ -121,15 +128,37 @@ namespace OSM
         _db.executeSQL(sql.c_str());
     }
     
-    void addNodeTag(const std::string& idStr, const std::string& k, const std::string& v) {
+    void OSMDatabase::addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr) {
+        std::string id = "NULL";
+        std::string k = "NULL";
+        std::string v = "NULL";
         
-    }
-    
-    void addWayTag(const std::string& idStr, const std::string& k, const std::string& v) {
+        if (Util::isLong(idStr)) {
+            id = idStr;
+        } else {
+            // need to have an id
+            return;
+        }
+        if (!kStr.empty()) {
+            k = "'" + kStr + "'";
+        }
+        if (!vStr.empty()) {
+            v = "'" + vStr + "'";
+        }
         
-    }
-    
-    void addRelationTag(const std::string& idStr, const std::string& k, const std::string& v) {
+        std::string table;
+        if (parentElementType == ElementType::NODE) {
+            table = "nodes_tags";
+        } else if (parentElementType == ElementType::WAY) {
+            table = "ways_tags";
+        } else {
+            table = "relations_tags";
+        }
         
+        std::string sql = "INSERT INTO " + table + " VALUES (" +
+                            id + ',' + k + ',' + v + ");";
+        
+        _db.executeSQL(sql.c_str());
     }
+
 }

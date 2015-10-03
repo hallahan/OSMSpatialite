@@ -10,9 +10,13 @@
 #define OSMElement_hpp
 
 namespace OSM {
+
+//Used to differentiate between the various types of OSM Elements. 
+enum class ElementType { NODE, WAY, RELATION, TAG, ND, MEMBER, BOUNDS, OSM };
     
 class OSMElement {
 public:
+    
     
 protected:
     

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015. All rights reserved.
 //
 
-#include "OSMUtil.h"
+#include "Util.h"
 
 namespace OSM
 {

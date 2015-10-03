@@ -12,6 +12,7 @@
 #include <string>
 #include <libxml/xmlreader.h>
 
+#include "OSMElement.hpp"
 #include "OSMDatabase.hpp"
 
 namespace OSM {
@@ -39,7 +40,7 @@ private:
     std::string _filePath;
     OSMDatabase _osmdb;
     
-    enum class ParentElementType { NODE, WAY, RELATION } _parentElementType;
+    ElementType _parentElementType;
     std::string _parentElementId;
 };
     

@@ -11,8 +11,7 @@
 #include <iostream>
 #include <stdio.h>
 
-namespace OSM
-{
+namespace OSM {
     
     // Note: I am using namespaces with const ints instead of enum,
     //    because this allows me to avoid having to cast C return
@@ -162,7 +161,7 @@ namespace OSM
                 }
             }
         }
-        _parentElementType = ParentElementType::NODE;
+        _parentElementType = ElementType::NODE;
         _parentElementId = idStr;
         _osmdb.addNode(idStr, latStr, lonStr, versionStr, timestampStr,
                        changesetStr, uidStr, userStr, actionStr, visibleStr);
@@ -191,18 +190,8 @@ namespace OSM
                 }
             }
         }
-        // There is a tag table for each OSM Element type.
-        switch (_parentElementType) {
-            case ParentElementType::NODE:
-                
-                break;
-            case ParentElementType::WAY:
-                
-                break;
-            case ParentElementType::RELATION:
-                
-                break;
-        }
+        
+        _osmdb.addTag(_parentElementType, _parentElementId, k, v);
     }
     
     void OSMXmlParser::_readNd() {
