@@ -178,6 +178,56 @@ namespace OSM
         _db.executeSQL(sql.c_str());
     }
     
+    void OSMDatabase::addRelation(const std::string& idStr, const std::string& versionStr,
+                             const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
+                             const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
+        // If we are unable to get a valid value, we want to simply insert a NULL.
+        std::string id = "NULL";
+        std::string version = "NULL";
+        std::string timestamp = "NULL";
+        std::string changeset = "NULL";
+        std::string uid = "NULL";
+        std::string user = "NULL";
+        std::string action = "NULL";
+        std::string visible = "NULL";
+        
+        
+        if (Util::isLong(idStr)) {
+            id = idStr;
+        } else {
+            // need to have an id
+            return;
+        }
+        if (Util::isLong(versionStr)) {
+            version = versionStr;
+        }
+        if (!timestampStr.empty()) {
+            // needs surrounding '' for string in insert statement
+            timestamp = "'" + timestampStr + "'";
+        }
+        if (Util::isLong(changesetStr)) {
+            changeset = changesetStr;
+        }
+        if (Util::isLong(uidStr)) {
+            uid = uidStr;
+        }
+        if (!userStr.empty()) {
+            user = "'" + userStr + "'";
+        }
+        if (!actionStr.empty()) {
+            action = "'" + actionStr + "'";
+        }
+        if (!visibleStr.empty()) {
+            visible = "'" + visibleStr + "'";
+        }
+        
+        std::string sql = "INSERT INTO relations VALUES (" +
+        id + ',' + action + ',' + version + ',' + timestamp + ',' +
+        changeset + ',' + uid + ',' + user + ',' + visible + ");";
+        
+        _db.executeSQL(sql.c_str());
+    }
+    
     void OSMDatabase::addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr) {
         std::string id = "NULL";
         std::string k = "NULL";

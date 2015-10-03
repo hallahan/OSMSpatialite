@@ -207,7 +207,42 @@ namespace OSM {
     }
     
     void OSMXmlParser::_readRelation() {
-        
+        std::string idStr;
+        std::string versionStr;
+        std::string timestampStr;
+        std::string changesetStr;
+        std::string uidStr;
+        std::string userStr;
+        std::string actionStr;
+        std::string visibleStr;
+        // Read attributes
+        if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
+            while (xmlTextReaderMoveToNextAttribute(_reader)) {
+                std::string k = (char*) xmlTextReaderConstName(_reader);
+                std::string v = (char*) xmlTextReaderConstValue(_reader);
+                if (k == "id") {
+                    idStr = v;
+                } else if (k == "version") {
+                    versionStr = v;
+                } else if (k == "timestamp") {
+                    timestampStr = v;
+                } else if (k == "changeset") {
+                    changesetStr = v;
+                } else if (k == "uid") {
+                    uidStr = v;
+                } else if (k == "user") {
+                    userStr = v;
+                } else if (k == "action") {
+                    actionStr = v;
+                } else if (k == "visible") {
+                    visibleStr = v;
+                }
+            }
+        }
+        _parentElementType = ElementType::RELATION;
+        _parentElementId = idStr;
+        _osmdb.addRelation(idStr, versionStr, timestampStr, changesetStr,
+                      uidStr, userStr, actionStr, visibleStr);
     }
     
     void OSMXmlParser::_readTag() {

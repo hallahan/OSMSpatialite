@@ -29,6 +29,10 @@ public:
                  const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                  const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
     
+    void addRelation(const std::string& idStr, const std::string& versionStr,
+                const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
+                const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
+    
     void addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr);
     
 private:
