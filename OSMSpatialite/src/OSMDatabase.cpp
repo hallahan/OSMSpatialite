@@ -73,7 +73,6 @@ namespace OSM
                               const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                               const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
-        std::string id = "NULL";
         std::string lat = "NULL";
         std::string lon = "NULL";
         std::string version = "NULL";
@@ -85,9 +84,7 @@ namespace OSM
         std::string visible = "NULL";
         
         
-        if (Util::isLong(idStr)) {
-            id = idStr;
-        } else {
+        if (!Util::isLong(idStr)) {
             // need to have an id
             return;
         }
@@ -121,7 +118,7 @@ namespace OSM
         }
         
         std::string sql = "INSERT INTO nodes VALUES (" +
-                            id + ',' + action + ',' + lat + ',' +
+                            idStr + ',' + action + ',' + lat + ',' +
                             lon + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ");";
         
@@ -132,7 +129,6 @@ namespace OSM
            const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
            const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
-        std::string id = "NULL";
         std::string version = "NULL";
         std::string timestamp = "NULL";
         std::string changeset = "NULL";
@@ -142,9 +138,7 @@ namespace OSM
         std::string visible = "NULL";
         
         
-        if (Util::isLong(idStr)) {
-            id = idStr;
-        } else {
+        if (!Util::isLong(idStr)) {
             // need to have an id
             return;
         }
@@ -172,8 +166,8 @@ namespace OSM
         }
         
         std::string sql = "INSERT INTO ways VALUES (" +
-        id + ',' + action + ',' + version + ',' + timestamp + ',' +
-        changeset + ',' + uid + ',' + user + ',' + visible + ");";
+                            idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
+                            changeset + ',' + uid + ',' + user + ',' + visible + ");";
         
         _db.executeSQL(sql.c_str());
     }
@@ -182,7 +176,6 @@ namespace OSM
                              const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                              const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
-        std::string id = "NULL";
         std::string version = "NULL";
         std::string timestamp = "NULL";
         std::string changeset = "NULL";
@@ -192,9 +185,7 @@ namespace OSM
         std::string visible = "NULL";
         
         
-        if (Util::isLong(idStr)) {
-            id = idStr;
-        } else {
+        if (!Util::isLong(idStr)) {
             // need to have an id
             return;
         }
@@ -222,21 +213,17 @@ namespace OSM
         }
         
         std::string sql = "INSERT INTO relations VALUES (" +
-        id + ',' + action + ',' + version + ',' + timestamp + ',' +
-        changeset + ',' + uid + ',' + user + ',' + visible + ");";
+                            idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
+                            changeset + ',' + uid + ',' + user + ',' + visible + ");";
         
         _db.executeSQL(sql.c_str());
     }
     
     void OSMDatabase::addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr) {
-        std::string id = "NULL";
         std::string k = "NULL";
         std::string v = "NULL";
         
-        if (Util::isLong(idStr)) {
-            id = idStr;
-        } else {
-            // need to have an id
+        if (!Util::isLong(idStr)) {
             return;
         }
         if (!kStr.empty()) {
@@ -256,7 +243,7 @@ namespace OSM
         }
         
         std::string sql = "INSERT INTO " + table + " VALUES (" +
-                            id + ',' + k + ',' + v + ");";
+                            idStr + ',' + k + ',' + v + ");";
         
         _db.executeSQL(sql.c_str());
     }
@@ -265,21 +252,43 @@ namespace OSM
         std::string wayId = "NULL";
         std::string nodeId = "NULL";
         
-        if (Util::isLong(idStr)) {
-            wayId = idStr;
-        } else {
+        if (!Util::isLong(idStr)) {
             // need to have an id
             return;
         }
-        if (Util::isLong(refStr)) {
-            nodeId = refStr;
-        } else {
+        if (!Util::isLong(refStr)) {
             // need to have an id
             return;
         }
         
         std::string sql = "INSERT INTO ways_nodes VALUES (" +
-                            wayId + ',' + nodeId + ',' + std::to_string(pos) + ");";
+                            idStr + ',' + refStr + ',' + std::to_string(pos) + ");";
+        
+        _db.executeSQL(sql.c_str());
+    }
+    
+    void OSMDatabase::addMember(const std::string& relationIdStr, const std::string& refStr,
+                                const std::string& typeStr, const std::string& roleStr) {
+        std::string type = "NULL";
+        std::string role = "NULL";
+        
+        if (!Util::isLong(relationIdStr)) {
+            // need to have an id
+            return;
+        }
+        if (!Util::isLong(refStr)) {
+            // need to have an id
+            return;
+        }
+        if (!typeStr.empty()) {
+            type = "'" + typeStr + "'";
+        }
+        if (!roleStr.empty()) {
+            role = "'" + roleStr + "'";
+        }
+        
+        std::string sql = "INSERT INTO relations_members VALUES (" +
+                            relationIdStr + ',' + refStr + ',' + type + ',' + role + ");";
         
         _db.executeSQL(sql.c_str());
     }

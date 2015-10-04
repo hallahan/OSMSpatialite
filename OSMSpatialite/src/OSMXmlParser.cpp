@@ -285,6 +285,23 @@ namespace OSM {
     }
     
     void OSMXmlParser::_readMember() {
-        
+        std::string type;
+        std::string ref;
+        std::string role;
+        // Read attributes
+        if (xmlTextReaderHasAttributes(_reader) == XmlStatus::TRUE) {
+            while (xmlTextReaderMoveToNextAttribute(_reader)) {
+                std::string k = (char*) xmlTextReaderConstName(_reader);
+                std::string v = (char*) xmlTextReaderConstValue(_reader);
+                if (k == "type") {
+                    type = v;
+                } else if (k == "ref") {
+                    ref = v;
+                } else if (k == "role") {
+                    role = v;
+                }
+            }
+        }
+        _osmdb.addMember(_parentElementId, ref, type, role);
     }
 }

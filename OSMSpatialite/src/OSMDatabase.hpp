@@ -33,9 +33,13 @@ public:
                 const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                 const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
     
-    void addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr);
+    void addTag(const ElementType parentElementType, const std::string& idStr,
+                const std::string& kStr, const std::string& vStr);
     
     void addNd(const std::string& idStr, const std::string& refStr, unsigned int pos);
+    
+    void addMember(const std::string& relationIdStr, const std::string& refStr,
+                   const std::string& typeStr, const std::string& roleStr);
     
 private:
     // Initializes DB to have OSM Schema if needed.
