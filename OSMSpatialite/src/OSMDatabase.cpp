@@ -16,7 +16,7 @@ namespace OSM
     
     OSMDatabase::OSMDatabase(const std::string& dbPath) :
     _dbPath(dbPath),
-    _db(dbPath, false) {
+    _db(dbPath, false) { // NH FIXME: Crash when enable spatial?
         _initDB();
     }
     
@@ -97,7 +97,7 @@ namespace OSM
             visible = "'" + visibleStr + "'";
         }
         
-        std::string sql = "INSERT INTO nodes VALUES (" +
+        std::string sql = "INSERT OR REPLACE INTO nodes VALUES (" +
                             idStr + ',' + action + ',' + lat + ',' +
                             lon + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ',' + wkb_geometry + ");";
@@ -146,7 +146,7 @@ namespace OSM
             visible = "'" + visibleStr + "'";
         }
         
-        std::string sql = "INSERT INTO ways VALUES (" +
+        std::string sql = "INSERT OR REPLACE INTO ways VALUES (" +
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ',' + wkb_geometry + ");";
         
@@ -193,16 +193,18 @@ namespace OSM
             visible = "'" + visibleStr + "'";
         }
         
-        std::string sql = "INSERT INTO relations VALUES (" +
+        std::string sql = "INSERT OR REPLACE INTO relations VALUES (" +
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ");";
         
         _db.executeSQL(sql.c_str());
     }
     
-    void OSMDatabase::addTag(const ElementType parentElementType, const std::string& idStr, const std::string& kStr, const std::string& vStr) {
+    void OSMDatabase::addTag(const ElementType parentElementType, const std::string& idStr,
+                             const std::string& kStr, const std::string& vStr, bool reset) {
         std::string k = "NULL";
         std::string v = "NULL";
+        std::string sql;
         
         if (!Util::isLong(idStr)) {
             return;
@@ -223,8 +225,14 @@ namespace OSM
             table = "relations_tags";
         }
         
-        std::string sql = "INSERT INTO " + table + " VALUES (" +
-                            idStr + ',' + k + ',' + v + ");";
+        // We want to blast out the previous tags for the given element when doing an update.
+        if (reset) {
+            sql = "DELETE FROM " + table + " WHERE id = " + idStr + ';';
+            _db.executeSQL(sql.c_str());
+        }
+        
+        sql = "INSERT INTO " + table + " VALUES (" +
+               idStr + ',' + k + ',' + v + ");";
         
         _db.executeSQL(sql.c_str());
     }
@@ -232,6 +240,7 @@ namespace OSM
     void OSMDatabase::addNd(const std::string& idStr, const std::string& refStr, unsigned int pos) {
         std::string wayId = "NULL";
         std::string nodeId = "NULL";
+        std::string sql;
         
         if (!Util::isLong(idStr)) {
             // need to have an id
@@ -242,16 +251,23 @@ namespace OSM
             return;
         }
         
-        std::string sql = "INSERT INTO ways_nodes VALUES (" +
-                            idStr + ',' + refStr + ',' + std::to_string(pos) + ");";
+        // We want to blast out the previous node_ways for the given way when doing an update.
+        if (pos == 0) {
+            sql = "DELETE FROM ways_nodes WHERE way_id = " + idStr + ';';
+            _db.executeSQL(sql.c_str());
+        }
+        
+        sql = "INSERT INTO ways_nodes VALUES (" +
+               idStr + ',' + refStr + ',' + std::to_string(pos) + ");";
         
         _db.executeSQL(sql.c_str());
     }
     
     void OSMDatabase::addMember(const std::string& relationIdStr, const std::string& refStr,
-                                const std::string& typeStr, const std::string& roleStr) {
+                                const std::string& typeStr, const std::string& roleStr, bool reset) {
         std::string type = "NULL";
         std::string role = "NULL";
+        std::string sql;
         
         if (!Util::isLong(relationIdStr)) {
             // need to have an id
@@ -268,8 +284,13 @@ namespace OSM
             role = "'" + roleStr + "'";
         }
         
-        std::string sql = "INSERT INTO relations_members VALUES (" +
-                            relationIdStr + ',' + refStr + ',' + type + ',' + role + ");";
+        if (reset) {
+            sql = "DELETE FROM relations_members WHERE relation_id = " + relationIdStr + ';';
+            _db.executeSQL(sql.c_str());
+        }
+        
+        sql = "INSERT INTO relations_members VALUES (" +
+               relationIdStr + ',' + refStr + ',' + type + ',' + role + ");";
         
         _db.executeSQL(sql.c_str());
     }

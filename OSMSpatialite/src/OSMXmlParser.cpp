@@ -262,7 +262,14 @@ namespace OSM {
                 }
             }
         }
-        _osmdb.addTag(_parentElementType, _parentElementId, k, v);
+        
+        // Only blast the previous tags for the element once when updating.
+        if (_prevTagParentElementId == _parentElementId) {
+            _osmdb.addTag(_parentElementType, _parentElementId, k, v, false);
+        } else {
+            _osmdb.addTag(_parentElementType, _parentElementId, k, v, true);
+            _prevTagParentElementId = _parentElementId;
+        }
     }
     
     void OSMXmlParser::_readNd() {
@@ -304,6 +311,11 @@ namespace OSM {
                 }
             }
         }
-        _osmdb.addMember(_parentElementId, ref, type, role);
+        if (_prevMemberParentElementId == _parentElementId) {
+            _osmdb.addMember(_parentElementId, ref, type, role, false);
+        } else {
+            _osmdb.addMember(_parentElementId, ref, type, role, true);
+            _prevMemberParentElementId = _parentElementId;
+        }
     }
 }

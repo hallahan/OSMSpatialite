@@ -34,12 +34,12 @@ public:
                 const std::string& userStr, const std::string& actionStr, const std::string& visibleStr);
     
     void addTag(const ElementType parentElementType, const std::string& idStr,
-                const std::string& kStr, const std::string& vStr);
+                const std::string& kStr, const std::string& vStr, bool reset);
     
     void addNd(const std::string& idStr, const std::string& refStr, unsigned int pos);
     
     void addMember(const std::string& relationIdStr, const std::string& refStr,
-                   const std::string& typeStr, const std::string& roleStr);
+                   const std::string& typeStr, const std::string& roleStr, bool reset);
     
     // To be called after update / insert of OSM elements.
     // Creates indices and WKB geometries.

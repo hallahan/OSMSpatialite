@@ -13,6 +13,7 @@ I have gotten it to run without hitches on XCode 6.4 and 7.0.
 ## Short Term Milestones
 
 - [x] Parse OSM XML into SQLite
+- [ ] Unit Tests
 - [ ] Create WKB Geometries for Nodes and Ways from the topology. RTree Index as applicable.
 - [ ] Replicate OSM data model API as found in [OpenMapKit](https://github.com/AmericanRedCross/OpenMapKit/tree/master/MapboxAndroidSDK/src/main/java/com/spatialdev/osm/model).
 - [ ] Design workflow for fetching, editing, and submitting edits with OSM API

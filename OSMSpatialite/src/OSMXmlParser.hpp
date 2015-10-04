@@ -46,7 +46,13 @@ private:
     // This is used internally for incrementing way_pos as we are reading nds in a way.
     // This should ONLY be referenced by _readNd.
     std::string _prevParentElementId;
-    unsigned int _ndPosCount = 0; // only use in _readNd
+    unsigned int _ndPosCount = 0; // only use in _readNd()
+    
+    // This should only be referenced by _readTag()
+    std::string _prevTagParentElementId;
+    
+    // This should only be referenced by _readMember()
+    std::string _prevMemberParentElementId;
 };
     
 }
