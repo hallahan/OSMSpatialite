@@ -27,8 +27,8 @@ namespace OSM
         _db.executeSQL("CREATE TABLE IF NOT EXISTS osm(version TEXT, generator TEXT);");
         
         // Nodes, Ways, Relations
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
+        _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, wkb_geometry GEOMETRY);");
+        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, wkb_geometry GEOMETRY);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
         
         // Tag tables for each OSM element type
@@ -61,6 +61,7 @@ namespace OSM
         std::string user = "NULL";
         std::string action = "NULL";
         std::string visible = "NULL";
+        std::string wkb_geometry = "NULL";
         
         
         if (!Util::isLong(idStr)) {
@@ -99,7 +100,7 @@ namespace OSM
         std::string sql = "INSERT INTO nodes VALUES (" +
                             idStr + ',' + action + ',' + lat + ',' +
                             lon + ',' + version + ',' + timestamp + ',' +
-                            changeset + ',' + uid + ',' + user + ',' + visible + ");";
+                            changeset + ',' + uid + ',' + user + ',' + visible + ',' + wkb_geometry + ");";
         
         _db.executeSQL(sql.c_str());
     }
@@ -115,6 +116,7 @@ namespace OSM
         std::string user = "NULL";
         std::string action = "NULL";
         std::string visible = "NULL";
+        std::string wkb_geometry = "NULL";
         
         
         if (!Util::isLong(idStr)) {
@@ -146,7 +148,7 @@ namespace OSM
         
         std::string sql = "INSERT INTO ways VALUES (" +
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
-                            changeset + ',' + uid + ',' + user + ',' + visible + ");";
+                            changeset + ',' + uid + ',' + user + ',' + visible + ',' + wkb_geometry + ");";
         
         _db.executeSQL(sql.c_str());
     }

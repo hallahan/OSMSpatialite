@@ -46,7 +46,7 @@ void testSpatialite() {
 
 int main(int argc, const char * argv[]) {
     testSqlite();
-    testSpatialite();
+//    testSpatialite();
     
     OSM::OSMXmlParser parser("/temp/arcade_test4.db", "/temp/arcade.osm");
     parser.parse();

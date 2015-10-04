@@ -69,11 +69,11 @@ namespace OSM {
         }
         
         
-        std::cout   << "name: " << name << '\n'
-        << "value: " << value << '\n'
-        << "nodeType: " << nodeType << '\n'
-        << "isEmptyElement: " << isEmptyElement << '\n'
-        << "hasTextValue: " << hasTextValue << "\n\n";
+//        std::cout   << "name: " << name << '\n'
+//        << "value: " << value << '\n'
+//        << "nodeType: " << nodeType << '\n'
+//        << "isEmptyElement: " << isEmptyElement << '\n'
+//        << "hasTextValue: " << hasTextValue << "\n\n";
         
         if (nodeType == XmlNodeType::ELEMENT) {
             if (name == "osm") {
