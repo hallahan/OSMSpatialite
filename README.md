@@ -12,19 +12,19 @@ I have gotten it to run without hitches on XCode 6.4 and 7.0.
 
 ## Short Term Milestones
 
--[x] Parse OSM XML into SQLite
--[ ] Create WKB Geometries for Nodes and Ways from the topology. RTree Index as applicable.
--[ ] Design workflow for fetching, editing, and submitting edits with OSM API
--[ ] Sort out getting Spatialite working properly.
+- [x] Parse OSM XML into SQLite
+- [ ] Create WKB Geometries for Nodes and Ways from the topology. RTree Index as applicable.
+- [ ] Design workflow for fetching, editing, and submitting edits with OSM API
+- [ ] Sort out getting Spatialite working properly.
 
 ## Medium Term Milestones
 
--[ ] Cross Platform Build Process
+- [ ] Cross Platform Build Process
 
 ## Long Term Milestones
 
--[ ] Integrate into [AmigoClient](https://github.com/amigocloud/amigoclient/)
-	-[ ] Create OSM editing UX
--[ ] Hook up Mapnik (Local Proof of Concept)
-	-[ ] Have Mapnik create vector tiles on iOS / Android
-	-[ ] Consume vector tiles form MapboxGL Native
+- [ ] Integrate into [AmigoClient](https://github.com/amigocloud/amigoclient/)
+	- [ ] Create OSM editing UX
+- [ ] Hook up Mapnik (Local Proof of Concept)
+	- [ ] Have Mapnik create vector tiles on iOS / Android
+	- [ ] Consume vector tiles form MapboxGL Native
