@@ -31,35 +31,14 @@ namespace OSM
         _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
         
-        // Index their action so we can quickly query modified or deleted elements
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_action ON nodes (action);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_action ON relations (action);");
-        
         // Tag tables for each OSM element type
         _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes_tags(id INTEGER, k TEXT, v TEXT);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS ways_tags(id INTEGER, k TEXT, v TEXT);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations_tags(id INTEGER, k TEXT, v TEXT);");
         
-        // Indices for tag tables
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
-        // Indexes on k and v will be useful for typeahead.
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_v ON nodes_tags (v);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_v ON ways_tags (v);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_v ON relations_tags (v);");
-        
         // Member tables
         _db.executeSQL("CREATE TABLE IF NOT EXISTS ways_nodes(way_id  INTEGER, node_id INTEGER, way_pos INTEGER);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations_members(relation_id  INTEGER, ref INTEGER, type TEXT, role TEXT);");
-        
-        // Indices for member tables
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
         
         _db.commitTransaction();
     }
@@ -293,4 +272,31 @@ namespace OSM
         _db.executeSQL(sql.c_str());
     }
 
+    void OSMDatabase::postProcess() {
+        _addIndices();
+    }
+    
+    void OSMDatabase::_addIndices() {
+        // Index OSM element's action so we can quickly query modified or deleted elements
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_action ON nodes (action);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_action ON relations (action);");
+        
+        // Indices for tag tables
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
+        // Indexes on k and v will be useful for typeahead.
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_v ON nodes_tags (v);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_v ON ways_tags (v);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_v ON relations_tags (v);");
+        
+        // Indices for member tables
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
+    }
+ 
 }

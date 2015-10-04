@@ -46,7 +46,9 @@ namespace OSM {
             while (ret == 1) {
                 _processXmlNode();
                 ret = xmlTextReaderRead(_reader);
-            }        }
+            }
+            _osmdb.postProcess();
+        }
     }
     
     void OSMXmlParser::_processXmlNode() {

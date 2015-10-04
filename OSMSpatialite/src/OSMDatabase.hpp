@@ -41,9 +41,15 @@ public:
     void addMember(const std::string& relationIdStr, const std::string& refStr,
                    const std::string& typeStr, const std::string& roleStr);
     
+    // To be called after update / insert of OSM elements.
+    // Creates indices and WKB geometries.
+    void postProcess();
+    
 private:
     // Initializes DB to have OSM Schema if needed.
     void _initDB();
+    
+    void _addIndices();
     
     const std::string _dbPath;
     AmigoCloud::Database _db;
