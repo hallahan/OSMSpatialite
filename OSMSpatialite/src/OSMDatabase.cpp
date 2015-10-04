@@ -297,6 +297,7 @@ namespace OSM
 
     void OSMDatabase::postProcess() {
         _addIndices();
+        _buildGeometries();
     }
     
     void OSMDatabase::_addIndices() {
@@ -309,7 +310,7 @@ namespace OSM
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
-        // Indexes on k and v will be useful for typeahead.
+        // Indices on k and v will be useful for typeahead.
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
@@ -320,6 +321,23 @@ namespace OSM
         // Indices for member tables
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
+    }
+    
+    void OSMDatabase::_buildGeometries() {
+        // Fetch Standalone Nodes (Nodes not in a Way).
+        // This gets the ids of the nodes not in a way.
+        std::string sql = "SELECT * FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
+
+        AmigoCloud::DatabaseResult result;
+        _db.executeSQL(sql.c_str(), result);
+        if (result.isOK()) {
+//            const std::vector< std::vector<std::string> > &records=result.records;
+            if (result.records.size() > 0) {
+                for ( auto const &record : result.records) {
+                    
+                }
+            }
+        }
     }
  
 }

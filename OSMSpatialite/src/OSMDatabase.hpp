@@ -48,8 +48,8 @@ public:
 private:
     // Initializes DB to have OSM Schema if needed.
     void _initDB();
-    
     void _addIndices();
+    void _buildGeometries();
     
     const std::string _dbPath;
     AmigoCloud::Database _db;
