@@ -324,20 +324,26 @@ namespace OSM
     }
     
     void OSMDatabase::_buildGeometries() {
+        _buildStandaloneNodeGeometries();
+    }
+    
+    void OSMDatabase::_buildStandaloneNodeGeometries() {
         // Fetch Standalone Nodes (Nodes not in a Way).
         // This gets the ids of the nodes not in a way.
-        std::string sql = "SELECT * FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
-
+        std::string sql = "SELECT nodes.id FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
+        
         AmigoCloud::DatabaseResult result;
         _db.executeSQL(sql.c_str(), result);
         if (result.isOK()) {
-//            const std::vector< std::vector<std::string> > &records=result.records;
-            if (result.records.size() > 0) {
-                for ( auto const &record : result.records) {
-                    
+            const std::vector< std::vector<std::string> > &records = result.records;
+            if (records.size() > 0) {
+                for ( auto const &record : records) {
+                    const std::string &standaloneNodeIdStr = record[0];
+
                 }
             }
         }
+        
     }
  
 }

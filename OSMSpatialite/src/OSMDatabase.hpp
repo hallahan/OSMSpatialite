@@ -50,6 +50,7 @@ private:
     void _initDB();
     void _addIndices();
     void _buildGeometries();
+    void _buildStandaloneNodeGeometries();
     
     const std::string _dbPath;
     AmigoCloud::Database _db;
