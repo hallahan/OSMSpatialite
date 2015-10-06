@@ -338,12 +338,18 @@ namespace OSM
             const std::vector< std::vector<std::string> > &records = result.records;
             if (records.size() > 0) {
                 for ( auto const &record : records) {
-                    const std::string &standaloneNodeIdStr = record[0];
-
+                    _buildNodeGeometry(record[0]);
                 }
             }
         }
         
+    }
+    
+    void OSMDatabase::_buildNodeGeometry(const std::string& nodeIdStr) {
+        std::string sql = "UPDATE nodes SET wkb_geometry = GeomFromText('POINT(2.22 3.33)', 4326) WHERE nodes.id = " + nodeIdStr + ";";
+        AmigoCloud::DatabaseResult result;
+        _db.executeSQL(sql.c_str(), result);
+        std::cout << result.errorCode;
     }
  
 }
