@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		011BF3621BBEF6DC00B68AFE /* OSMUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */; };
 		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; };
 		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; };
 		0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */; };
@@ -27,6 +26,7 @@
 		01B2DAA11BBDF49B001E656D /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA971BBDF49B001E656D /* libxml2.2.dylib */; };
 		01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA981BBDF49B001E656D /* libz.1.dylib */; };
 		01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BF3D9D1BBDF40D000520AE /* main.cpp */; };
+		01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01ED63DB1BC5760F00766C92 /* Util.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +42,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMUtil.cpp; path = src/OSMUtil.cpp; sourceTree = "<group>"; };
-		011BF3611BBEF6DC00B68AFE /* OSMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSMUtil.h; path = src/OSMUtil.h; sourceTree = "<group>"; };
 		0166F6721BBDFD8B00517ACC /* OSMElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMElement.cpp; path = src/OSMElement.cpp; sourceTree = "<group>"; };
 		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
 		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
@@ -76,6 +74,8 @@
 		01B2DA991BBDF49B001E656D /* mod_spatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.bundle"; name = mod_spatialite.7.dylib; path = OSMSpatialite/lib/mod_spatialite.7.dylib; sourceTree = "<group>"; };
 		01BF3D9A1BBDF40D000520AE /* OSMSpatialite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSMSpatialite; sourceTree = BUILT_PRODUCTS_DIR; };
 		01BF3D9D1BBDF40D000520AE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		01ED63DB1BC5760F00766C92 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = src/Util.cpp; sourceTree = "<group>"; };
+		01ED63DC1BC5760F00766C92 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = src/Util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +141,8 @@
 				0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */,
 				0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */,
 				0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */,
-				011BF3601BBEF6DC00B68AFE /* OSMUtil.cpp */,
-				011BF3611BBEF6DC00B68AFE /* OSMUtil.h */,
+				01ED63DB1BC5760F00766C92 /* Util.cpp */,
+				01ED63DC1BC5760F00766C92 /* Util.h */,
 			);
 			path = OSMSpatialite;
 			sourceTree = "<group>";
@@ -220,11 +220,11 @@
 			files = (
 				0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
-				011BF3621BBEF6DC00B68AFE /* OSMUtil.cpp in Sources */,
 				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
 				0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */,
+				01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */,
 				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
 				0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */,
 				0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */,

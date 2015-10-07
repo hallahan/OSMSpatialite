@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "OSMDatabase::addNode(const std::string&amp; idStr, const std::string&amp; latStr, const std::string&amp; lonStr, const std::string&amp; versionStr, const std::string&amp; timestampStr, const std::string&amp; changesetStr, const std::string&amp; uidStr, const std::string&amp; userStr, const std::string&amp; actionStr, const std::string&amp; visibleStr)"
+            landmarkName = "OSMDatabase::addWay(const std::string&amp; idStr, const std::string&amp; versionStr, const std::string&amp; timestampStr, const std::string&amp; changesetStr, const std::string&amp; uidStr, const std::string&amp; userStr, const std::string&amp; actionStr, const std::string&amp; visibleStr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
