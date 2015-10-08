@@ -51,7 +51,7 @@ private:
     void _addIndices();
     void _buildGeometries();
     void _buildStandaloneNodeGeometries();
-    void _buildNodeGeometry(const std::string& nodeIdStr);
+    void _buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr);
     
     const std::string _dbPath;
     AmigoCloud::Database _db;

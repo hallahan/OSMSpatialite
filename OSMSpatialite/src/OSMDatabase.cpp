@@ -330,7 +330,7 @@ namespace OSM
     void OSMDatabase::_buildStandaloneNodeGeometries() {
         // Fetch Standalone Nodes (Nodes not in a Way).
         // This gets the ids of the nodes not in a way.
-        std::string sql = "SELECT nodes.id FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
+        std::string sql = "SELECT nodes.id, nodes.lat, nodes.lon FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
         
         AmigoCloud::DatabaseResult result;
         _db.executeSQL(sql.c_str(), result);
@@ -338,22 +338,16 @@ namespace OSM
             const std::vector< std::vector<std::string> > &records = result.records;
             if (records.size() > 0) {
                 for ( auto const &record : records) {
-                    _buildNodeGeometry(record[0]);
+                    _buildNodeGeometry(record[0], record[1], record[2]);
                 }
             }
         }
         
     }
     
-    void OSMDatabase::_buildNodeGeometry(const std::string& nodeIdStr) {
-        std::string sql = "UPDATE nodes SET wkb_geometry = GeomFromText('POINT(2.22 3.33)', 4326) WHERE nodes.id = " + nodeIdStr + ";";
-        AmigoCloud::DatabaseResult result;
-        _db.executeSQL(sql.c_str(), result);
-        std::cout << result.errorCode << '\n';
-        
-        sql = "select id, lat, lon, AsGeoJSON(wkb_geometry) from nodes where id = " + nodeIdStr + ";";
-        _db.executeSQL(sql.c_str(), result);
-        std::cout << result.records[0][3] << '\n';
+    void OSMDatabase::_buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr) {
+        std::string sql = "UPDATE nodes SET wkb_geometry = GeomFromText('POINT(" + nodeLonStr + " " + nodeLatStr + ")', 4326) WHERE nodes.id = " + nodeIdStr + ";";
+        _db.executeSQL(sql.c_str());
     }
  
 }
