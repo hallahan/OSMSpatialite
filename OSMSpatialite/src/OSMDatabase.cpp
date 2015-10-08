@@ -16,11 +16,11 @@ namespace OSM
     
     OSMDatabase::OSMDatabase(const std::string& dbPath) :
     _dbPath(dbPath),
-    _db(dbPath, false) { // NH FIXME: Crash when enable spatial?
+    _db(dbPath, true) { // NH FIXME: Crash when enable spatial?
         _initDB();
     }
     
-    void OSMDatabase::_initDB() {
+    void OSMDatabase::_initDB() {   
         _db.beginTransaction();
         
         // OSM XML Node (one per OSM XML file)
@@ -349,7 +349,11 @@ namespace OSM
         std::string sql = "UPDATE nodes SET wkb_geometry = GeomFromText('POINT(2.22 3.33)', 4326) WHERE nodes.id = " + nodeIdStr + ";";
         AmigoCloud::DatabaseResult result;
         _db.executeSQL(sql.c_str(), result);
-        std::cout << result.errorCode;
+        std::cout << result.errorCode << '\n';
+        
+        sql = "select id, lat, lon, AsGeoJSON(wkb_geometry) from nodes where id = " + nodeIdStr + ";";
+        _db.executeSQL(sql.c_str(), result);
+        std::cout << result.records[0][3] << '\n';
     }
  
 }
