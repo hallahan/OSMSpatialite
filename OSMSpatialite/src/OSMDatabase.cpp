@@ -28,7 +28,7 @@ namespace OSM
         
         // Nodes, Ways, Relations
         _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, wkb_geometry GEOMETRY);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, wkb_geometry GEOMETRY);");
+        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, closed INTEGER, wkb_geometry);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
         
         // Tag tables for each OSM element type
@@ -306,6 +306,9 @@ namespace OSM
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_action ON relations (action);");
         
+        // Index on ways closed. Closed ways are polygons. Open ways are lines.
+        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_closed ON ways (closed);");
+        
         // Indices for tag tables
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
@@ -349,5 +352,8 @@ namespace OSM
         std::string sql = "UPDATE nodes SET wkb_geometry = GeomFromText('POINT(" + nodeLonStr + " " + nodeLatStr + ")', 4326) WHERE nodes.id = " + nodeIdStr + ";";
         _db.executeSQL(sql.c_str());
     }
- 
+    
+    void OSMDatabase::_buildWayGeometries() {
+        std::string sql = "";
+    }
 }
