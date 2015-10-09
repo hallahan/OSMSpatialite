@@ -328,6 +328,7 @@ namespace OSM
     
     void OSMDatabase::_buildGeometries() {
         _buildStandaloneNodeGeometries();
+        _buildWayGeometries();
     }
     
     void OSMDatabase::_buildStandaloneNodeGeometries() {
@@ -354,6 +355,91 @@ namespace OSM
     }
     
     void OSMDatabase::_buildWayGeometries() {
-        std::string sql = "";
+        std::string sql = "SELECT id FROM ways;";
+        
+        AmigoCloud::DatabaseResult result;
+        _db.executeSQL(sql.c_str(), result);
+        if (result.isOK()) {
+            const std::vector< std::vector<std::string> > &records = result.records;
+            if (records.size() > 0) {
+                
+                // For each way, we need to check to see if we have the same number off
+                // corresponding nodes to nds. If that count is not the same, we know
+                // that we don't have all of the nodes needed to construct a way geom.
+                for (auto const &record : records) {
+                    _checkNodeCountForWay(record[0]); // wayId
+                }
+                
+            }
+        }
+    }
+    
+    void OSMDatabase::_checkNodeCountForWay(const std::string& wayId) {
+        std::string sql = "SELECT COUNT(node_id) FROM ways_nodes WHERE way_id = " + wayId + ";";
+        
+        AmigoCloud::DatabaseResult result;
+        _db.executeSQL(sql.c_str(), result);
+        if (result.isOK()) {
+            const std::vector< std::vector<std::string> > &records = result.records;
+            if (records.size() > 0) {
+                
+                const std::string& countStr = records[0][0];
+                long count = std::stol(countStr);
+                
+                sql = "SELECT lat, lon  FROM ways_nodes JOIN nodes ON ways_nodes.node_id = nodes.id WHERE way_id = " + wayId + " ORDER BY way_pos;";
+                
+                AmigoCloud::DatabaseResult result;
+                _db.executeSQL(sql.c_str(), result);
+                if (result.isOK()) {
+                    const std::vector< std::vector<std::string> > &records = result.records;
+                    
+                    // Checking to see that the join has the same count as the number
+                    // of nodes in ways_nodes for the given way.
+                    if (count > 1 && records.size() == count) {
+
+                        _createAndInsertWayGeometry(wayId, records);
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    std::string createWKTPolygon(const std::vector< std::vector<std::string> >& latLons) {
+        std::string wkt = "POLYGON((" + latLons[0][1] + " " + latLons[0][0];
+        std::size_t size = latLons.size();
+        for (long i = 1; i < size; ++i) {
+            const std::vector<std::string>& latLon = latLons[i];
+            wkt += ", " + latLon[1] + " " + latLon[0];
+        }
+        return wkt += "))";
+    }
+    
+    std::string createWKTLineString(const std::vector< std::vector<std::string> >& latLons) {
+        std::string wkt = "LINESTRING(" + latLons[0][1] + " " + latLons[0][0];
+        std::size_t size = latLons.size();
+        for (long i = 1; i < size; ++i) {
+            const std::vector<std::string>& latLon = latLons[i];
+            wkt += ", " + latLon[1] + " " + latLon[0];
+        }
+        return wkt += ")";
+    }
+    
+    void OSMDatabase::_createAndInsertWayGeometry(const std::string& wayId,
+                                                  const std::vector< std::vector<std::string> >& latLons) {
+        const std::string& firstLat = latLons[0][0];
+        const std::string& firstLon = latLons[0][1];
+        const std::string& lastLat = latLons[latLons.size()-1][0];
+        const std::string& lastLon = latLons[latLons.size()-1][1];
+        
+        // if it is a polygon
+        if (firstLat == lastLat && firstLon == lastLon) {
+            std::string wktPolygon = createWKTPolygon(latLons);
+        }
+        // if it is a polyline (linestring)
+        else {
+            std::string wktLineString = createWKTLineString(latLons);
+        }
     }
 }
