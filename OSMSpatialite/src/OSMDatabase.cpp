@@ -148,7 +148,7 @@ namespace OSM
         
         std::string sql = "INSERT OR REPLACE INTO ways VALUES (" +
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
-                            changeset + ',' + uid + ',' + user + ',' + visible + ',' + wkb_geometry + ");";
+                            changeset + ',' + uid + ',' + user + ',' + visible + ",NULL," + wkb_geometry + ");";
         
         _db.executeSQL(sql.c_str());
     }
@@ -436,10 +436,14 @@ namespace OSM
         // if it is a polygon
         if (firstLat == lastLat && firstLon == lastLon) {
             std::string wktPolygon = createWKTPolygon(latLons);
+            std::string sql = "UPDATE ways SET wkb_geometry = GeomFromText('" + wktPolygon + "', 4326), closed = 1 WHERE id = " + wayId + ";";
+            _db.executeSQL(sql.c_str());
         }
         // if it is a polyline (linestring)
         else {
             std::string wktLineString = createWKTLineString(latLons);
+            std::string sql = "UPDATE ways SET wkb_geometry = GeomFromText('" + wktLineString + "', 4326), closed = 0 WHERE id = " + wayId + ";";
+            _db.executeSQL(sql.c_str());
         }
     }
 }
