@@ -28,8 +28,10 @@ namespace OSM
         
         // Nodes, Ways, Relations
         _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, wkb_geometry GEOMETRY);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, closed INTEGER, wkb_geometry);");
+        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, closed INTEGER);");
         _db.executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
+        
+        _db.executeSQL("SELECT AddGeometryColumn('ways', 'wkb_geometry', 4326, 'LINESTRING', 'XY')");
         
         // Tag tables for each OSM element type
         _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes_tags(id INTEGER, k TEXT, v TEXT);");
@@ -433,17 +435,17 @@ namespace OSM
         const std::string& lastLat = latLons[latLons.size()-1][0];
         const std::string& lastLon = latLons[latLons.size()-1][1];
         
-        // if it is a polygon
-        if (firstLat == lastLat && firstLon == lastLon) {
-            std::string wktPolygon = createWKTPolygon(latLons);
-            std::string sql = "UPDATE ways SET wkb_geometry = GeomFromText('" + wktPolygon + "', 4326), closed = 1 WHERE id = " + wayId + ";";
-            _db.executeSQL(sql.c_str());
-        }
-        // if it is a polyline (linestring)
-        else {
+//        // if it is a polygon
+//        if (firstLat == lastLat && firstLon == lastLon) {
+//            std::string wktPolygon = createWKTPolygon(latLons);
+//            std::string sql = "UPDATE ways SET wkb_geometry = GeomFromText('" + wktPolygon + "', 4326), closed = 1 WHERE id = " + wayId + ";";
+//            _db.executeSQL(sql.c_str());
+//        }
+//        // if it is a polyline (linestring)
+//        else {
             std::string wktLineString = createWKTLineString(latLons);
             std::string sql = "UPDATE ways SET wkb_geometry = GeomFromText('" + wktLineString + "', 4326), closed = 0 WHERE id = " + wayId + ";";
             _db.executeSQL(sql.c_str());
-        }
+//        }
     }
 }
