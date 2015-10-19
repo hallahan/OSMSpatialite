@@ -5,51 +5,18 @@
 
 #include "OSMXmlParser.hpp"
 
-void testSqlite() {
-    sqlite3 *db;
-    char *zErr;
-    int rc;
-    std::string sql;
-    
-    rc = sqlite3_open("/temp/test.db", &db);
-    if(rc) {
-        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-        sqlite3_close(db);
-        exit(1);
-    }
-    sql = "create table if not exists episodes(id int, name text)";
-    rc = sqlite3_exec(db, sql.c_str(), NULL, NULL, &zErr);
-    if(rc != SQLITE_OK) {
-        if (zErr != NULL) {
-            fprintf(stderr, "SQL error: %s\n", zErr);
-            sqlite3_free(zErr);
-        }
-    }
-    sql = "insert into episodes values (10, 'The Dinner Party')";
-    rc = sqlite3_exec(db, sql.c_str(), NULL, NULL, &zErr);
-    if(rc != SQLITE_OK) {
-        if (zErr != NULL) {
-            fprintf(stderr, "SQL error: %s\n", zErr);
-            sqlite3_free(zErr);
-        }
-    }
-    sql = "insert into episodes values (11, 'Pixel Perfect')";
-    rc = sqlite3_exec(db, sql.c_str(), NULL, NULL, &zErr);
-    sqlite3_close(db);
-}
-
-void testSpatialite() {
-    spatialite_init (0);
-    const char* version = spatialite_version();
-    std::cout << "Spatialite version: " << version << std::endl << std::endl;
-}
 
 int main(int argc, const char * argv[]) {
-//    testSqlite();
-//    testSpatialite();
     
-    OSM::OSMXmlParser parser("/temp/arcade_test.db", "/temp/include_standalone.osm");
-    parser.parse();
+    std::string xmlStr = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm version=\"0.6\" generator=\"Overpass API\"><meta osm_base=\"2015-10-19T15:48:02Z\"/><node id=\"368174593\" lat=\"38.6393485\" lon=\"-121.3799524\" version=\"1\" timestamp=\"2009-04-01T07:58:57Z\" changeset=\"17182\" uid=\"28145\" user=\"amillar\"><tag k=\"addr:state\" v=\"CA\"/><tag k=\"ele\" v=\"22\"/><tag k=\"gnis:county_name\" v=\"Sacramento\"/><tag k=\"gnis:feature_id\" v=\"1817495\"/><tag k=\"gnis:import_uuid\" v=\"57871b70-0100-4405-bb30-88b2e001a944\"/><tag k=\"gnis:reviewed\" v=\"no\"/><tag k=\"name\" v=\"Discovery Museum Science and Space Center\"/><tag k=\"source\" v=\"USGS Geonames\"/><tag k=\"tourism\" v=\"museum\"/></node></osm>";
+    
+    AmigoCloud::Database db("/temp/xmlstr.db", true);
+    OSM::OSMXmlParser parser(db);
+    parser.xmlString(xmlStr).parse();
+    
+    AmigoCloud::Database db2("/temp/xmlfile.db", true);
+    OSM::OSMXmlParser parser2(db2);
+    parser2.xmlFile("/temp/include_standalone.osm").parse();
 
     return 0;
 }

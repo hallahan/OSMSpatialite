@@ -20,6 +20,7 @@ namespace OSM {
     
 class OSMDatabaseBuilder {
 public:
+    explicit OSMDatabaseBuilder(const AmigoCloud::Database& db);
     explicit OSMDatabaseBuilder(const std::string& dbPath);
     
     // OSM Element found at beginning of XML Document
@@ -61,7 +62,6 @@ private:
     void _checkNodeCountForWay(const std::string& wayId);
     void _createAndInsertWayGeometry(const std::string& wayId, const std::vector< std::vector<std::string> >& latLons);
     
-    const std::string _dbPath;
     AmigoCloud::Database _db;
 };
 }

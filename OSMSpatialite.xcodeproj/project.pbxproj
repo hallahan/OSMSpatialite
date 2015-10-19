@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; };
 		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; };
-		0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */; };
+		0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */; };
 		0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */; };
 		0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */; };
 		0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* OSMNode.cpp */; };
@@ -47,8 +47,8 @@
 		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
 		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
 		0166F6761BBDFDCB00517ACC /* OSMWay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMWay.hpp; path = src/OSMWay.hpp; sourceTree = "<group>"; };
-		0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMDatabase.cpp; path = src/OSMDatabase.cpp; sourceTree = "<group>"; };
-		0166F6791BBDFE4400517ACC /* OSMDatabase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMDatabase.hpp; path = src/OSMDatabase.hpp; sourceTree = "<group>"; };
+		0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMDatabaseBuilder.cpp; path = src/OSMDatabaseBuilder.cpp; sourceTree = "<group>"; };
+		0166F6791BBDFE4400517ACC /* OSMDatabaseBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMDatabaseBuilder.hpp; path = src/OSMDatabaseBuilder.hpp; sourceTree = "<group>"; };
 		0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMRelation.cpp; path = src/OSMRelation.cpp; sourceTree = "<group>"; };
 		0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMRelation.hpp; path = src/OSMRelation.hpp; sourceTree = "<group>"; };
 		0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMXmlParser.cpp; path = src/OSMXmlParser.cpp; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			children = (
 				01F966D21BBDF65D00864D82 /* AmigoCloud */,
 				01BF3D9D1BBDF40D000520AE /* main.cpp */,
-				0166F6781BBDFE4400517ACC /* OSMDatabase.cpp */,
-				0166F6791BBDFE4400517ACC /* OSMDatabase.hpp */,
+				0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */,
+				0166F6791BBDFE4400517ACC /* OSMDatabaseBuilder.hpp */,
 				0166F6721BBDFD8B00517ACC /* OSMElement.cpp */,
 				0166F6731BBDFD8B00517ACC /* OSMElement.hpp */,
 				0166F6811BBDFE9800517ACC /* OSMNode.cpp */,
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0166F67A1BBDFE4400517ACC /* OSMDatabase.cpp in Sources */,
+				0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
 				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,

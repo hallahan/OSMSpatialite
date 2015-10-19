@@ -13,10 +13,14 @@
 
 namespace OSM
 {
+    OSMDatabaseBuilder::OSMDatabaseBuilder(const AmigoCloud::Database& db) :
+    _db(db) {
+        _initDB();
+    }
+    
     
     OSMDatabaseBuilder::OSMDatabaseBuilder(const std::string& dbPath) :
-    _dbPath(dbPath),
-    _db(dbPath, true) { // NH FIXME: Crash when enable spatial?
+    _db(dbPath, true) {
         _initDB();
     }
     

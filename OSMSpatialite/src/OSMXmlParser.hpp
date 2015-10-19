@@ -20,9 +20,12 @@ namespace OSM {
     
 class OSMXmlParser {
 public:
-    explicit OSMXmlParser(const std::string& dbPath, const std::string& filePath);
+    explicit OSMXmlParser(const AmigoCloud::Database& db);
     
-    void parse();
+    OSMXmlParser& xmlFile(const std::string& filePath);
+    OSMXmlParser& xmlString(const std::string& xmlString);
+    
+    OSMXmlParser& parse();
     
 private:
     void _processXmlNode();

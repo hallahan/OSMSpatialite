@@ -32,15 +32,25 @@ namespace OSM {
         const int END_ELEMENT=15; const int END_ENTITY=16; const int XML_DECLARATION=17;
     };
     
-    
-    OSMXmlParser::OSMXmlParser(const std::string& dbPath, const std::string& filePath) :
-    _dbBuilder(dbPath),
-    _filePath(filePath) {
-        _reader = xmlReaderForFile(_filePath.c_str(), NULL, 0);
+    OSMXmlParser::OSMXmlParser(const AmigoCloud::Database& db) :
+    _dbBuilder(db) {
+        
     }
     
+    OSMXmlParser& OSMXmlParser::xmlFile(const std::string& filePath) {
+        xmlInitParser();
+        _reader = xmlReaderForFile(filePath.c_str(), NULL, 0);
+        return *this;
+    }
     
-    void OSMXmlParser::parse() {
+    OSMXmlParser& OSMXmlParser::xmlString(const std::string& xmlString) {
+        xmlInitParser();
+        const char* cstr = xmlString.c_str();
+        _reader = xmlReaderForMemory(cstr, (int)strlen(cstr), NULL, NULL, 0);
+        return *this;
+    }
+    
+    OSMXmlParser& OSMXmlParser::parse() {
         if (_reader != NULL) {
             int ret = xmlTextReaderRead(_reader);
             while (ret == 1) {
@@ -48,13 +58,15 @@ namespace OSM {
                 ret = xmlTextReaderRead(_reader);
             }
             _dbBuilder.postProcess();
+            xmlCleanupParser();
         }
+        return *this;
     }
     
     void OSMXmlParser::_processXmlNode() {
         const int nodeType       = xmlTextReaderNodeType(_reader);
-        const int isEmptyElement = xmlTextReaderIsEmptyElement(_reader);
-        const int hasTextValue   = xmlTextReaderHasValue(_reader);
+//        const int isEmptyElement = xmlTextReaderIsEmptyElement(_reader);
+//        const int hasTextValue   = xmlTextReaderHasValue(_reader);
         
         std::string value;
         const xmlChar *val = xmlTextReaderConstValue(_reader);
