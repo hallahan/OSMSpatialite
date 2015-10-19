@@ -11,4 +11,20 @@
 
 #include <stdio.h>
 
+#include "OSMElement.hpp"
+
+namespace OSM {
+    
+class OSMNode : public OSMElement {
+public:
+    
+    
+private:
+    double _lat;
+    double _lon;
+    
+};
+
+}
+
 #endif /* OSMNode_hpp */

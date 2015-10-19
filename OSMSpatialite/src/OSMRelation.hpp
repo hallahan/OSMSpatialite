@@ -13,11 +13,12 @@
 
 namespace OSM {
     
-class OSMRelation : public OSMElement {
+class OSMRelation {
 public:
+    int test = 1;
     
 private:
-    
+
 };
     
 }
