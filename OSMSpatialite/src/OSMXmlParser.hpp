@@ -13,7 +13,7 @@
 #include <libxml/xmlreader.h>
 
 #include "OSMElement.hpp"
-#include "OSMDatabase.hpp"
+#include "OSMDatabaseBuilder.hpp"
 
 namespace OSM {
     
@@ -38,7 +38,7 @@ private:
     
     xmlTextReaderPtr _reader;
     std::string _filePath;
-    OSMDatabase _osmdb;
+    OSMDatabaseBuilder _dbBuilder;
     
     ElementType _parentElementType;
     std::string _parentElementId;

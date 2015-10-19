@@ -34,7 +34,7 @@ namespace OSM {
     
     
     OSMXmlParser::OSMXmlParser(const std::string& dbPath, const std::string& filePath) :
-    _osmdb(dbPath),
+    _dbBuilder(dbPath),
     _filePath(filePath) {
         _reader = xmlReaderForFile(_filePath.c_str(), NULL, 0);
     }
@@ -47,7 +47,7 @@ namespace OSM {
                 _processXmlNode();
                 ret = xmlTextReaderRead(_reader);
             }
-            _osmdb.postProcess();
+            _dbBuilder.postProcess();
         }
     }
     
@@ -113,7 +113,7 @@ namespace OSM {
                 }
             }
         }
-        _osmdb.addOSM(versionStr, generatorStr);
+        _dbBuilder.addOSM(versionStr, generatorStr);
     }
     
     void OSMXmlParser::_readNote() {
@@ -165,7 +165,7 @@ namespace OSM {
         }
         _parentElementType = ElementType::NODE;
         _parentElementId = idStr;
-        _osmdb.addNode(idStr, latStr, lonStr, versionStr, timestampStr,
+        _dbBuilder.addNode(idStr, latStr, lonStr, versionStr, timestampStr,
                        changesetStr, uidStr, userStr, actionStr, visibleStr);
     }
     
@@ -204,7 +204,7 @@ namespace OSM {
         }
         _parentElementType = ElementType::WAY;
         _parentElementId = idStr;
-        _osmdb.addWay(idStr, versionStr, timestampStr, changesetStr,
+        _dbBuilder.addWay(idStr, versionStr, timestampStr, changesetStr,
                       uidStr, userStr, actionStr, visibleStr);
     }
     
@@ -243,7 +243,7 @@ namespace OSM {
         }
         _parentElementType = ElementType::RELATION;
         _parentElementId = idStr;
-        _osmdb.addRelation(idStr, versionStr, timestampStr, changesetStr,
+        _dbBuilder.addRelation(idStr, versionStr, timestampStr, changesetStr,
                       uidStr, userStr, actionStr, visibleStr);
     }
     
@@ -265,9 +265,9 @@ namespace OSM {
         
         // Only blast the previous tags for the element once when updating.
         if (_prevTagParentElementId == _parentElementId) {
-            _osmdb.addTag(_parentElementType, _parentElementId, k, v, false);
+            _dbBuilder.addTag(_parentElementType, _parentElementId, k, v, false);
         } else {
-            _osmdb.addTag(_parentElementType, _parentElementId, k, v, true);
+            _dbBuilder.addTag(_parentElementType, _parentElementId, k, v, true);
             _prevTagParentElementId = _parentElementId;
         }
     }
@@ -290,7 +290,7 @@ namespace OSM {
                 }
             }
         }
-        _osmdb.addNd(_parentElementId, ref, _ndPosCount);
+        _dbBuilder.addNd(_parentElementId, ref, _ndPosCount);
     }
     
     void OSMXmlParser::_readMember() {
@@ -312,9 +312,9 @@ namespace OSM {
             }
         }
         if (_prevMemberParentElementId == _parentElementId) {
-            _osmdb.addMember(_parentElementId, ref, type, role, false);
+            _dbBuilder.addMember(_parentElementId, ref, type, role, false);
         } else {
-            _osmdb.addMember(_parentElementId, ref, type, role, true);
+            _dbBuilder.addMember(_parentElementId, ref, type, role, true);
             _prevMemberParentElementId = _parentElementId;
         }
     }

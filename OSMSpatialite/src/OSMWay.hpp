@@ -11,15 +11,20 @@
 
 #include <vector>
 #include "OSMElement.hpp"
+#include "OSMNode.hpp"
 
 namespace OSM {
     
-class OSMWay {
+class OSMWay : public OSMElement {
 public:
+    
+    bool isClosed() { return _closed; };
     
 private:
     
-    std::vector<long> _linkedNodes;
+    bool _closed = false;
+    std::vector<OSMNode> _linkedNodes;
+    
     
 };
     

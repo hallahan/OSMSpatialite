@@ -11,13 +11,14 @@
 
 #include <map>
 #include <vector>
-#include "OSMRelation.hpp"
-
 
 namespace OSM {
 
-//Used to differentiate between the various types of OSM Elements. 
+// Used to differentiate between the various types of OSM Elements.
 enum class ElementType { NODE, WAY, RELATION, TAG, ND, MEMBER, BOUNDS, OSM };
+
+// Forward declaring OSMRelation so we can reference it within OSMElement.
+class OSMRelation;
     
 class OSMElement {
 public:
@@ -49,7 +50,7 @@ protected:
 //    geos::geometry _geom;
     
     std::map<std::string, std::string> _tags;
-//    std::vector<OSMRelation> _linkedRelations;
+    std::vector<OSMRelation> _linkedRelations;
 
     
 private:

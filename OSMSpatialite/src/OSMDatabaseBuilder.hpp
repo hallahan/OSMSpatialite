@@ -1,22 +1,26 @@
 //
-//  OSMDatabase.hpp
+//  OSMDatabaseBuilder.hpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#ifndef OSMDatabase_hpp
-#define OSMDatabase_hpp
+#ifndef OSMDatabaseBuilder_hpp
+#define OSMDatabaseBuilder_hpp
 
+#include <array>
 #include "AmigoCloud/Database.h"
 #include "OSMElement.hpp"
+#include "OSMNode.hpp"
+#include "OSMWay.hpp"
+#include "OSMRelation.hpp"
 
 namespace OSM {
     
-class OSMDatabase {
+class OSMDatabaseBuilder {
 public:
-    explicit OSMDatabase(const std::string& dbPath);
+    explicit OSMDatabaseBuilder(const std::string& dbPath);
     
     // OSM Element found at beginning of XML Document
     void addOSM(const std::string& version, const std::string& generator);
@@ -45,6 +49,7 @@ public:
     // Creates indices and WKB geometries.
     void postProcess();
     
+    
 private:
     // Initializes DB to have OSM Schema if needed.
     void _initDB();
@@ -61,4 +66,4 @@ private:
 };
 }
 
-#endif /* OSMDatabase_hpp */
+#endif /* OSMDatabaseBuilder_hpp */
