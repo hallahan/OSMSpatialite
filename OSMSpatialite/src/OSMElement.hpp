@@ -11,6 +11,7 @@
 
 #include <map>
 #include <vector>
+#include "AmigoCloud/Database.h"
 
 namespace OSM {
 
@@ -28,7 +29,7 @@ public:
     long getVersion()           { return _version; }
     long getChangeset()         { return _changeset; }
     long getUid()               { return _uid; }
-//    std::string getTimestamp()  { return _timestamp; }
+    std::string getTimestamp()  { return _timestamp; }
 //    std::string getUser()       { return _user; }
     bool isModified()           { return _modified; }
     
@@ -38,7 +39,7 @@ protected:
     long _version;
     long _changeset;
     long _uid;
-//    std::string _timestamp;
+    std::string _timestamp;
 //    std::string _user;
     
     // Element has been modified since fetched from OSM API.
@@ -50,7 +51,7 @@ protected:
 //    geos::geometry _geom;
     
     std::map<std::string, std::string> _tags;
-    std::vector<OSMRelation> _linkedRelations;
+//    std::vector<OSMRelation> _linkedRelations;
 
     
 private:

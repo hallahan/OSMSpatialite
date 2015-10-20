@@ -13,9 +13,12 @@
 
 namespace OSM {
     
-class OSMRelation {
+class OSMRelation : public OSMElement {
 public:
-    int test = 1;
+    
+    static std::vector<OSMRelation> fetchRelations(AmigoCloud::Database db);
+    static std::vector<OSMRelation> fetchModifiedRelations(AmigoCloud::Database db);
+    static std::vector<OSMRelation> fetchDeletedRelations(AmigoCloud::Database db);
     
 private:
 
