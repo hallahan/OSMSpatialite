@@ -304,6 +304,7 @@ namespace OSM
     void OSMDatabaseBuilder::postProcess() {
         _addIndices();
         _buildGeometries();
+        _addSpatialIndices();
     }
     
     void OSMDatabaseBuilder::_addIndices() {
@@ -330,6 +331,13 @@ namespace OSM
         // Indices for member tables
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
         _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
+        
+    }
+    
+    void OSMDatabaseBuilder::_addSpatialIndices() {
+        _db.executeSQL("SELECT CreateSpatialIndex('nodes', 'point');");
+        _db.executeSQL("SELECT CreateSpatialIndex('ways', 'line');");
+        _db.executeSQL("SELECT CreateSpatialIndex('ways', 'polygon');");
     }
     
     void OSMDatabaseBuilder::_buildGeometries() {
@@ -452,6 +460,5 @@ namespace OSM
             _db.executeSQL(sql.c_str());
         }
     }
-    
     
 }

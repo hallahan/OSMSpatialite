@@ -55,6 +55,7 @@ private:
     // Initializes DB to have OSM Schema if needed.
     void _initDB();
     void _addIndices();
+    void _addSpatialIndices();
     void _buildGeometries();
     void _buildStandaloneNodeGeometries();
     void _buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr);

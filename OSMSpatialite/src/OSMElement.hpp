@@ -11,6 +11,7 @@
 
 #include <map>
 #include <vector>
+#include <geos.h>
 #include "AmigoCloud/Database.h"
 
 namespace OSM {
