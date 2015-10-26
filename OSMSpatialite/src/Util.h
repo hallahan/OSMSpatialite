@@ -32,7 +32,6 @@ namespace OSM {
             
             return (*p == 0);
         }
-        
     }
 }
 

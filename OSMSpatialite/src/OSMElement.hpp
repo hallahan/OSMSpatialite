@@ -36,12 +36,25 @@ public:
     
     
 protected:
+    
+    OSMElement(const std::string& id, const std::string& action, const std::string& version, const std::string& changeset,
+               const std::string& uid, const std::string& user, const std::string& visible, const std::string& closed);
+    
     long _id;
     long _version;
     long _changeset;
     long _uid;
+    
+    std::string _action;
     std::string _timestamp;
-//    std::string _user;
+    std::string _user;
+    std::string _visible;
+    
+    bool _closed = false;
+    
+    std::shared_ptr<std::map<std::string,std::string>> _tags;
+    
+    std::shared_ptr<geos::geom::Geometry> _geometry;
     
     // Element has been modified since fetched from OSM API.
     bool _modified = false;
@@ -49,14 +62,12 @@ protected:
     // Element modified in current session.
     bool _modifiedInInstance = false;
     
-//    geos::geometry _geom;
-    
-    std::map<std::string, std::string> _tags;
 //    std::vector<OSMRelation> _linkedRelations;
 
     
 private:
     
+
 };
     
 }
