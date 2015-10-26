@@ -13,48 +13,48 @@
 
 namespace OSM
 {
-    OSMDatabaseBuilder::OSMDatabaseBuilder(const AmigoCloud::Database& db) :
+    OSMDatabaseBuilder::OSMDatabaseBuilder(std::shared_ptr<AmigoCloud::Database> db) :
     _db(db) {
         _initDB();
     }
     
     
     OSMDatabaseBuilder::OSMDatabaseBuilder(const std::string& dbPath) :
-    _db(dbPath, true) {
+    _db(std::make_shared<AmigoCloud::Database>(dbPath, true)) {
         _initDB();
     }
     
     void OSMDatabaseBuilder::_initDB() {
-        _db.beginTransaction();
+        _db->beginTransaction();
         
         // OSM XML Node (one per OSM XML file)
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS osm(version TEXT, generator TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS osm(version TEXT, generator TEXT);");
         
         // Nodes, Ways, Relations
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, closed INTEGER);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS nodes(id INTEGER PRIMARY KEY, action TEXT, lat REAL, lon REAL, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS ways(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT, closed INTEGER);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS relations(id INTEGER PRIMARY KEY, action TEXT, version INTEGER, timestamp TEXT, changeset INTEGER, uid INTEGER, user TEXT, visible TEXT);");
         
         // Add geometry columns for Nodes and Ways.
-        _db.executeSQL("SELECT AddGeometryColumn('nodes', 'point', 4326, 'POINT', 'XY')");
-        _db.executeSQL("SELECT AddGeometryColumn('ways', 'line', 4326, 'LINESTRING', 'XY')");
-        _db.executeSQL("SELECT AddGeometryColumn('ways', 'polygon', 4326, 'POLYGON', 'XY')");
+        _db->executeSQL("SELECT AddGeometryColumn('nodes', 'point', 4326, 'POINT', 'XY')");
+        _db->executeSQL("SELECT AddGeometryColumn('ways', 'line', 4326, 'LINESTRING', 'XY')");
+        _db->executeSQL("SELECT AddGeometryColumn('ways', 'polygon', 4326, 'POLYGON', 'XY')");
         
         // Tag tables for each OSM element type
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS nodes_tags(id INTEGER, k TEXT, v TEXT);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways_tags(id INTEGER, k TEXT, v TEXT);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS relations_tags(id INTEGER, k TEXT, v TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS nodes_tags(id INTEGER, k TEXT, v TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS ways_tags(id INTEGER, k TEXT, v TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS relations_tags(id INTEGER, k TEXT, v TEXT);");
         
         // Member tables
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS ways_nodes(way_id  INTEGER, node_id INTEGER, way_pos INTEGER);");
-        _db.executeSQL("CREATE TABLE IF NOT EXISTS relations_members(relation_id  INTEGER, ref INTEGER, type TEXT, role TEXT);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS ways_nodes(way_id  INTEGER, node_id INTEGER, way_pos INTEGER);");
+        _db->executeSQL("CREATE TABLE IF NOT EXISTS relations_members(relation_id  INTEGER, ref INTEGER, type TEXT, role TEXT);");
         
-        _db.commitTransaction();
+        _db->commitTransaction();
     }
     
     void OSMDatabaseBuilder::addOSM(const std::string& version, const std::string& generator) {
         std::string sql = "INSERT INTO osm VALUES ('" + version + "', '" + generator + "');";
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addNode(const std::string& idStr, const std::string& latStr, const std::string& lonStr, const std::string& versionStr,
@@ -110,7 +110,7 @@ namespace OSM
                             lon + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ",NULL);";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addWay(const std::string& idStr, const std::string& versionStr,
@@ -156,7 +156,7 @@ namespace OSM
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ",NULL,NULL,NULL);";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addRelation(const std::string& idStr, const std::string& versionStr,
@@ -203,7 +203,7 @@ namespace OSM
                             idStr + ',' + action + ',' + version + ',' + timestamp + ',' +
                             changeset + ',' + uid + ',' + user + ',' + visible + ");";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addTag(const ElementType parentElementType, const std::string& idStr,
@@ -234,13 +234,13 @@ namespace OSM
         // We want to blast out the previous tags for the given element when doing an update.
         if (reset) {
             sql = "DELETE FROM " + table + " WHERE id = " + idStr + ';';
-            _db.executeSQL(sql.c_str());
+            _db->executeSQL(sql.c_str());
         }
         
         sql = "INSERT INTO " + table + " VALUES (" +
                idStr + ',' + k + ',' + v + ");";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addNd(const std::string& idStr, const std::string& refStr, unsigned int pos) {
@@ -260,13 +260,13 @@ namespace OSM
         // We want to blast out the previous node_ways for the given way when doing an update.
         if (pos == 0) {
             sql = "DELETE FROM ways_nodes WHERE way_id = " + idStr + ';';
-            _db.executeSQL(sql.c_str());
+            _db->executeSQL(sql.c_str());
         }
         
         sql = "INSERT INTO ways_nodes VALUES (" +
                idStr + ',' + refStr + ',' + std::to_string(pos) + ");";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::addMember(const std::string& relationIdStr, const std::string& refStr,
@@ -292,13 +292,13 @@ namespace OSM
         
         if (reset) {
             sql = "DELETE FROM relations_members WHERE relation_id = " + relationIdStr + ';';
-            _db.executeSQL(sql.c_str());
+            _db->executeSQL(sql.c_str());
         }
         
         sql = "INSERT INTO relations_members VALUES (" +
                relationIdStr + ',' + refStr + ',' + type + ',' + role + ");";
         
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
 
     void OSMDatabaseBuilder::postProcess() {
@@ -309,35 +309,35 @@ namespace OSM
     
     void OSMDatabaseBuilder::_addIndices() {
         // Index OSM element's action so we can quickly query modified or deleted elements
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_action ON nodes (action);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_action ON relations (action);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_action ON nodes (action);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_action ON relations (action);");
         
         // Index on ways closed. Closed ways are polygons. Open ways are lines.
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_closed ON ways (closed);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_closed ON ways (closed);");
         
         // Indices for tag tables
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_id ON nodes_tags (id);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_id ON ways_tags (id);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_id ON relations_tags (id);");
         // Indices on k and v will be useful for typeahead.
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_v ON nodes_tags (v);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_v ON ways_tags (v);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_v ON relations_tags (v);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_k ON nodes_tags (k);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_k ON ways_tags (k);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_k ON relations_tags (k);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_tags_v ON nodes_tags (v);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_tags_v ON ways_tags (v);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_tags_v ON relations_tags (v);");
         
         // Indices for member tables
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
-        _db.executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_nodes_way_id ON ways_nodes (way_id);");
+        _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_relations_members_relation_id ON relations_members (relation_id);");
         
     }
     
     void OSMDatabaseBuilder::_addSpatialIndices() {
-        _db.executeSQL("SELECT CreateSpatialIndex('nodes', 'point');");
-        _db.executeSQL("SELECT CreateSpatialIndex('ways', 'line');");
-        _db.executeSQL("SELECT CreateSpatialIndex('ways', 'polygon');");
+        _db->executeSQL("SELECT CreateSpatialIndex('nodes', 'point');");
+        _db->executeSQL("SELECT CreateSpatialIndex('ways', 'line');");
+        _db->executeSQL("SELECT CreateSpatialIndex('ways', 'polygon');");
     }
     
     void OSMDatabaseBuilder::_buildGeometries() {
@@ -351,7 +351,7 @@ namespace OSM
         std::string sql = "SELECT nodes.id, nodes.lat, nodes.lon FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
         
         AmigoCloud::DatabaseResult result;
-        _db.executeSQL(sql.c_str(), result);
+        _db->executeSQL(sql.c_str(), result);
         if (result.isOK()) {
             const std::vector< std::vector<std::string> > &records = result.records;
             if (records.size() > 0) {
@@ -365,14 +365,14 @@ namespace OSM
     
     void OSMDatabaseBuilder::_buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr) {
         std::string sql = "UPDATE nodes SET point = GeomFromText('POINT(" + nodeLonStr + " " + nodeLatStr + ")', 4326) WHERE nodes.id = " + nodeIdStr + ";";
-        _db.executeSQL(sql.c_str());
+        _db->executeSQL(sql.c_str());
     }
     
     void OSMDatabaseBuilder::_buildWayGeometries() {
         std::string sql = "SELECT id FROM ways;";
         
         AmigoCloud::DatabaseResult result;
-        _db.executeSQL(sql.c_str(), result);
+        _db->executeSQL(sql.c_str(), result);
         if (result.isOK()) {
             const std::vector< std::vector<std::string> > &records = result.records;
             if (records.size() > 0) {
@@ -392,7 +392,7 @@ namespace OSM
         std::string sql = "SELECT COUNT(node_id) FROM ways_nodes WHERE way_id = " + wayId + ";";
         
         AmigoCloud::DatabaseResult result;
-        _db.executeSQL(sql.c_str(), result);
+        _db->executeSQL(sql.c_str(), result);
         if (result.isOK()) {
             const std::vector< std::vector<std::string> > &records = result.records;
             if (records.size() > 0) {
@@ -403,7 +403,7 @@ namespace OSM
                 sql = "SELECT lat, lon  FROM ways_nodes JOIN nodes ON ways_nodes.node_id = nodes.id WHERE way_id = " + wayId + " ORDER BY way_pos;";
                 
                 AmigoCloud::DatabaseResult result;
-                _db.executeSQL(sql.c_str(), result);
+                _db->executeSQL(sql.c_str(), result);
                 if (result.isOK()) {
                     const std::vector< std::vector<std::string> > &records = result.records;
                     
@@ -451,13 +451,13 @@ namespace OSM
         if (firstLat == lastLat && firstLon == lastLon) {
             std::string wktPolygon = createWKTPolygon(latLons);
             std::string sql = "UPDATE ways SET polygon = GeomFromText('" + wktPolygon + "', 4326), closed = 1 WHERE id = " + wayId + ";";
-            _db.executeSQL(sql.c_str());
+            _db->executeSQL(sql.c_str());
         }
         // if it is a polyline (linestring)
         else {
             std::string wktLineString = createWKTLineString(latLons);
             std::string sql = "UPDATE ways SET line = GeomFromText('" + wktLineString + "', 4326), closed = 0 WHERE id = " + wayId + ";";
-            _db.executeSQL(sql.c_str());
+            _db->executeSQL(sql.c_str());
         }
     }
     

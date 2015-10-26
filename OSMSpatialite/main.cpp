@@ -15,10 +15,10 @@ int main(int argc, const char * argv[]) {
 //    OSM::OSMXmlParser parser(db);
 //    parser.xmlString(xmlStr).parse();
     
-    AmigoCloud::Database db2("/temp/arcade.db", true);
+    std::shared_ptr<AmigoCloud::Database> db2 = std::make_shared<AmigoCloud::Database>("/temp/arcade.db", true);
     OSM::OSMXmlParser parser2(db2);
     parser2.xmlFile("/temp/arcade.osm").parse();
-    
+   
     OSM::OSMWay::fetchWays(db2, "-121.369684,38.649432,-121.369564,38.649535");
 
     return 0;

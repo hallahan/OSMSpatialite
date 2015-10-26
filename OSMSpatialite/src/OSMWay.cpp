@@ -14,13 +14,13 @@ namespace OSM {
  * STATIC MEMBER FUNCTIONS
  */
 
-std::vector<OSMWay> OSMWay::fetchWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
     std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
 
     AmigoCloud::DatabaseResult result;
-    db.executeSQL(sql.c_str(), result);
+    db->executeSQL(sql.c_str(), result);
     if (result.isOK()) {
         const std::vector< std::vector<std::string> > &records = result.records;
         if (records.size() > 0) {
@@ -42,7 +42,7 @@ std::vector<OSMWay> OSMWay::fetchWays(AmigoCloud::Database& db, const std::strin
                 std::shared_ptr<std::map<std::string,std::string>> tags = std::make_shared<std::map<std::string,std::string>>();
                 std::string sqlT = "SELECT k, v FROM ways_tags WHERE id = " + id + ';';
                 AmigoCloud::DatabaseResult resultT;
-                db.executeSQL(sqlT.c_str(), resultT);
+                db->executeSQL(sqlT.c_str(), resultT);
                 if (resultT.isOK()) {
                     const std::vector< std::vector<std::string> > &recordsT = resultT.records;
                     if (recordsT.size() > 0) {
@@ -61,49 +61,49 @@ std::vector<OSMWay> OSMWay::fetchWays(AmigoCloud::Database& db, const std::strin
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchClosedWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchOpenWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchModifiedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedClosedWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchModifiedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedOpenWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchModifiedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchDeletedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedClosedWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchDeletedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(AmigoCloud::Database& db, const std::string& bbox) {
+std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
 	return ways;

@@ -32,7 +32,7 @@ namespace OSM {
         const int END_ELEMENT=15; const int END_ENTITY=16; const int XML_DECLARATION=17;
     };
     
-    OSMXmlParser::OSMXmlParser(const AmigoCloud::Database& db) :
+    OSMXmlParser::OSMXmlParser(std::shared_ptr<AmigoCloud::Database> db) :
     _dbBuilder(db) {
         
     }
