@@ -13,12 +13,8 @@ namespace OSM {
 /**
  * STATIC MEMBER FUNCTIONS
  */
-
-std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
-
-    const std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
-
+    
+void OSMWay::wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMWay>& ways, const std::string& sql) {
     AmigoCloud::DatabaseResult result;
     db->executeSQL(sql.c_str(), result);
     if (result.isOK()) {
@@ -40,12 +36,21 @@ std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, 
                 
                 bool closedBool = (closed == "1");
                 
-                OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, (closedBool ? polygon : line) );
+                OSMWay w(db, sql, id, action, version, timestamp, changeset, uid,
+                         user, visible, closedBool, (closedBool ? polygon : line) );
                 ways.push_back(w);
                 
             }
         }
     }
+}
+
+std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<OSMWay> ways;
+
+    const std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
+
+    wayQuery(db, ways, sql);
     
 	return ways;
 }
