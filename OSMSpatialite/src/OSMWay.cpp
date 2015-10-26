@@ -40,13 +40,9 @@ std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, 
                 
                 bool closedBool = (closed == "1");
                 
-                if (closedBool) {
-                    OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, polygon);
-                    ways.push_back(w);
-                } else {
-                    OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, line);
-                    ways.push_back(w);
-                }
+                OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, (closedBool ? polygon : line) );
+                ways.push_back(w);
+                
             }
         }
     }
@@ -120,7 +116,7 @@ _closed(closed) {
             for ( auto const &recordT : recordsT) {
                 const std::string &k = recordT[0];
                 const std::string &v = recordT[1];
-                (*_tags)[k] = v;
+                _tags[k] = v;
             }
         }
     }

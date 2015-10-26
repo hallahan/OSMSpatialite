@@ -53,7 +53,7 @@ protected:
     
     bool _closed = false;
     
-    std::shared_ptr<std::map<std::string,std::string>> _tags;
+    std::map<std::string,std::string> _tags;
     
     std::shared_ptr<geos::geom::Geometry> _geometry;
     
