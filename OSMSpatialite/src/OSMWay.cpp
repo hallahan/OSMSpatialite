@@ -36,7 +36,7 @@ void OSMWay::wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMW
                 
                 bool closedBool = (closed == "1");
                 
-                OSMWay w(db, sql, id, action, version, timestamp, changeset, uid,
+                OSMWay w(db, id, action, version, timestamp, changeset, uid,
                          user, visible, closedBool, (closedBool ? polygon : line) );
                 ways.push_back(w);
                 
@@ -104,11 +104,11 @@ std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Dat
 }
     
     
-OSMWay::OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& sql, const std::string& id,
+OSMWay::OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
                const std::string& action, const std::string& version, const std::string& timestamp,
                const std::string& changeset, const std::string& uid, const std::string& user,
                const std::string& visible, bool closed, const std::string& geometry) :
-OSMElement(db, sql, id, action, version, timestamp, changeset, uid, user, visible),
+OSMElement(db, id, action, version, timestamp, changeset, uid, user, visible, geometry),
 _closed(closed) {
     
     // Get Tags.
