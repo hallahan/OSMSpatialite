@@ -39,16 +39,16 @@ public:
     static std::vector<OSMWay> fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
     
     
-    
     bool isClosed() { return _closed; };
     
 private:
     
-//    OSMWay(const std::string& id, const std::string& action, const std::string& version, const std::string& changeset,
-//           const std::string& uid, const std::string& user, const std::string& visible, const std::string& closed,
-//           );
+    OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& sql, const std::string& id,
+           const std::string& action, const std::string& version, const std::string& timestamp,
+           const std::string& changeset, const std::string& uid, const std::string& user,
+           const std::string& visible, bool closed, const std::string& geometry);
     
-    bool _closed = false;
+    bool _closed;
     std::vector<OSMNode> _linkedNodes;
     
     

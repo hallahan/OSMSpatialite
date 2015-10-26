@@ -17,7 +17,7 @@ namespace OSM {
 std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
-    std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
+    const std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
 
     AmigoCloud::DatabaseResult result;
     db->executeSQL(sql.c_str(), result);
@@ -38,22 +38,15 @@ std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, 
                 const std::string &line = record[9];
                 const std::string &polygon = record[10];
                 
-                // Get Tags.
-                std::shared_ptr<std::map<std::string,std::string>> tags = std::make_shared<std::map<std::string,std::string>>();
-                std::string sqlT = "SELECT k, v FROM ways_tags WHERE id = " + id + ';';
-                AmigoCloud::DatabaseResult resultT;
-                db->executeSQL(sqlT.c_str(), resultT);
-                if (resultT.isOK()) {
-                    const std::vector< std::vector<std::string> > &recordsT = resultT.records;
-                    if (recordsT.size() > 0) {
-                        for ( auto const &recordT : recordsT) {
-                            const std::string &k = recordT[0];
-                            const std::string &v = recordT[1];
-                            (*tags)[k] = v;
-                        }
-                    }
-                }
+                bool closedBool = (closed == "1");
                 
+                if (closedBool) {
+                    OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, polygon);
+                    ways.push_back(w);
+                } else {
+                    OSMWay w(db, sql, id, action, version, timestamp, changeset, uid, user, visible, closedBool, line);
+                    ways.push_back(w);
+                }
             }
         }
     }
@@ -108,9 +101,30 @@ std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Dat
 
 	return ways;
 }
-
-
-//    OSMWay::OSMWay() {
-//        
-//    }
+    
+    
+OSMWay::OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& sql, const std::string& id,
+               const std::string& action, const std::string& version, const std::string& timestamp,
+               const std::string& changeset, const std::string& uid, const std::string& user,
+               const std::string& visible, bool closed, const std::string& geometry) :
+OSMElement(db, sql, id, action, version, timestamp, changeset, uid, user, visible),
+_closed(closed) {
+    
+    // Get Tags.
+    std::string sqlT = "SELECT k, v FROM ways_tags WHERE id = " + id + ';';
+    AmigoCloud::DatabaseResult resultT;
+    db->executeSQL(sqlT.c_str(), resultT);
+    if (resultT.isOK()) {
+        const std::vector< std::vector<std::string> > &recordsT = resultT.records;
+        if (recordsT.size() > 0) {
+            for ( auto const &recordT : recordsT) {
+                const std::string &k = recordT[0];
+                const std::string &v = recordT[1];
+                (*_tags)[k] = v;
+            }
+        }
+    }
+    
+}
+    
 }
