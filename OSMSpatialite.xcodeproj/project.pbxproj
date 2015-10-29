@@ -27,6 +27,8 @@
 		01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA981BBDF49B001E656D /* libz.1.dylib */; };
 		01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BF3D9D1BBDF40D000520AE /* main.cpp */; };
 		01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D66DDA1BC6A91B003281C3 /* SpatialiteInit.cpp */; };
+		01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */; };
+		01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01E860951BE12E8700AA5A06 /* WKBParser.cpp */; };
 		01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01ED63DB1BC5760F00766C92 /* Util.cpp */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,33 @@
 		01BF3D9D1BBDF40D000520AE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		01D66DDA1BC6A91B003281C3 /* SpatialiteInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpatialiteInit.cpp; path = src/AmigoCloud/SpatialiteInit.cpp; sourceTree = "<group>"; };
 		01D66DDB1BC6A91B003281C3 /* SpatialiteInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpatialiteInit.h; path = src/AmigoCloud/SpatialiteInit.h; sourceTree = "<group>"; };
+		01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GeometryHandler.cpp; path = src/AmigoCloud/GeometryHandler.cpp; sourceTree = "<group>"; };
+		01E860931BE12E7500AA5A06 /* GeometryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeometryHandler.h; path = src/AmigoCloud/GeometryHandler.h; sourceTree = "<group>"; };
+		01E860951BE12E8700AA5A06 /* WKBParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WKBParser.cpp; path = src/AmigoCloud/WKBParser.cpp; sourceTree = "<group>"; };
+		01E860961BE12E8700AA5A06 /* WKBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKBParser.h; path = src/AmigoCloud/WKBParser.h; sourceTree = "<group>"; };
+		01E860981BE12F4B00AA5A06 /* VectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorTypes.h; path = src/AmigoCloud/VectorTypes.h; sourceTree = "<group>"; };
+		01E8609F1BE1442F00AA5A06 /* Chaskii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chaskii.h; path = src/AmigoCloud/Chaskii/Chaskii.h; sourceTree = "<group>"; };
+		01E860A01BE1442F00AA5A06 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Export.h; path = src/AmigoCloud/Chaskii/Export.h; sourceTree = "<group>"; };
+		01E860A21BE1445000AA5A06 /* bound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bound.h; path = src/AmigoCloud/Chaskii/Math/bound.h; sourceTree = "<group>"; };
+		01E860A31BE1445000AA5A06 /* boundD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = boundD.h; path = src/AmigoCloud/Chaskii/Math/boundD.h; sourceTree = "<group>"; };
+		01E860A41BE1445000AA5A06 /* iiMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iiMath.h; path = src/AmigoCloud/Chaskii/Math/iiMath.h; sourceTree = "<group>"; };
+		01E860A51BE1445000AA5A06 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix.h; path = src/AmigoCloud/Chaskii/Math/matrix.h; sourceTree = "<group>"; };
+		01E860A61BE1445000AA5A06 /* matrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix3.h; path = src/AmigoCloud/Chaskii/Math/matrix3.h; sourceTree = "<group>"; };
+		01E860A71BE1445000AA5A06 /* matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4.h; path = src/AmigoCloud/Chaskii/Math/matrix4.h; sourceTree = "<group>"; };
+		01E860A81BE1445000AA5A06 /* matrix4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4d.h; path = src/AmigoCloud/Chaskii/Math/matrix4d.h; sourceTree = "<group>"; };
+		01E860A91BE1445000AA5A06 /* matrixDecompose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecompose.h; path = src/AmigoCloud/Chaskii/Math/matrixDecompose.h; sourceTree = "<group>"; };
+		01E860AA1BE1445000AA5A06 /* matrixDecomposeD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecomposeD.h; path = src/AmigoCloud/Chaskii/Math/matrixDecomposeD.h; sourceTree = "<group>"; };
+		01E860AB1BE1445000AA5A06 /* plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plane.h; path = src/AmigoCloud/Chaskii/Math/plane.h; sourceTree = "<group>"; };
+		01E860AC1BE1445000AA5A06 /* planed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = planed.h; path = src/AmigoCloud/Chaskii/Math/planed.h; sourceTree = "<group>"; };
+		01E860AD1BE1445000AA5A06 /* pos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pos.h; path = src/AmigoCloud/Chaskii/Math/pos.h; sourceTree = "<group>"; };
+		01E860AE1BE1445000AA5A06 /* quat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quat.h; path = src/AmigoCloud/Chaskii/Math/quat.h; sourceTree = "<group>"; };
+		01E860AF1BE1445000AA5A06 /* quatd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quatd.h; path = src/AmigoCloud/Chaskii/Math/quatd.h; sourceTree = "<group>"; };
+		01E860B01BE1445000AA5A06 /* rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rect.h; path = src/AmigoCloud/Chaskii/Math/rect.h; sourceTree = "<group>"; };
+		01E860B11BE1445000AA5A06 /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec2.h; path = src/AmigoCloud/Chaskii/Math/vec2.h; sourceTree = "<group>"; };
+		01E860B21BE1445000AA5A06 /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3.h; path = src/AmigoCloud/Chaskii/Math/vec3.h; sourceTree = "<group>"; };
+		01E860B31BE1445000AA5A06 /* vec3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3d.h; path = src/AmigoCloud/Chaskii/Math/vec3d.h; sourceTree = "<group>"; };
+		01E860B41BE1445000AA5A06 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4.h; path = src/AmigoCloud/Chaskii/Math/vec4.h; sourceTree = "<group>"; };
+		01E860B51BE1445000AA5A06 /* vec4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4d.h; path = src/AmigoCloud/Chaskii/Math/vec4d.h; sourceTree = "<group>"; };
 		01ED63DB1BC5760F00766C92 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = src/Util.cpp; sourceTree = "<group>"; };
 		01ED63DC1BC5760F00766C92 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = src/Util.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,9 +179,52 @@
 			path = OSMSpatialite;
 			sourceTree = "<group>";
 		};
+		01E8609E1BE143D700AA5A06 /* Chaskii */ = {
+			isa = PBXGroup;
+			children = (
+				01E860A11BE1443700AA5A06 /* Math */,
+				01E8609F1BE1442F00AA5A06 /* Chaskii.h */,
+				01E860A01BE1442F00AA5A06 /* Export.h */,
+			);
+			name = Chaskii;
+			sourceTree = "<group>";
+		};
+		01E860A11BE1443700AA5A06 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				01E860A21BE1445000AA5A06 /* bound.h */,
+				01E860A31BE1445000AA5A06 /* boundD.h */,
+				01E860A41BE1445000AA5A06 /* iiMath.h */,
+				01E860A51BE1445000AA5A06 /* matrix.h */,
+				01E860A61BE1445000AA5A06 /* matrix3.h */,
+				01E860A71BE1445000AA5A06 /* matrix4.h */,
+				01E860A81BE1445000AA5A06 /* matrix4d.h */,
+				01E860A91BE1445000AA5A06 /* matrixDecompose.h */,
+				01E860AA1BE1445000AA5A06 /* matrixDecomposeD.h */,
+				01E860AB1BE1445000AA5A06 /* plane.h */,
+				01E860AC1BE1445000AA5A06 /* planed.h */,
+				01E860AD1BE1445000AA5A06 /* pos.h */,
+				01E860AE1BE1445000AA5A06 /* quat.h */,
+				01E860AF1BE1445000AA5A06 /* quatd.h */,
+				01E860B01BE1445000AA5A06 /* rect.h */,
+				01E860B11BE1445000AA5A06 /* vec2.h */,
+				01E860B21BE1445000AA5A06 /* vec3.h */,
+				01E860B31BE1445000AA5A06 /* vec3d.h */,
+				01E860B41BE1445000AA5A06 /* vec4.h */,
+				01E860B51BE1445000AA5A06 /* vec4d.h */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		01F966D21BBDF65D00864D82 /* AmigoCloud */ = {
 			isa = PBXGroup;
 			children = (
+				01E8609E1BE143D700AA5A06 /* Chaskii */,
+				01E860981BE12F4B00AA5A06 /* VectorTypes.h */,
+				01E860951BE12E8700AA5A06 /* WKBParser.cpp */,
+				01E860961BE12E8700AA5A06 /* WKBParser.h */,
+				01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */,
+				01E860931BE12E7500AA5A06 /* GeometryHandler.h */,
 				0166F6841BBE004E00517ACC /* AmigoError.h */,
 				0166F6851BBE007800517ACC /* Database.cpp */,
 				0166F6861BBE007800517ACC /* Database.h */,
@@ -228,9 +300,11 @@
 				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
+				01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */,
 				0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */,
 				01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */,
 				01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */,
+				01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */,
 				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
 				0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */,
 				0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */,

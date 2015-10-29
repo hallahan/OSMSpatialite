@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "OSMXmlParser::_readOsm()"
-            landmarkType = "5">
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSMSpatialite/src/OSMDatabaseBuilder.cpp"
-            timestampString = "466961276.52087"
+            timestampString = "467252386.501469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "OSMDatabaseBuilder::_buildNodeGeometry(const std::string&amp; nodeIdStr, const std::string&amp; nodeLatStr, const std::string&amp; nodeLonStr)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSMSpatialite/src/OSMDatabaseBuilder.cpp"
-            timestampString = "466961276.52087"
+            timestampString = "467252386.501469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "OSMDatabaseBuilder::_buildWayGeometries()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSMSpatialite/src/OSMDatabaseBuilder.cpp"
-            timestampString = "466961276.52087"
+            timestampString = "467252386.501469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
+            startingLineNumber = "448"
+            endingLineNumber = "448"
             landmarkName = "OSMDatabaseBuilder::_createAndInsertWayGeometry(const std::string&amp; wayId, const std::vector&lt; std::vector&lt;std::string&gt; &gt;&amp; latLons)"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSMSpatialite/src/OSMDatabaseBuilder.cpp"
-            timestampString = "466961276.52087"
+            timestampString = "467252386.501469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
             landmarkName = "OSMDatabaseBuilder::_createAndInsertWayGeometry(const std::string&amp; wayId, const std::vector&lt; std::vector&lt;std::string&gt; &gt;&amp; latLons)"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,13 +120,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OSMSpatialite/src/OSMElement.hpp"
-            timestampString = "466908667.850759"
+            timestampString = "467581073.885614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "class OSMElement"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OSMSpatialite/src/OSMWay.cpp"
+            timestampString = "467579334.068736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "OSMWay::fetchWays(std::shared_ptr&lt;AmigoCloud::Database&gt; db, const std::string&amp; bbox)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OSMSpatialite/main.cpp"
+            timestampString = "467503925.68896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "main(int argc, const char * argv[])"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OSMSpatialite/src/OSMWay.cpp"
+            timestampString = "467579319.288535"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "OSMWay::fetchWays(std::shared_ptr&lt;AmigoCloud::Database&gt; db, const std::string&amp; bbox)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
