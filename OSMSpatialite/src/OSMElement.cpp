@@ -8,6 +8,7 @@
 
 #include "OSMElement.hpp"
 
+
 namespace OSM {
     
 OSMElement::OSMElement(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
@@ -15,15 +16,49 @@ OSMElement::OSMElement(std::shared_ptr<AmigoCloud::Database> db, const std::stri
                        const std::string& changeset, const std::string& uid, const std::string& user,
                        const std::string& visible, const std::string& geometry) :
 _db(db),
-_id(std::stol(id)),
 _action(action),
-_version(std::stol(version)),
 _timestamp(timestamp),
-_changeset(std::stol(changeset)),
-_uid(std::stol(uid)),
 _user(user),
 _visible(visible),
-_geometry() {}
+_geometry( AmigoCloud::GeometryHandler::parseWKBBin(geometry) ) {
+    
+    try {
+       _id = std::stol(id);
+    } catch (...) {
+        _id = 0;
+    }
+    
+    if (action == "NULL") {
+        _action = "";
+    }
+    
+    try {
+        _version = std::stol(version);
+    } catch (...) {
+        _version = 0;
+    }
+    
+    if (timestamp == "NULL") {
+        _timestamp = "";
+    }
+    
+    try {
+        _changeset = std::stol(changeset);
+    } catch (...) {
+        _changeset = 0;
+    }
+    
+    try {
+        _uid = std::stol(uid);
+    } catch (...) {
+        _uid = 0;
+    }
+    
+    if (user == "NULL") {
+        _user = "";
+    }
+    
+}
     
     
     

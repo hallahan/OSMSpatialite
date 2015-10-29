@@ -13,6 +13,7 @@
 #include <vector>
 #include <geos.h>
 #include "AmigoCloud/Database.h"
+#include "AmigoCloud/GeometryHandler.h"
 
 namespace OSM {
 

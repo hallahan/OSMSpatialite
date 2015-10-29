@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     OSM::OSMXmlParser parser2(db2);
     parser2.xmlFile("/temp/arcade.osm").parse();
    
-    OSM::OSMWay::fetchWays(db2, "-121.369684,38.649432,-121.369564,38.649535");
+    OSM::OSMWay::fetchWays(db2, "-121.369328,38.649437,-121.369215,38.649527");
 
     return 0;
 }

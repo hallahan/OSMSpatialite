@@ -13,7 +13,7 @@ namespace OSM {
 /**
  * STATIC MEMBER FUNCTIONS
  */
-    
+
 void OSMWay::wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMWay>& ways, const std::string& sql) {
     AmigoCloud::DatabaseResult result;
     db->executeSQL(sql.c_str(), result);
