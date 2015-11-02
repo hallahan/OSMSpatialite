@@ -48,7 +48,7 @@ void OSMWay::wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMW
 std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMWay> ways;
 
-    const std::string sql = "SELECT * FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT * FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
+    const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND polygon IS NOT NULL UNION ALL SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND line IS NOT NULL;";
 
     wayQuery(db, ways, sql);
     
