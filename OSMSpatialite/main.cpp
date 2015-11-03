@@ -23,6 +23,11 @@ int main(int argc, const char * argv[]) {
     OSM::OSMWay::fetchWays(db2, "-121.369328,38.649437,-121.369215,38.649527");
     
     std::vector<OSM::OSMNode> nodes = OSM::OSMNode::fetchNodesForWayId(db2, 349945505);
+    
+    std::shared_ptr<AmigoCloud::Database> db3 = std::make_shared<AmigoCloud::Database>("/temp/fbi.db", true);
+    OSM::OSMXmlParser parser3(db3);
+    parser3.xmlFile("/temp/fbi.osm").parse();
+    std::vector<OSM::OSMNode> nodes3 = OSM::OSMNode::fetchStandaloneNodes(db3, "-121.381330,38.634573,-121.350946,38.651735");
 
     return 0;
 }

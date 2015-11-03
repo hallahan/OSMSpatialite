@@ -14,34 +14,6 @@ namespace OSM {
  * STATIC MEMBER FUNCTIONS
  */
 
-void OSMNode::_nodeQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMNode>& nodes, const std::string& sql) {
-    AmigoCloud::DatabaseResult result;
-    db->executeSQL(sql.c_str(), result);
-    if (result.isOK()) {
-        const std::vector< std::vector<std::string> > &records = result.records;
-        if (records.size() > 0) {
-            for ( auto const &record : records) {
-                
-//                const std::string &id = record[0];
-//                const std::string &action = record[1];
-//                const std::string &version = record[2];
-//                const std::string &timestamp = record[3];
-//                const std::string &changeset = record[4];
-//                const std::string &uid = record[5];
-//                const std::string &user = record[6];
-//                const std::string &visible = record[7];
-//                const std::string &point = record[8];
-//                
-//                bool standaloneBool = (point != "NULL");
-//                
-//                OSMNode n(db, id, action, version, timestamp, changeset, uid,
-//                         user, visible, standaloneBool, point );
-//                nodes.push_back(n);
-                
-            }
-        }
-    }
-}
 
 std::vector<OSMNode> OSMNode::fetchNodesForWayId(std::shared_ptr<AmigoCloud::Database> db, const long wayId) {
 	std::vector<OSMNode> nodes;
@@ -99,21 +71,79 @@ std::vector<OSMNode> OSMNode::fetchNodesForWayId(std::shared_ptr<AmigoCloud::Dat
 	return nodes;
 }
 
+void OSMNode::_nodeQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMNode>& nodes, const std::string& sql) {
+    AmigoCloud::DatabaseResult result;
+    db->executeSQL(sql.c_str(), result);
+    if (result.isOK()) {
+        const std::vector< std::vector<std::string> > &records = result.records;
+        if (records.size() > 0) {
+            for ( auto const &record : records) {
+                
+                const std::string &id = record[0];
+                const std::string &action = record[1];
+                const std::string &latStr = record[2];
+                const std::string &lonStr = record[3];
+                const std::string &version = record[4];
+                const std::string &timestamp = record[5];
+                const std::string &changeset = record[6];
+                const std::string &uid = record[7];
+                const std::string &user = record[8];
+                const std::string &visible = record[9];
+                const std::string &point = record[10];
+                
+                long lat;
+                long lon;
+                
+                try {
+                    lat = std::stol(latStr);
+                } catch (...) {
+                    continue;
+                }
+                
+                try {
+                    lon = std::stol(lonStr);
+                } catch (...) {
+                    continue;
+                }
+
+                bool standaloneBool = (point != "NULL");
+
+                OSMNode n(db, id, action, lat, lon, version, timestamp, changeset, uid,
+                          user, visible, standaloneBool, point);
+                nodes.push_back(n);
+
+            }
+        }
+    }
+}
+    
 std::vector<OSMNode> OSMNode::fetchStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMNode> nodes;
 
+    const std::string sql = "SELECT id, action, lat, lon, version, timestamp, changeset, uid, user, visible, AsBinary(point) FROM nodes WHERE Intersects(point, BuildMbr(" + bbox + ")) AND point IS NOT NULL;";
+    
+    _nodeQuery(db, nodes, sql);
+    
 	return nodes;
 }
 
 std::vector<OSMNode> OSMNode::fetchModifiedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMNode> nodes;
 
+    const std::string sql = "SELECT id, action, lat, lon, version, timestamp, changeset, uid, user, visible, AsBinary(point) FROM nodes WHERE Intersects(point, BuildMbr(" + bbox + ")) AND point IS NOT NULL AND action = 'modify';";
+    
+    _nodeQuery(db, nodes, sql);
+    
 	return nodes;
 }
 
 std::vector<OSMNode> OSMNode::fetchDeletedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMNode> nodes;
 
+    const std::string sql = "SELECT id, action, lat, lon, version, timestamp, changeset, uid, user, visible, AsBinary(point) FROM nodes WHERE Intersects(point, BuildMbr(" + bbox + ")) AND point IS NOT NULL AND action = 'delete';";
+    
+    _nodeQuery(db, nodes, sql);
+    
 	return nodes;
 }
 
