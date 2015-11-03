@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0129736A1BE950DF000A3989 /* OSMRest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 012973681BE950DF000A3989 /* OSMRest.cpp */; settings = {ASSET_TAGS = (); }; };
+		0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736C1BE952F7000A3989 /* SystemConfig.cpp */; settings = {ASSET_TAGS = (); }; };
+		012973711BE9530E000A3989 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736F1BE9530E000A3989 /* RestClient.cpp */; settings = {ASSET_TAGS = (); }; };
 		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; };
 		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; };
 		0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */; };
@@ -16,6 +19,7 @@
 		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; };
 		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; };
 		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; };
+		01AD32411BE97F6200396DDD /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD32401BE97F6200396DDD /* libcurl.tbd */; };
 		01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA901BBDF49B001E656D /* libcharset.1.dylib */; };
 		01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */; };
 		01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */; };
@@ -45,6 +49,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		012973681BE950DF000A3989 /* OSMRest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMRest.cpp; path = src/OSMRest.cpp; sourceTree = "<group>"; };
+		012973691BE950DF000A3989 /* OSMRest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMRest.hpp; path = src/OSMRest.hpp; sourceTree = "<group>"; };
+		0129736B1BE9527E000A3989 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = src/AmigoCloud/Mutex.h; sourceTree = "<group>"; };
+		0129736C1BE952F7000A3989 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SystemConfig.cpp; path = src/AmigoCloud/SystemConfig.cpp; sourceTree = "<group>"; };
+		0129736D1BE952F7000A3989 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemConfig.h; path = src/AmigoCloud/SystemConfig.h; sourceTree = "<group>"; };
+		0129736F1BE9530E000A3989 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestClient.cpp; path = src/AmigoCloud/RestClient.cpp; sourceTree = "<group>"; };
+		012973701BE9530E000A3989 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = src/AmigoCloud/RestClient.h; sourceTree = "<group>"; };
 		0166F6721BBDFD8B00517ACC /* OSMElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMElement.cpp; path = src/OSMElement.cpp; sourceTree = "<group>"; };
 		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
 		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
@@ -65,6 +76,7 @@
 		0166F68B1BBE00A400517ACC /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/Thread.cpp; sourceTree = "<group>"; };
 		0166F68C1BBE00A400517ACC /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = src/AmigoCloud/Thread.h; sourceTree = "<group>"; };
 		0166F68E1BBE00C300517ACC /* Timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timestamp.h; path = src/AmigoCloud/Timestamp.h; sourceTree = "<group>"; };
+		01AD32401BE97F6200396DDD /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		01B2DA901BBDF49B001E656D /* libcharset.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcharset.1.dylib; path = OSMSpatialite/lib/libcharset.1.dylib; sourceTree = "<group>"; };
 		01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = OSMSpatialite/lib/libgeos_c.1.dylib; sourceTree = "<group>"; };
 		01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "OSMSpatialite/lib/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
@@ -115,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AD32411BE97F6200396DDD /* libcurl.tbd in Frameworks */,
 				01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */,
 				01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */,
 				01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */,
@@ -133,6 +146,7 @@
 		01BF3D911BBDF40D000520AE = {
 			isa = PBXGroup;
 			children = (
+				01AD32401BE97F6200396DDD /* libcurl.tbd */,
 				01B2DA901BBDF49B001E656D /* libcharset.1.dylib */,
 				01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */,
 				01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */,
@@ -175,6 +189,8 @@
 				0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */,
 				01ED63DB1BC5760F00766C92 /* Util.cpp */,
 				01ED63DC1BC5760F00766C92 /* Util.h */,
+				012973681BE950DF000A3989 /* OSMRest.cpp */,
+				012973691BE950DF000A3989 /* OSMRest.hpp */,
 			);
 			path = OSMSpatialite;
 			sourceTree = "<group>";
@@ -219,6 +235,11 @@
 		01F966D21BBDF65D00864D82 /* AmigoCloud */ = {
 			isa = PBXGroup;
 			children = (
+				0129736F1BE9530E000A3989 /* RestClient.cpp */,
+				012973701BE9530E000A3989 /* RestClient.h */,
+				0129736C1BE952F7000A3989 /* SystemConfig.cpp */,
+				0129736D1BE952F7000A3989 /* SystemConfig.h */,
+				0129736B1BE9527E000A3989 /* Mutex.h */,
 				01E8609E1BE143D700AA5A06 /* Chaskii */,
 				01E860981BE12F4B00AA5A06 /* VectorTypes.h */,
 				01E860951BE12E8700AA5A06 /* WKBParser.cpp */,
@@ -297,15 +318,18 @@
 			files = (
 				0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
+				012973711BE9530E000A3989 /* RestClient.cpp in Sources */,
 				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
 				01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */,
+				0129736A1BE950DF000A3989 /* OSMRest.cpp in Sources */,
 				0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */,
 				01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */,
 				01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */,
 				01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */,
 				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
+				0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */,
 				0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */,
 				0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */,
 				0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */,

@@ -6,6 +6,7 @@
 
 #include "OSMXmlParser.hpp"
 #include "OSMWay.hpp"
+#include "src/AmigoCloud/RestClient.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -29,5 +30,9 @@ int main(int argc, const char * argv[]) {
     parser3.xmlFile("/temp/fbi.osm").parse();
     std::vector<OSM::OSMNode> nodes3 = OSM::OSMNode::fetchStandaloneNodes(db3, "-121.381330,38.634573,-121.350946,38.651735");
 
+    AmigoCloud::RestClient restClient("OSMSpatialite/0.0.1");
+    AmigoCloud::RestClient::response response = restClient.get("http://www.openstreetmap.org/api/0.6/map?bbox=-121.03599071502686,39.24774208062821,-121.00122928619385,39.27266344858914");
+    
+    
     return 0;
 }
