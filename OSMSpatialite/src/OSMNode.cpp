@@ -105,19 +105,7 @@ std::vector<OSMNode> OSMNode::fetchStandaloneNodes(std::shared_ptr<AmigoCloud::D
 	return nodes;
 }
 
-std::vector<OSMNode> OSMNode::fetchEditedNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMNode> nodes;
-
-	return nodes;
-}
-
-std::vector<OSMNode> OSMNode::fetchEditedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMNode> nodes;
-
-	return nodes;
-}
-
-std::vector<OSMNode> OSMNode::fetchDeletedNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+std::vector<OSMNode> OSMNode::fetchModifiedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
 	std::vector<OSMNode> nodes;
 
 	return nodes;

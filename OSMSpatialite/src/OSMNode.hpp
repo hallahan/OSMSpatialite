@@ -19,10 +19,9 @@ class OSMNode : public OSMElement {
 public:
     
     static std::vector<OSMNode> fetchNodesForWayId(std::shared_ptr<AmigoCloud::Database> db, const long wayId);
+    
     static std::vector<OSMNode> fetchStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
-    static std::vector<OSMNode> fetchEditedNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
-    static std::vector<OSMNode> fetchEditedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
-    static std::vector<OSMNode> fetchDeletedNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
+    static std::vector<OSMNode> fetchModifiedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
     static std::vector<OSMNode> fetchDeletedStandaloneNodes(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox);
 
 private:
