@@ -2,6 +2,7 @@
 #include <sqlite3.h>
 #include <spatialite/gaiageo.h>
 #include <spatialite.h>
+#include <vector>
 
 #include "OSMXmlParser.hpp"
 #include "OSMWay.hpp"
@@ -20,6 +21,8 @@ int main(int argc, const char * argv[]) {
     parser2.xmlFile("/temp/arcade.osm").parse();
    
     OSM::OSMWay::fetchWays(db2, "-121.369328,38.649437,-121.369215,38.649527");
+    
+    std::vector<OSM::OSMNode> nodes = OSM::OSMNode::fetchNodesForWayId(db2, 349945505);
 
     return 0;
 }

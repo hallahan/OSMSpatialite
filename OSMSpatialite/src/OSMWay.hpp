@@ -43,7 +43,7 @@ public:
     
 private:
     
-    static void wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMWay>& ways, const std::string& sql);
+    static void _wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMWay>& ways, const std::string& sql);
     
     OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
            const std::string& action, const std::string& version, const std::string& timestamp,
