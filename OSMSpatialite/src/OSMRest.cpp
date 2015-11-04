@@ -7,3 +7,13 @@
 //
 
 #include "OSMRest.hpp"
+
+namespace OSM {
+
+OSMRest::OSMRest(const std::string& baseUrl) :
+_baseUrl(baseUrl) {
+        
+    
+}
+    
+}

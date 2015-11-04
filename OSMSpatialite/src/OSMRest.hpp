@@ -9,6 +9,18 @@
 #ifndef OSMRest_hpp
 #define OSMRest_hpp
 
-#include <stdio.h>
+#include "AmigoCloud/RestClient.h"
+
+namespace OSM {
+    
+class OSMRest {
+public:
+    explicit OSMRest(const std::string& baseUrl="http://www.openstreetmap.org/api/0.6/");
+    
+protected:
+    const std::string _baseUrl;
+};
+    
+}
 
 #endif /* OSMRest_hpp */
