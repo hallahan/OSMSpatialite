@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736C1BE952F7000A3989 /* SystemConfig.cpp */; settings = {ASSET_TAGS = (); }; };
 		012973711BE9530E000A3989 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736F1BE9530E000A3989 /* RestClient.cpp */; settings = {ASSET_TAGS = (); }; };
-		0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* OSMElement.cpp */; };
-		0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* OSMWay.cpp */; };
-		0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */; };
-		0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */; };
-		0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */; };
-		0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* OSMNode.cpp */; };
+		0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* Element.cpp */; };
+		0166F6771BBDFDCB00517ACC /* Way.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* Way.cpp */; };
+		0166F67A1BBDFE4400517ACC /* DatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */; };
+		0166F67D1BBDFE5B00517ACC /* Relation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* Relation.cpp */; };
+		0166F6801BBDFE8200517ACC /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* XmlParser.cpp */; };
+		0166F6831BBDFE9800517ACC /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* Node.cpp */; };
 		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; };
 		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; };
 		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; };
@@ -56,18 +56,18 @@
 		0129736D1BE952F7000A3989 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemConfig.h; path = src/AmigoCloud/SystemConfig.h; sourceTree = "<group>"; };
 		0129736F1BE9530E000A3989 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestClient.cpp; path = src/AmigoCloud/RestClient.cpp; sourceTree = "<group>"; };
 		012973701BE9530E000A3989 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = src/AmigoCloud/RestClient.h; sourceTree = "<group>"; };
-		0166F6721BBDFD8B00517ACC /* OSMElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMElement.cpp; path = src/OSMElement.cpp; sourceTree = "<group>"; };
-		0166F6731BBDFD8B00517ACC /* OSMElement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMElement.hpp; path = src/OSMElement.hpp; sourceTree = "<group>"; };
-		0166F6751BBDFDCB00517ACC /* OSMWay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMWay.cpp; path = src/OSMWay.cpp; sourceTree = "<group>"; };
-		0166F6761BBDFDCB00517ACC /* OSMWay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMWay.hpp; path = src/OSMWay.hpp; sourceTree = "<group>"; };
-		0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMDatabaseBuilder.cpp; path = src/OSMDatabaseBuilder.cpp; sourceTree = "<group>"; };
-		0166F6791BBDFE4400517ACC /* OSMDatabaseBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMDatabaseBuilder.hpp; path = src/OSMDatabaseBuilder.hpp; sourceTree = "<group>"; };
-		0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMRelation.cpp; path = src/OSMRelation.cpp; sourceTree = "<group>"; };
-		0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMRelation.hpp; path = src/OSMRelation.hpp; sourceTree = "<group>"; };
-		0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMXmlParser.cpp; path = src/OSMXmlParser.cpp; sourceTree = "<group>"; };
-		0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMXmlParser.hpp; path = src/OSMXmlParser.hpp; sourceTree = "<group>"; };
-		0166F6811BBDFE9800517ACC /* OSMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OSMNode.cpp; path = src/OSMNode.cpp; sourceTree = "<group>"; };
-		0166F6821BBDFE9800517ACC /* OSMNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OSMNode.hpp; path = src/OSMNode.hpp; sourceTree = "<group>"; };
+		0166F6721BBDFD8B00517ACC /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = src/Element.cpp; sourceTree = "<group>"; };
+		0166F6731BBDFD8B00517ACC /* Element.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Element.hpp; path = src/Element.hpp; sourceTree = "<group>"; };
+		0166F6751BBDFDCB00517ACC /* Way.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Way.cpp; path = src/Way.cpp; sourceTree = "<group>"; };
+		0166F6761BBDFDCB00517ACC /* Way.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Way.hpp; path = src/Way.hpp; sourceTree = "<group>"; };
+		0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DatabaseBuilder.cpp; path = src/DatabaseBuilder.cpp; sourceTree = "<group>"; };
+		0166F6791BBDFE4400517ACC /* DatabaseBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DatabaseBuilder.hpp; path = src/DatabaseBuilder.hpp; sourceTree = "<group>"; };
+		0166F67B1BBDFE5B00517ACC /* Relation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Relation.cpp; path = src/Relation.cpp; sourceTree = "<group>"; };
+		0166F67C1BBDFE5B00517ACC /* Relation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Relation.hpp; path = src/Relation.hpp; sourceTree = "<group>"; };
+		0166F67E1BBDFE8200517ACC /* XmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XmlParser.cpp; path = src/XmlParser.cpp; sourceTree = "<group>"; };
+		0166F67F1BBDFE8200517ACC /* XmlParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = XmlParser.hpp; path = src/XmlParser.hpp; sourceTree = "<group>"; };
+		0166F6811BBDFE9800517ACC /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = src/Node.cpp; sourceTree = "<group>"; };
+		0166F6821BBDFE9800517ACC /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Node.hpp; path = src/Node.hpp; sourceTree = "<group>"; };
 		0166F6841BBE004E00517ACC /* AmigoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AmigoError.h; path = src/AmigoCloud/AmigoError.h; sourceTree = "<group>"; };
 		0166F6851BBE007800517ACC /* Database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Database.cpp; path = src/AmigoCloud/Database.cpp; sourceTree = "<group>"; };
 		0166F6861BBE007800517ACC /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = src/AmigoCloud/Database.h; sourceTree = "<group>"; };
@@ -181,18 +181,18 @@
 			children = (
 				01F966D21BBDF65D00864D82 /* AmigoCloud */,
 				01BF3D9D1BBDF40D000520AE /* main.cpp */,
-				0166F6781BBDFE4400517ACC /* OSMDatabaseBuilder.cpp */,
-				0166F6791BBDFE4400517ACC /* OSMDatabaseBuilder.hpp */,
-				0166F6721BBDFD8B00517ACC /* OSMElement.cpp */,
-				0166F6731BBDFD8B00517ACC /* OSMElement.hpp */,
-				0166F6811BBDFE9800517ACC /* OSMNode.cpp */,
-				0166F6821BBDFE9800517ACC /* OSMNode.hpp */,
-				0166F6751BBDFDCB00517ACC /* OSMWay.cpp */,
-				0166F6761BBDFDCB00517ACC /* OSMWay.hpp */,
-				0166F67B1BBDFE5B00517ACC /* OSMRelation.cpp */,
-				0166F67C1BBDFE5B00517ACC /* OSMRelation.hpp */,
-				0166F67E1BBDFE8200517ACC /* OSMXmlParser.cpp */,
-				0166F67F1BBDFE8200517ACC /* OSMXmlParser.hpp */,
+				0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */,
+				0166F6791BBDFE4400517ACC /* DatabaseBuilder.hpp */,
+				0166F6721BBDFD8B00517ACC /* Element.cpp */,
+				0166F6731BBDFD8B00517ACC /* Element.hpp */,
+				0166F6811BBDFE9800517ACC /* Node.cpp */,
+				0166F6821BBDFE9800517ACC /* Node.hpp */,
+				0166F6751BBDFDCB00517ACC /* Way.cpp */,
+				0166F6761BBDFDCB00517ACC /* Way.hpp */,
+				0166F67B1BBDFE5B00517ACC /* Relation.cpp */,
+				0166F67C1BBDFE5B00517ACC /* Relation.hpp */,
+				0166F67E1BBDFE8200517ACC /* XmlParser.cpp */,
+				0166F67F1BBDFE8200517ACC /* XmlParser.hpp */,
 				01ED63DB1BC5760F00766C92 /* Util.cpp */,
 				01ED63DC1BC5760F00766C92 /* Util.h */,
 				01AD32421BEA63A700396DDD /* RestAPI.cpp */,
@@ -326,25 +326,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0166F67A1BBDFE4400517ACC /* OSMDatabaseBuilder.cpp in Sources */,
+				0166F67A1BBDFE4400517ACC /* DatabaseBuilder.cpp in Sources */,
 				01AD324A1BEA640C00396DDD /* EditingAPI.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
 				012973711BE9530E000A3989 /* RestClient.cpp in Sources */,
 				01AD32441BEA63A700396DDD /* RestAPI.cpp in Sources */,
-				0166F6741BBDFD8B00517ACC /* OSMElement.cpp in Sources */,
+				0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */,
 				01AD32471BEA63DD00396DDD /* OverpassAPI.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
 				01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */,
-				0166F6801BBDFE8200517ACC /* OSMXmlParser.cpp in Sources */,
+				0166F6801BBDFE8200517ACC /* XmlParser.cpp in Sources */,
 				01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */,
 				01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */,
 				01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */,
 				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
 				0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */,
-				0166F67D1BBDFE5B00517ACC /* OSMRelation.cpp in Sources */,
-				0166F6771BBDFDCB00517ACC /* OSMWay.cpp in Sources */,
-				0166F6831BBDFE9800517ACC /* OSMNode.cpp in Sources */,
+				0166F67D1BBDFE5B00517ACC /* Relation.cpp in Sources */,
+				0166F6771BBDFDCB00517ACC /* Way.cpp in Sources */,
+				0166F6831BBDFE9800517ACC /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

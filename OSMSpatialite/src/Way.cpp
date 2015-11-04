@@ -1,12 +1,12 @@
 //
-//  OSMWay.cpp
+//  Way.cpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#include "OSMWay.hpp"
+#include "Way.hpp"
 
 namespace OSM {
 
@@ -14,7 +14,7 @@ namespace OSM {
  * STATIC MEMBER FUNCTIONS
  */
 
-void OSMWay::_wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSMWay>& ways, const std::string& sql) {
+void Way::_wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<Way>& ways, const std::string& sql) {
     AmigoCloud::DatabaseResult result;
     db->executeSQL(sql.c_str(), result);
     if (result.isOK()) {
@@ -36,7 +36,7 @@ void OSMWay::_wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSM
                 
                 bool closedBool = (closed == "1");
                 
-                OSMWay w(db, id, action, version, timestamp, changeset, uid,
+                Way w(db, id, action, version, timestamp, changeset, uid,
                          user, visible, closedBool, (closedBool ? polygon : line) );
                 ways.push_back(w);
                 
@@ -45,8 +45,8 @@ void OSMWay::_wayQuery(std::shared_ptr<AmigoCloud::Database> db, std::vector<OSM
     }
 }
 
-std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1 UNION ALL SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND closed = 0;";
 
@@ -55,8 +55,8 @@ std::vector<OSMWay> OSMWay::fetchWays(std::shared_ptr<AmigoCloud::Database> db, 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1;";
     
@@ -65,8 +65,8 @@ std::vector<OSMWay> OSMWay::fetchClosedWays(std::shared_ptr<AmigoCloud::Database
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND closed = 0;";
     
@@ -75,8 +75,8 @@ std::vector<OSMWay> OSMWay::fetchOpenWays(std::shared_ptr<AmigoCloud::Database> 
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchModifiedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1 AND action = 'modify' UNION ALL SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND closed = 0 AND action = 'modify';";
     
@@ -85,8 +85,8 @@ std::vector<OSMWay> OSMWay::fetchModifiedWays(std::shared_ptr<AmigoCloud::Databa
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchModifiedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1 AND action = 'modify';";
     
@@ -95,8 +95,8 @@ std::vector<OSMWay> OSMWay::fetchModifiedClosedWays(std::shared_ptr<AmigoCloud::
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchModifiedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchModifiedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
     
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 0 AND action = 'modify';";
     
@@ -105,8 +105,8 @@ std::vector<OSMWay> OSMWay::fetchModifiedOpenWays(std::shared_ptr<AmigoCloud::Da
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchDeletedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
 
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1 AND action = 'delete' UNION ALL SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(line, BuildMbr(" + bbox + ")) AND closed = 0 AND action = 'delete';";
     
@@ -115,8 +115,8 @@ std::vector<OSMWay> OSMWay::fetchDeletedWays(std::shared_ptr<AmigoCloud::Databas
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchDeletedClosedWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
     
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 1 AND action = 'delete';";
     
@@ -125,8 +125,8 @@ std::vector<OSMWay> OSMWay::fetchDeletedClosedWays(std::shared_ptr<AmigoCloud::D
 	return ways;
 }
 
-std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
-	std::vector<OSMWay> ways;
+std::vector<Way> Way::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Database> db, const std::string& bbox) {
+	std::vector<Way> ways;
     
     const std::string sql = "SELECT id, action, version, timestamp, changeset, uid, user, visible, closed, AsBinary(line), AsBinary(polygon) FROM ways WHERE Intersects(polygon, BuildMbr(" + bbox + ")) AND closed = 0 AND action = 'delete';";
     
@@ -136,11 +136,11 @@ std::vector<OSMWay> OSMWay::fetchDeletedOpenWays(std::shared_ptr<AmigoCloud::Dat
 }
     
     
-OSMWay::OSMWay(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
+Way::Way(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
                const std::string& action, const std::string& version, const std::string& timestamp,
                const std::string& changeset, const std::string& uid, const std::string& user,
                const std::string& visible, bool closed, const std::string& geometry) :
-OSMElement(db, id, action, version, timestamp, changeset, uid, user, visible, geometry),
+Element(db, id, action, version, timestamp, changeset, uid, user, visible, geometry),
 _closed(closed) {
     
     // Get Tags.

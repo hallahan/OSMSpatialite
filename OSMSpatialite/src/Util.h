@@ -1,13 +1,13 @@
 //
-//  OSMUtil.h
+//  Util.h
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/2/15.
 //  Copyright (c) 2015 theoutpost. All rights reserved.
 //
 
-#ifndef __OSMSpatialite__OSMUtil__
-#define __OSMSpatialite__OSMUtil__
+#ifndef __OSMSpatialite__Util__
+#define __OSMSpatialite__Util__
 
 #include <string>
 #include <stdlib.h>
@@ -35,4 +35,4 @@ namespace OSM {
     }
 }
 
-#endif /* defined(__OSMSpatialite__OSMUtil__) */
+#endif /* defined(__OSMSpatialite__Util__) */

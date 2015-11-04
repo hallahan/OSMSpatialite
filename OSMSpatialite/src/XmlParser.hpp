@@ -1,31 +1,31 @@
 //
-//  OSMXmlParser.hpp
+//  XmlParser.hpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#ifndef OSMXmlParser_hpp
-#define OSMXmlParser_hpp
+#ifndef XmlParser_hpp
+#define XmlParser_hpp
 
 #include <string>
 #include <libxml/xmlreader.h>
 
-#include "OSMElement.hpp"
-#include "OSMDatabaseBuilder.hpp"
+#include "Element.hpp"
+#include "DatabaseBuilder.hpp"
 
 namespace OSM {
     
     
-class OSMXmlParser {
+class XmlParser {
 public:
-    explicit OSMXmlParser(std::shared_ptr<AmigoCloud::Database> db);
+    explicit XmlParser(std::shared_ptr<AmigoCloud::Database> db);
     
-    OSMXmlParser& xmlFile(const std::string& filePath);
-    OSMXmlParser& xmlString(const std::string& xmlString);
+    XmlParser& xmlFile(const std::string& filePath);
+    XmlParser& xmlString(const std::string& xmlString);
     
-    OSMXmlParser& parse();
+    XmlParser& parse();
     
 private:
     void _processXmlNode();
@@ -41,7 +41,7 @@ private:
     
     xmlTextReaderPtr _reader;
     std::string _filePath;
-    OSMDatabaseBuilder _dbBuilder;
+    DatabaseBuilder _dbBuilder;
     
     ElementType _parentElementType;
     std::string _parentElementId;
@@ -60,4 +60,4 @@ private:
     
 }
 
-#endif /* OSMXmlParser_hpp */
+#endif /* XmlParser_hpp */

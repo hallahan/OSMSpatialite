@@ -1,30 +1,30 @@
 //
-//  OSMDatabase.cpp
+//  DatabaseBuilder.cpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#include "OSMDatabaseBuilder.hpp"
+#include "DatabaseBuilder.hpp"
 
 #include <iostream>
 #include "Util.h"
 
 namespace OSM
 {
-    OSMDatabaseBuilder::OSMDatabaseBuilder(std::shared_ptr<AmigoCloud::Database> db) :
+    DatabaseBuilder::DatabaseBuilder(std::shared_ptr<AmigoCloud::Database> db) :
     _db(db) {
         _initDB();
     }
     
     
-    OSMDatabaseBuilder::OSMDatabaseBuilder(const std::string& dbPath) :
+    DatabaseBuilder::DatabaseBuilder(const std::string& dbPath) :
     _db(std::make_shared<AmigoCloud::Database>(dbPath, true)) {
         _initDB();
     }
     
-    void OSMDatabaseBuilder::_initDB() {
+    void DatabaseBuilder::_initDB() {
         _db->beginTransaction();
         
         // OSM XML Node (one per OSM XML file)
@@ -52,12 +52,12 @@ namespace OSM
         _db->commitTransaction();
     }
     
-    void OSMDatabaseBuilder::addOSM(const std::string& version, const std::string& generator) {
+    void DatabaseBuilder::addOSM(const std::string& version, const std::string& generator) {
         std::string sql = "INSERT INTO osm VALUES ('" + version + "', '" + generator + "');";
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addNode(const std::string& idStr, const std::string& latStr, const std::string& lonStr, const std::string& versionStr,
+    void DatabaseBuilder::addNode(const std::string& idStr, const std::string& latStr, const std::string& lonStr, const std::string& versionStr,
                               const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                               const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
@@ -113,7 +113,7 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addWay(const std::string& idStr, const std::string& versionStr,
+    void DatabaseBuilder::addWay(const std::string& idStr, const std::string& versionStr,
            const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
            const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
@@ -159,7 +159,7 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addRelation(const std::string& idStr, const std::string& versionStr,
+    void DatabaseBuilder::addRelation(const std::string& idStr, const std::string& versionStr,
                              const std::string& timestampStr, const std::string& changesetStr, const std::string& uidStr,
                              const std::string& userStr, const std::string& actionStr, const std::string& visibleStr) {
         // If we are unable to get a valid value, we want to simply insert a NULL.
@@ -206,7 +206,7 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addTag(const ElementType parentElementType, const std::string& idStr,
+    void DatabaseBuilder::addTag(const ElementType parentElementType, const std::string& idStr,
                              const std::string& kStr, const std::string& vStr, bool reset) {
         std::string k = "NULL";
         std::string v = "NULL";
@@ -243,7 +243,7 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addNd(const std::string& idStr, const std::string& refStr, unsigned int pos) {
+    void DatabaseBuilder::addNd(const std::string& idStr, const std::string& refStr, unsigned int pos) {
         std::string wayId = "NULL";
         std::string nodeId = "NULL";
         std::string sql;
@@ -269,7 +269,7 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::addMember(const std::string& relationIdStr, const std::string& refStr,
+    void DatabaseBuilder::addMember(const std::string& relationIdStr, const std::string& refStr,
                                 const std::string& typeStr, const std::string& roleStr, bool reset) {
         std::string type = "NULL";
         std::string role = "NULL";
@@ -301,13 +301,13 @@ namespace OSM
         _db->executeSQL(sql.c_str());
     }
 
-    void OSMDatabaseBuilder::postProcess() {
+    void DatabaseBuilder::postProcess() {
         _addIndices();
         _buildGeometries();
         _addSpatialIndices();
     }
     
-    void OSMDatabaseBuilder::_addIndices() {
+    void DatabaseBuilder::_addIndices() {
         // Index OSM element's action so we can quickly query modified or deleted elements
         _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_nodes_action ON nodes (action);");
         _db->executeSQL("CREATE INDEX IF NOT EXISTS idx_ways_action ON ways (action);");
@@ -334,18 +334,18 @@ namespace OSM
         
     }
     
-    void OSMDatabaseBuilder::_addSpatialIndices() {
+    void DatabaseBuilder::_addSpatialIndices() {
         _db->executeSQL("SELECT CreateSpatialIndex('nodes', 'point');");
         _db->executeSQL("SELECT CreateSpatialIndex('ways', 'line');");
         _db->executeSQL("SELECT CreateSpatialIndex('ways', 'polygon');");
     }
     
-    void OSMDatabaseBuilder::_buildGeometries() {
+    void DatabaseBuilder::_buildGeometries() {
         _buildStandaloneNodeGeometries();
         _buildWayGeometries();
     }
     
-    void OSMDatabaseBuilder::_buildStandaloneNodeGeometries() {
+    void DatabaseBuilder::_buildStandaloneNodeGeometries() {
         // Fetch Standalone Nodes (Nodes not in a Way).
         // This gets the ids of the nodes not in a way.
         std::string sql = "SELECT nodes.id, nodes.lat, nodes.lon FROM nodes LEFT OUTER JOIN ways_nodes ON nodes.id = ways_nodes.node_id WHERE ways_nodes.node_id IS NULL;";
@@ -363,12 +363,12 @@ namespace OSM
         
     }
     
-    void OSMDatabaseBuilder::_buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr) {
+    void DatabaseBuilder::_buildNodeGeometry(const std::string& nodeIdStr, const std::string& nodeLatStr, const std::string& nodeLonStr) {
         std::string sql = "UPDATE nodes SET point = GeomFromText('POINT(" + nodeLonStr + " " + nodeLatStr + ")', 4326) WHERE nodes.id = " + nodeIdStr + ";";
         _db->executeSQL(sql.c_str());
     }
     
-    void OSMDatabaseBuilder::_buildWayGeometries() {
+    void DatabaseBuilder::_buildWayGeometries() {
         std::string sql = "SELECT id FROM ways;";
         
         AmigoCloud::DatabaseResult result;
@@ -388,7 +388,7 @@ namespace OSM
         }
     }
     
-    void OSMDatabaseBuilder::_checkNodeCountForWay(const std::string& wayId) {
+    void DatabaseBuilder::_checkNodeCountForWay(const std::string& wayId) {
         std::string sql = "SELECT COUNT(node_id) FROM ways_nodes WHERE way_id = " + wayId + ";";
         
         AmigoCloud::DatabaseResult result;
@@ -440,7 +440,7 @@ namespace OSM
         return wkt += ")";
     }
     
-    void OSMDatabaseBuilder::_createAndInsertWayGeometry(const std::string& wayId,
+    void DatabaseBuilder::_createAndInsertWayGeometry(const std::string& wayId,
                                                   const std::vector< std::vector<std::string> >& latLons) {
         const std::string& firstLat = latLons[0][0];
         const std::string& firstLon = latLons[0][1];

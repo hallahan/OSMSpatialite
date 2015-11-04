@@ -1,13 +1,13 @@
 //
-//  OSMElement.hpp
+//  Element.hpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#ifndef OSMElement_hpp
-#define OSMElement_hpp
+#ifndef Element_hpp
+#define Element_hpp
 
 #include <map>
 #include <vector>
@@ -17,13 +17,13 @@
 
 namespace OSM {
 
-// Used to differentiate between the various types of OSM Elements.
+// Used to differentiate between the various types of Elements.
 enum class ElementType { NODE, WAY, RELATION, TAG, ND, MEMBER, BOUNDS, OSM };
 
-// Forward declaring OSMRelation so we can reference it within OSMElement.
-class OSMRelation;
+// Forward declaring Relation so we can reference it within Element.
+class Relation;
     
-class OSMElement {
+class Element {
 public:
     
     // Getters
@@ -38,7 +38,7 @@ public:
     
 protected:
     
-    OSMElement(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
+    Element(std::shared_ptr<AmigoCloud::Database> db, const std::string& id,
                const std::string& action, const std::string& version, const std::string& timestamp,
                const std::string& changeset, const std::string& uid, const std::string& user,
                const std::string& visible, const std::string& geometry);
@@ -67,7 +67,7 @@ protected:
     // Element modified in current session.
     bool _modifiedInInstance = false;
     
-//    std::vector<OSMRelation> _linkedRelations;
+//    std::vector<Relation> _linkedRelations;
 
     
     
@@ -79,4 +79,4 @@ private:
     
 }
 
-#endif /* OSMElement_hpp */
+#endif /* Element_hpp */

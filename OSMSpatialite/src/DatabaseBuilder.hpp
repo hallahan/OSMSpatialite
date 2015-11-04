@@ -1,27 +1,27 @@
 //
-//  OSMDatabaseBuilder.hpp
+//  DatabaseBuilder.hpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/1/15.
 //  Copyright © 2015 Nicholas Hallahan. All rights reserved.
 //
 
-#ifndef OSMDatabaseBuilder_hpp
-#define OSMDatabaseBuilder_hpp
+#ifndef DatabaseBuilder_hpp
+#define DatabaseBuilder_hpp
 
 #include <array>
 #include "AmigoCloud/Database.h"
-#include "OSMElement.hpp"
-#include "OSMNode.hpp"
-#include "OSMWay.hpp"
-#include "OSMRelation.hpp"
+#include "Element.hpp"
+#include "Node.hpp"
+#include "Way.hpp"
+#include "Relation.hpp"
 
 namespace OSM {
     
-class OSMDatabaseBuilder {
+class DatabaseBuilder {
 public:
-    explicit OSMDatabaseBuilder(std::shared_ptr<AmigoCloud::Database> db);
-    explicit OSMDatabaseBuilder(const std::string& dbPath);
+    explicit DatabaseBuilder(std::shared_ptr<AmigoCloud::Database> db);
+    explicit DatabaseBuilder(const std::string& dbPath);
     
     // OSM Element found at beginning of XML Document
     void addOSM(const std::string& version, const std::string& generator);
@@ -67,4 +67,4 @@ private:
 };
 }
 
-#endif /* OSMDatabaseBuilder_hpp */
+#endif /* DatabaseBuilder_hpp */

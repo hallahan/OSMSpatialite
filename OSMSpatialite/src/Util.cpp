@@ -1,5 +1,5 @@
 //
-//  OSMUtil.cpp
+//  Util.cpp
 //  OSMSpatialite
 //
 //  Created by Nicholas Hallahan on 10/2/15.
