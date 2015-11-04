@@ -19,7 +19,7 @@ public:
 private:
     
 };
-
+    
 }
 
 #endif /* OverpassAPI_hpp */

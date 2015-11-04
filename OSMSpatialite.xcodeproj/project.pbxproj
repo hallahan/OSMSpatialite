@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012802C51BEA7AAF003BAD1D /* OverpassAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */; settings = {ASSET_TAGS = (); }; };
 		0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736C1BE952F7000A3989 /* SystemConfig.cpp */; settings = {ASSET_TAGS = (); }; };
 		012973711BE9530E000A3989 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736F1BE9530E000A3989 /* RestClient.cpp */; settings = {ASSET_TAGS = (); }; };
 		0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* Element.cpp */; };
@@ -20,7 +21,6 @@
 		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; };
 		01AD32411BE97F6200396DDD /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD32401BE97F6200396DDD /* libcurl.tbd */; };
 		01AD32441BEA63A700396DDD /* RestAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01AD32421BEA63A700396DDD /* RestAPI.cpp */; settings = {ASSET_TAGS = (); }; };
-		01AD32471BEA63DD00396DDD /* OverpassAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01AD32451BEA63DD00396DDD /* OverpassAPI.cpp */; settings = {ASSET_TAGS = (); }; };
 		01AD324A1BEA640C00396DDD /* EditingAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01AD32481BEA640C00396DDD /* EditingAPI.cpp */; settings = {ASSET_TAGS = (); }; };
 		01B2DA9A1BBDF49B001E656D /* libcharset.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA901BBDF49B001E656D /* libcharset.1.dylib */; };
 		01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */; };
@@ -51,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OverpassAPI.cpp; path = src/OverpassAPI.cpp; sourceTree = "<group>"; };
+		012802C41BEA7AAF003BAD1D /* OverpassAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OverpassAPI.hpp; path = src/OverpassAPI.hpp; sourceTree = "<group>"; };
 		0129736B1BE9527E000A3989 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = src/AmigoCloud/Mutex.h; sourceTree = "<group>"; };
 		0129736C1BE952F7000A3989 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SystemConfig.cpp; path = src/AmigoCloud/SystemConfig.cpp; sourceTree = "<group>"; };
 		0129736D1BE952F7000A3989 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemConfig.h; path = src/AmigoCloud/SystemConfig.h; sourceTree = "<group>"; };
@@ -79,8 +81,6 @@
 		01AD32401BE97F6200396DDD /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
 		01AD32421BEA63A700396DDD /* RestAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestAPI.cpp; path = src/RestAPI.cpp; sourceTree = "<group>"; };
 		01AD32431BEA63A700396DDD /* RestAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RestAPI.hpp; path = src/RestAPI.hpp; sourceTree = "<group>"; };
-		01AD32451BEA63DD00396DDD /* OverpassAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OverpassAPI.cpp; sourceTree = "<group>"; };
-		01AD32461BEA63DD00396DDD /* OverpassAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OverpassAPI.hpp; sourceTree = "<group>"; };
 		01AD32481BEA640C00396DDD /* EditingAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditingAPI.cpp; path = src/EditingAPI.cpp; sourceTree = "<group>"; };
 		01AD32491BEA640C00396DDD /* EditingAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EditingAPI.hpp; path = src/EditingAPI.hpp; sourceTree = "<group>"; };
 		01B2DA901BBDF49B001E656D /* libcharset.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcharset.1.dylib; path = OSMSpatialite/lib/libcharset.1.dylib; sourceTree = "<group>"; };
@@ -197,10 +197,10 @@
 				01ED63DC1BC5760F00766C92 /* Util.h */,
 				01AD32421BEA63A700396DDD /* RestAPI.cpp */,
 				01AD32431BEA63A700396DDD /* RestAPI.hpp */,
-				01AD32451BEA63DD00396DDD /* OverpassAPI.cpp */,
-				01AD32461BEA63DD00396DDD /* OverpassAPI.hpp */,
 				01AD32481BEA640C00396DDD /* EditingAPI.cpp */,
 				01AD32491BEA640C00396DDD /* EditingAPI.hpp */,
+				012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */,
+				012802C41BEA7AAF003BAD1D /* OverpassAPI.hpp */,
 			);
 			path = OSMSpatialite;
 			sourceTree = "<group>";
@@ -330,9 +330,9 @@
 				01AD324A1BEA640C00396DDD /* EditingAPI.cpp in Sources */,
 				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
 				012973711BE9530E000A3989 /* RestClient.cpp in Sources */,
+				012802C51BEA7AAF003BAD1D /* OverpassAPI.cpp in Sources */,
 				01AD32441BEA63A700396DDD /* RestAPI.cpp in Sources */,
 				0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */,
-				01AD32471BEA63DD00396DDD /* OverpassAPI.cpp in Sources */,
 				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
 				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
 				01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */,
