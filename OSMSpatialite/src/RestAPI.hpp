@@ -9,6 +9,8 @@
 #ifndef RestAPI_hpp
 #define RestAPI_hpp
 
+#include "AmigoCloud/RestClient.h"
+
 namespace OSM {
 
 class RestAPI {

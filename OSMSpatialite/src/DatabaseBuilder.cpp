@@ -9,7 +9,7 @@
 #include "DatabaseBuilder.hpp"
 
 #include <iostream>
-#include "Util.h"
+#include "Util.hpp"
 
 namespace OSM
 {

@@ -125,7 +125,7 @@
 		01E860B41BE1445000AA5A06 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4.h; path = src/AmigoCloud/Chaskii/Math/vec4.h; sourceTree = "<group>"; };
 		01E860B51BE1445000AA5A06 /* vec4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4d.h; path = src/AmigoCloud/Chaskii/Math/vec4d.h; sourceTree = "<group>"; };
 		01ED63DB1BC5760F00766C92 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = src/Util.cpp; sourceTree = "<group>"; };
-		01ED63DC1BC5760F00766C92 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = src/Util.h; sourceTree = "<group>"; };
+		01ED63DC1BC5760F00766C92 /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Util.hpp; path = src/Util.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +194,7 @@
 				0166F67E1BBDFE8200517ACC /* XmlParser.cpp */,
 				0166F67F1BBDFE8200517ACC /* XmlParser.hpp */,
 				01ED63DB1BC5760F00766C92 /* Util.cpp */,
-				01ED63DC1BC5760F00766C92 /* Util.h */,
+				01ED63DC1BC5760F00766C92 /* Util.hpp */,
 				01AD32421BEA63A700396DDD /* RestAPI.cpp */,
 				01AD32431BEA63A700396DDD /* RestAPI.hpp */,
 				01AD32481BEA640C00396DDD /* EditingAPI.cpp */,
