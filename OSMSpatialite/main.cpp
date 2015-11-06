@@ -7,6 +7,7 @@
 #include "XmlParser.hpp"
 #include "Way.hpp"
 #include "src/AmigoCloud/RestClient.h"
+#include "EditingAPI.hpp"
 
 
 int main(int argc, const char * argv[]) {
@@ -31,8 +32,11 @@ int main(int argc, const char * argv[]) {
     std::vector<OSM::Node> nodes3 = OSM::Node::fetchStandaloneNodes(db3, "-121.381330,38.634573,-121.350946,38.651735");
 
     AmigoCloud::RestClient restClient("OSMSpatialite/0.0.1");
-    AmigoCloud::RestClient::response response = restClient.get("http://www.openstreetmap.org/api/0.6/map?bbox=-121.03599071502686,39.24774208062821,-121.00122928619385,39.27266344858914");
+    AmigoCloud::RestClient::response response = restClient.get("http://www.openstreetmap.org/api/0.6/map?bbox=-121.0359907102686,39.24774208062821,-121.00122928619385,39.27266344858914");
     
+    OSM::EditingAPI api(db3);
+    
+    api.get("-121.369317,38.649377,-121.369202,38.649533");
     
     return 0;
 }

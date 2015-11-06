@@ -16,6 +16,11 @@ namespace OSM {
 class EditingAPI : public RestAPI {
 public:
     
+    explicit EditingAPI(const std::shared_ptr<AmigoCloud::Database> db, const std::string& baseUrl = "http://www.openstreetmap.org/api/0.6/");
+    
+    void get(const std::string& bbox);
+    
+    
 private:
     
 };
