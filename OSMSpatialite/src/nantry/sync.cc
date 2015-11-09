@@ -7,6 +7,7 @@
  ********************************************************************/
 
 #include <nan.h>
+// #include <libxml/xmlreader.h>
 #include "pi_est.h"  // NOLINT(build/include)
 #include "sync.h"  // NOLINT(build/include)
 
@@ -16,5 +17,7 @@ NAN_METHOD(CalculateSync) {
   int points = info[0]->Uint32Value();
   double est = Estimate(points);  
 
+  // xmlInitParser();
+  
   info.GetReturnValue().Set(est);
 }
