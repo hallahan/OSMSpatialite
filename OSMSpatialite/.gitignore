@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+npm-debug.log
+lib/binding
+build
+out
+Release
+Debug
+node_modules
+.deps
+Makefile.gyp
