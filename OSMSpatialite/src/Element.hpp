@@ -34,6 +34,7 @@ public:
     std::string getTimestamp()  { return _timestamp; }
 //    std::string getUser()       { return _user; }
     bool isModified()           { return _modified; }
+    std::shared_ptr<geos::geom::Geometry> getGeometry() { return _geometry; }
     
     
 protected:
