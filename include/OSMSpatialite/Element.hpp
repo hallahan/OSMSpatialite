@@ -11,7 +11,7 @@
 
 #include <map>
 #include <vector>
-#include <geos.h>
+#include <geos/geom/Geometry.h>
 #include <core/Database.h>
 #include <core/GeometryHandler.h>
 

@@ -18,6 +18,10 @@ namespace OSM {
 //    values to types. I get the comparable utility of enums,
 //    but I can still print out int values and look at them directly.
 
+// Don't worry if constants in these two namespaces are not used...
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+
 // Return codes from XML Reader API
 namespace XmlStatus { const int ERROR=-1; const int FALSE=0; const int TRUE=1; };
 
@@ -31,6 +35,8 @@ namespace XmlNodeType {
     const int WHITESPACE=13; const int SIGNIFICANT_WHITESPACE=14;
     const int END_ELEMENT=15; const int END_ENTITY=16; const int XML_DECLARATION=17;
 };
+    
+#pragma clang diagnostic pop
 
 XmlParser::XmlParser(std::shared_ptr<AmigoCloud::Database> db) :
 _dbBuilder(db) {

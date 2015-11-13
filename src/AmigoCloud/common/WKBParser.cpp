@@ -348,7 +348,7 @@ geos::geom::GeometryCollection *WKBParser::_readGeometryCollection()
 geos::geom::CoordinateSequence *WKBParser::_readCoordinateSequence(int size)
 {
 	geos::geom::CoordinateSequence *cs = _factory.getCoordinateSequenceFactory()->create(size, _dimension);
-	unsigned int dim = cs->getDimension();
+	unsigned long dim = cs->getDimension();
 	if ( dim > _dimension )
 		dim = _dimension;
 	for (int i=0; i<size; i++) {

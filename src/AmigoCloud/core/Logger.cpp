@@ -149,12 +149,12 @@ namespace AmigoCloud
         static int line;
         static Timestamp lastTimestamp;
         
-        static double getDeltaTime()
-        {
-            double dt = Timestamp::deltaNowMs(lastTimestamp);
-            lastTimestamp = Timestamp();
-            return dt/1000.0;
-        }
+//        static double getDeltaTime()
+//        {
+//            double dt = Timestamp::deltaNowMs(lastTimestamp);
+//            lastTimestamp = Timestamp();
+//            return dt/1000.0;
+//        }
         
 #define BUFFER_SIZE 2048
         
