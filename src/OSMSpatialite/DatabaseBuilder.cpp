@@ -25,6 +25,22 @@ namespace OSM
     }
     
     void DatabaseBuilder::_initDB() {
+        
+        // Check to see if we already made the OSM database...
+        AmigoCloud::DatabaseResult result;
+        _db->executeSQL("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'nodes';", result);
+        if (result.isOK()) {
+            const std::vector< std::vector<std::string> > &records = result.records;
+            if (records.size() > 0) {
+                
+                // If we have a nodes table, we can assume that the database and it's resulting schema
+                // have already been created.
+                return;
+                
+            }
+        }
+
+        
         _db->beginTransaction();
         
         // OSM XML Node (one per OSM XML file)
@@ -335,6 +351,17 @@ namespace OSM
     }
     
     void DatabaseBuilder::_addSpatialIndices() {
+        // Check to see if we made spatial indices yet.
+        AmigoCloud::DatabaseResult result;
+        _db->executeSQL("SELECT CheckSpatialIndex('nodes', 'point');", result);
+        if (result.isOK()) {
+            const std::vector< std::vector<std::string> > &records = result.records;
+            if (records.size() > 0) {
+                // We already have created our spatial indices...
+                return;
+            }
+        }
+        
         _db->executeSQL("SELECT CreateSpatialIndex('nodes', 'point');");
         _db->executeSQL("SELECT CreateSpatialIndex('ways', 'line');");
         _db->executeSQL("SELECT CreateSpatialIndex('ways', 'polygon');");
