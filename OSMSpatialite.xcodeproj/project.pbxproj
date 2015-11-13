@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012802C51BEA7AAF003BAD1D /* OverpassAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */; };
-		0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736C1BE952F7000A3989 /* SystemConfig.cpp */; };
-		012973711BE9530E000A3989 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0129736F1BE9530E000A3989 /* RestClient.cpp */; };
-		0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6721BBDFD8B00517ACC /* Element.cpp */; };
-		0166F6771BBDFDCB00517ACC /* Way.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6751BBDFDCB00517ACC /* Way.cpp */; };
-		0166F67A1BBDFE4400517ACC /* DatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */; };
-		0166F67D1BBDFE5B00517ACC /* Relation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67B1BBDFE5B00517ACC /* Relation.cpp */; };
-		0166F6801BBDFE8200517ACC /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F67E1BBDFE8200517ACC /* XmlParser.cpp */; };
-		0166F6831BBDFE9800517ACC /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6811BBDFE9800517ACC /* Node.cpp */; };
-		0166F6871BBE007800517ACC /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6851BBE007800517ACC /* Database.cpp */; };
-		0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F6881BBE008B00517ACC /* Logger.cpp */; };
-		0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0166F68B1BBE00A400517ACC /* Thread.cpp */; };
 		01AD32411BE97F6200396DDD /* libcurl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AD32401BE97F6200396DDD /* libcurl.tbd */; };
-		01AD32441BEA63A700396DDD /* RestAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01AD32421BEA63A700396DDD /* RestAPI.cpp */; };
-		01AD324A1BEA640C00396DDD /* EditingAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01AD32481BEA640C00396DDD /* EditingAPI.cpp */; };
-		01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */; };
-		01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */; };
-		01B2DA9E1BBDF49B001E656D /* libproj.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA941BBDF49B001E656D /* libproj.9.dylib */; };
-		01B2DA9F1BBDF49B001E656D /* libspatialite.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */; };
-		01B2DAA01BBDF49B001E656D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */; };
-		01B2DAA11BBDF49B001E656D /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA971BBDF49B001E656D /* libxml2.2.dylib */; };
-		01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B2DA981BBDF49B001E656D /* libz.1.dylib */; };
-		01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BF3D9D1BBDF40D000520AE /* main.cpp */; };
-		01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D66DDA1BC6A91B003281C3 /* SpatialiteInit.cpp */; };
-		01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */; };
-		01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01E860951BE12E8700AA5A06 /* WKBParser.cpp */; };
-		01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01ED63DB1BC5760F00766C92 /* Util.cpp */; };
+		3097204A1BF657DA00FB98A7 /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720441BF657DA00FB98A7 /* Database.cpp */; };
+		3097204B1BF657DA00FB98A7 /* GeometryHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720451BF657DA00FB98A7 /* GeometryHandler.cpp */; };
+		3097204C1BF657DA00FB98A7 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720461BF657DA00FB98A7 /* Logger.cpp */; };
+		3097204D1BF657DA00FB98A7 /* RestClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720471BF657DA00FB98A7 /* RestClient.cpp */; };
+		3097204E1BF657DA00FB98A7 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720481BF657DA00FB98A7 /* SystemConfig.cpp */; };
+		3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720491BF657DA00FB98A7 /* Thread.cpp */; };
+		309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720501BF657EA00FB98A7 /* WKBParser.cpp */; };
+		30B766E41BF551D90088836B /* libfreexl.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DB1BF551D90088836B /* libfreexl.1.dylib */; };
+		30B766E51BF551D90088836B /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DC1BF551D90088836B /* libgeos_c.1.dylib */; };
+		30B766E61BF551D90088836B /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */; };
+		30B766E71BF551D90088836B /* libproj.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DE1BF551D90088836B /* libproj.9.dylib */; };
+		30B766E81BF551D90088836B /* libspatialite.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DF1BF551D90088836B /* libspatialite.7.dylib */; };
+		30B766E91BF551D90088836B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766E01BF551D90088836B /* libsqlite3.0.dylib */; };
+		30B766EA1BF551D90088836B /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766E11BF551D90088836B /* libxml2.2.dylib */; };
+		30B766EB1BF551D90088836B /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766E21BF551D90088836B /* libz.1.dylib */; };
+		30B7672C1BF55D190088836B /* DatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767211BF55D190088836B /* DatabaseBuilder.cpp */; };
+		30B7672D1BF55D190088836B /* EditingAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767221BF55D190088836B /* EditingAPI.cpp */; };
+		30B7672E1BF55D190088836B /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767231BF55D190088836B /* Element.cpp */; };
+		30B7672F1BF55D190088836B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767241BF55D190088836B /* main.cpp */; };
+		30B767301BF55D190088836B /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767251BF55D190088836B /* Node.cpp */; };
+		30B767311BF55D190088836B /* OverpassAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767261BF55D190088836B /* OverpassAPI.cpp */; };
+		30B767321BF55D190088836B /* Relation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767271BF55D190088836B /* Relation.cpp */; };
+		30B767331BF55D190088836B /* RestAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767281BF55D190088836B /* RestAPI.cpp */; };
+		30B767341BF55D190088836B /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767291BF55D190088836B /* Util.cpp */; };
+		30B767351BF55D190088836B /* Way.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B7672A1BF55D190088836B /* Way.cpp */; };
+		30B767361BF55D190088836B /* XmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B7672B1BF55D190088836B /* XmlParser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,81 +49,79 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OverpassAPI.cpp; path = src/OverpassAPI.cpp; sourceTree = "<group>"; };
-		012802C41BEA7AAF003BAD1D /* OverpassAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OverpassAPI.hpp; path = src/OverpassAPI.hpp; sourceTree = "<group>"; };
-		0129736B1BE9527E000A3989 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = src/AmigoCloud/Mutex.h; sourceTree = "<group>"; };
-		0129736C1BE952F7000A3989 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SystemConfig.cpp; path = src/AmigoCloud/SystemConfig.cpp; sourceTree = "<group>"; };
-		0129736D1BE952F7000A3989 /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemConfig.h; path = src/AmigoCloud/SystemConfig.h; sourceTree = "<group>"; };
-		0129736F1BE9530E000A3989 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestClient.cpp; path = src/AmigoCloud/RestClient.cpp; sourceTree = "<group>"; };
-		012973701BE9530E000A3989 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = src/AmigoCloud/RestClient.h; sourceTree = "<group>"; };
-		0166F6721BBDFD8B00517ACC /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = src/Element.cpp; sourceTree = "<group>"; };
-		0166F6731BBDFD8B00517ACC /* Element.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Element.hpp; path = src/Element.hpp; sourceTree = "<group>"; };
-		0166F6751BBDFDCB00517ACC /* Way.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Way.cpp; path = src/Way.cpp; sourceTree = "<group>"; };
-		0166F6761BBDFDCB00517ACC /* Way.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Way.hpp; path = src/Way.hpp; sourceTree = "<group>"; };
-		0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DatabaseBuilder.cpp; path = src/DatabaseBuilder.cpp; sourceTree = "<group>"; };
-		0166F6791BBDFE4400517ACC /* DatabaseBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DatabaseBuilder.hpp; path = src/DatabaseBuilder.hpp; sourceTree = "<group>"; };
-		0166F67B1BBDFE5B00517ACC /* Relation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Relation.cpp; path = src/Relation.cpp; sourceTree = "<group>"; };
-		0166F67C1BBDFE5B00517ACC /* Relation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Relation.hpp; path = src/Relation.hpp; sourceTree = "<group>"; };
-		0166F67E1BBDFE8200517ACC /* XmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XmlParser.cpp; path = src/XmlParser.cpp; sourceTree = "<group>"; };
-		0166F67F1BBDFE8200517ACC /* XmlParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = XmlParser.hpp; path = src/XmlParser.hpp; sourceTree = "<group>"; };
-		0166F6811BBDFE9800517ACC /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = src/Node.cpp; sourceTree = "<group>"; };
-		0166F6821BBDFE9800517ACC /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Node.hpp; path = src/Node.hpp; sourceTree = "<group>"; };
-		0166F6841BBE004E00517ACC /* AmigoError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AmigoError.h; path = src/AmigoCloud/AmigoError.h; sourceTree = "<group>"; };
-		0166F6851BBE007800517ACC /* Database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Database.cpp; path = src/AmigoCloud/Database.cpp; sourceTree = "<group>"; };
-		0166F6861BBE007800517ACC /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = src/AmigoCloud/Database.h; sourceTree = "<group>"; };
-		0166F6881BBE008B00517ACC /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = src/AmigoCloud/Logger.cpp; sourceTree = "<group>"; };
-		0166F6891BBE008B00517ACC /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = src/AmigoCloud/Logger.h; sourceTree = "<group>"; };
-		0166F68B1BBE00A400517ACC /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/Thread.cpp; sourceTree = "<group>"; };
-		0166F68C1BBE00A400517ACC /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = src/AmigoCloud/Thread.h; sourceTree = "<group>"; };
-		0166F68E1BBE00C300517ACC /* Timestamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timestamp.h; path = src/AmigoCloud/Timestamp.h; sourceTree = "<group>"; };
 		01AD32401BE97F6200396DDD /* libcurl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.tbd; path = usr/lib/libcurl.tbd; sourceTree = SDKROOT; };
-		01AD32421BEA63A700396DDD /* RestAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestAPI.cpp; path = src/RestAPI.cpp; sourceTree = "<group>"; };
-		01AD32431BEA63A700396DDD /* RestAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RestAPI.hpp; path = src/RestAPI.hpp; sourceTree = "<group>"; };
-		01AD32481BEA640C00396DDD /* EditingAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditingAPI.cpp; path = src/EditingAPI.cpp; sourceTree = "<group>"; };
-		01AD32491BEA640C00396DDD /* EditingAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EditingAPI.hpp; path = src/EditingAPI.hpp; sourceTree = "<group>"; };
-		01B2DA901BBDF49B001E656D /* libcharset.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcharset.1.dylib; path = OSMSpatialite/lib/libcharset.1.dylib; sourceTree = "<group>"; };
-		01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = OSMSpatialite/lib/libgeos_c.1.dylib; sourceTree = "<group>"; };
-		01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "OSMSpatialite/lib/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
-		01B2DA931BBDF49B001E656D /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = OSMSpatialite/lib/libiconv.2.dylib; sourceTree = "<group>"; };
-		01B2DA941BBDF49B001E656D /* libproj.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libproj.9.dylib; path = OSMSpatialite/lib/libproj.9.dylib; sourceTree = "<group>"; };
-		01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libspatialite.7.dylib; path = OSMSpatialite/lib/libspatialite.7.dylib; sourceTree = "<group>"; };
-		01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = OSMSpatialite/lib/libsqlite3.0.dylib; sourceTree = "<group>"; };
-		01B2DA971BBDF49B001E656D /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = OSMSpatialite/lib/libxml2.2.dylib; sourceTree = "<group>"; };
-		01B2DA981BBDF49B001E656D /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = OSMSpatialite/lib/libz.1.dylib; sourceTree = "<group>"; };
-		01B2DA991BBDF49B001E656D /* mod_spatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.bundle"; name = mod_spatialite.7.dylib; path = OSMSpatialite/lib/mod_spatialite.7.dylib; sourceTree = "<group>"; };
-		01BF3D9A1BBDF40D000520AE /* OSMSpatialite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSMSpatialite; sourceTree = BUILT_PRODUCTS_DIR; };
-		01BF3D9D1BBDF40D000520AE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		01D66DDA1BC6A91B003281C3 /* SpatialiteInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpatialiteInit.cpp; path = src/AmigoCloud/SpatialiteInit.cpp; sourceTree = "<group>"; };
-		01D66DDB1BC6A91B003281C3 /* SpatialiteInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpatialiteInit.h; path = src/AmigoCloud/SpatialiteInit.h; sourceTree = "<group>"; };
-		01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GeometryHandler.cpp; path = src/AmigoCloud/GeometryHandler.cpp; sourceTree = "<group>"; };
-		01E860931BE12E7500AA5A06 /* GeometryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeometryHandler.h; path = src/AmigoCloud/GeometryHandler.h; sourceTree = "<group>"; };
-		01E860951BE12E8700AA5A06 /* WKBParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WKBParser.cpp; path = src/AmigoCloud/WKBParser.cpp; sourceTree = "<group>"; };
-		01E860961BE12E8700AA5A06 /* WKBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKBParser.h; path = src/AmigoCloud/WKBParser.h; sourceTree = "<group>"; };
-		01E860981BE12F4B00AA5A06 /* VectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorTypes.h; path = src/AmigoCloud/VectorTypes.h; sourceTree = "<group>"; };
-		01E8609F1BE1442F00AA5A06 /* Chaskii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chaskii.h; path = src/AmigoCloud/Chaskii/Chaskii.h; sourceTree = "<group>"; };
-		01E860A01BE1442F00AA5A06 /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Export.h; path = src/AmigoCloud/Chaskii/Export.h; sourceTree = "<group>"; };
-		01E860A21BE1445000AA5A06 /* bound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bound.h; path = src/AmigoCloud/Chaskii/Math/bound.h; sourceTree = "<group>"; };
-		01E860A31BE1445000AA5A06 /* boundD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = boundD.h; path = src/AmigoCloud/Chaskii/Math/boundD.h; sourceTree = "<group>"; };
-		01E860A41BE1445000AA5A06 /* iiMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iiMath.h; path = src/AmigoCloud/Chaskii/Math/iiMath.h; sourceTree = "<group>"; };
-		01E860A51BE1445000AA5A06 /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix.h; path = src/AmigoCloud/Chaskii/Math/matrix.h; sourceTree = "<group>"; };
-		01E860A61BE1445000AA5A06 /* matrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix3.h; path = src/AmigoCloud/Chaskii/Math/matrix3.h; sourceTree = "<group>"; };
-		01E860A71BE1445000AA5A06 /* matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4.h; path = src/AmigoCloud/Chaskii/Math/matrix4.h; sourceTree = "<group>"; };
-		01E860A81BE1445000AA5A06 /* matrix4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4d.h; path = src/AmigoCloud/Chaskii/Math/matrix4d.h; sourceTree = "<group>"; };
-		01E860A91BE1445000AA5A06 /* matrixDecompose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecompose.h; path = src/AmigoCloud/Chaskii/Math/matrixDecompose.h; sourceTree = "<group>"; };
-		01E860AA1BE1445000AA5A06 /* matrixDecomposeD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecomposeD.h; path = src/AmigoCloud/Chaskii/Math/matrixDecomposeD.h; sourceTree = "<group>"; };
-		01E860AB1BE1445000AA5A06 /* plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plane.h; path = src/AmigoCloud/Chaskii/Math/plane.h; sourceTree = "<group>"; };
-		01E860AC1BE1445000AA5A06 /* planed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = planed.h; path = src/AmigoCloud/Chaskii/Math/planed.h; sourceTree = "<group>"; };
-		01E860AD1BE1445000AA5A06 /* pos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pos.h; path = src/AmigoCloud/Chaskii/Math/pos.h; sourceTree = "<group>"; };
-		01E860AE1BE1445000AA5A06 /* quat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quat.h; path = src/AmigoCloud/Chaskii/Math/quat.h; sourceTree = "<group>"; };
-		01E860AF1BE1445000AA5A06 /* quatd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quatd.h; path = src/AmigoCloud/Chaskii/Math/quatd.h; sourceTree = "<group>"; };
-		01E860B01BE1445000AA5A06 /* rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rect.h; path = src/AmigoCloud/Chaskii/Math/rect.h; sourceTree = "<group>"; };
-		01E860B11BE1445000AA5A06 /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec2.h; path = src/AmigoCloud/Chaskii/Math/vec2.h; sourceTree = "<group>"; };
-		01E860B21BE1445000AA5A06 /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3.h; path = src/AmigoCloud/Chaskii/Math/vec3.h; sourceTree = "<group>"; };
-		01E860B31BE1445000AA5A06 /* vec3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3d.h; path = src/AmigoCloud/Chaskii/Math/vec3d.h; sourceTree = "<group>"; };
-		01E860B41BE1445000AA5A06 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4.h; path = src/AmigoCloud/Chaskii/Math/vec4.h; sourceTree = "<group>"; };
-		01E860B51BE1445000AA5A06 /* vec4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4d.h; path = src/AmigoCloud/Chaskii/Math/vec4d.h; sourceTree = "<group>"; };
-		01ED63DB1BC5760F00766C92 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = src/Util.cpp; sourceTree = "<group>"; };
-		01ED63DC1BC5760F00766C92 /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Util.hpp; path = src/Util.hpp; sourceTree = "<group>"; };
+		309720441BF657DA00FB98A7 /* Database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Database.cpp; path = src/AmigoCloud/core/Database.cpp; sourceTree = "<group>"; };
+		309720451BF657DA00FB98A7 /* GeometryHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GeometryHandler.cpp; path = src/AmigoCloud/core/GeometryHandler.cpp; sourceTree = "<group>"; };
+		309720461BF657DA00FB98A7 /* Logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cpp; path = src/AmigoCloud/core/Logger.cpp; sourceTree = "<group>"; };
+		309720471BF657DA00FB98A7 /* RestClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestClient.cpp; path = src/AmigoCloud/core/RestClient.cpp; sourceTree = "<group>"; };
+		309720481BF657DA00FB98A7 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SystemConfig.cpp; path = src/AmigoCloud/core/SystemConfig.cpp; sourceTree = "<group>"; };
+		309720491BF657DA00FB98A7 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/core/Thread.cpp; sourceTree = "<group>"; };
+		309720501BF657EA00FB98A7 /* WKBParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WKBParser.cpp; path = src/AmigoCloud/common/WKBParser.cpp; sourceTree = "<group>"; };
+		30B766DB1BF551D90088836B /* libfreexl.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreexl.1.dylib; path = lib/osx/libfreexl.1.dylib; sourceTree = "<group>"; };
+		30B766DC1BF551D90088836B /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = lib/osx/libgeos_c.1.dylib; sourceTree = "<group>"; };
+		30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "lib/osx/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
+		30B766DE1BF551D90088836B /* libproj.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libproj.9.dylib; path = lib/osx/libproj.9.dylib; sourceTree = "<group>"; };
+		30B766DF1BF551D90088836B /* libspatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libspatialite.7.dylib; path = lib/osx/libspatialite.7.dylib; sourceTree = "<group>"; };
+		30B766E01BF551D90088836B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = lib/osx/libsqlite3.0.dylib; sourceTree = "<group>"; };
+		30B766E11BF551D90088836B /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = lib/osx/libxml2.2.dylib; sourceTree = "<group>"; };
+		30B766E21BF551D90088836B /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = lib/osx/libz.1.dylib; sourceTree = "<group>"; };
+		30B766E31BF551D90088836B /* mod_spatialite.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.bundle"; name = mod_spatialite.7.dylib; path = lib/osx/mod_spatialite.7.dylib; sourceTree = "<group>"; };
+		30B766FF1BF557700088836B /* Chaskii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chaskii.h; path = include/Chaskii/Chaskii.h; sourceTree = "<group>"; };
+		30B767001BF557700088836B /* Export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Export.h; path = include/Chaskii/Export.h; sourceTree = "<group>"; };
+		30B767011BF557840088836B /* bound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bound.h; path = include/Chaskii/Math/bound.h; sourceTree = "<group>"; };
+		30B767021BF557840088836B /* boundD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = boundD.h; path = include/Chaskii/Math/boundD.h; sourceTree = "<group>"; };
+		30B767031BF557840088836B /* iiMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iiMath.h; path = include/Chaskii/Math/iiMath.h; sourceTree = "<group>"; };
+		30B767041BF557840088836B /* matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix.h; path = include/Chaskii/Math/matrix.h; sourceTree = "<group>"; };
+		30B767051BF557840088836B /* matrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix3.h; path = include/Chaskii/Math/matrix3.h; sourceTree = "<group>"; };
+		30B767061BF557840088836B /* matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4.h; path = include/Chaskii/Math/matrix4.h; sourceTree = "<group>"; };
+		30B767071BF557840088836B /* matrix4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrix4d.h; path = include/Chaskii/Math/matrix4d.h; sourceTree = "<group>"; };
+		30B767081BF557840088836B /* matrixDecompose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecompose.h; path = include/Chaskii/Math/matrixDecompose.h; sourceTree = "<group>"; };
+		30B767091BF557840088836B /* matrixDecomposeD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = matrixDecomposeD.h; path = include/Chaskii/Math/matrixDecomposeD.h; sourceTree = "<group>"; };
+		30B7670A1BF557840088836B /* plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = plane.h; path = include/Chaskii/Math/plane.h; sourceTree = "<group>"; };
+		30B7670B1BF557840088836B /* planed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = planed.h; path = include/Chaskii/Math/planed.h; sourceTree = "<group>"; };
+		30B7670C1BF557840088836B /* pos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pos.h; path = include/Chaskii/Math/pos.h; sourceTree = "<group>"; };
+		30B7670D1BF557840088836B /* quat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quat.h; path = include/Chaskii/Math/quat.h; sourceTree = "<group>"; };
+		30B7670E1BF557840088836B /* quatd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quatd.h; path = include/Chaskii/Math/quatd.h; sourceTree = "<group>"; };
+		30B7670F1BF557840088836B /* rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rect.h; path = include/Chaskii/Math/rect.h; sourceTree = "<group>"; };
+		30B767101BF557840088836B /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec2.h; path = include/Chaskii/Math/vec2.h; sourceTree = "<group>"; };
+		30B767111BF557840088836B /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3.h; path = include/Chaskii/Math/vec3.h; sourceTree = "<group>"; };
+		30B767121BF557840088836B /* vec3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec3d.h; path = include/Chaskii/Math/vec3d.h; sourceTree = "<group>"; };
+		30B767131BF557840088836B /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4.h; path = include/Chaskii/Math/vec4.h; sourceTree = "<group>"; };
+		30B767141BF557840088836B /* vec4d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vec4d.h; path = include/Chaskii/Math/vec4d.h; sourceTree = "<group>"; };
+		30B767151BF558300088836B /* DatabaseBuilder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DatabaseBuilder.hpp; path = include/OSMSpatialite/DatabaseBuilder.hpp; sourceTree = "<group>"; };
+		30B767161BF558300088836B /* EditingAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = EditingAPI.hpp; path = include/OSMSpatialite/EditingAPI.hpp; sourceTree = "<group>"; };
+		30B767171BF558300088836B /* Element.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Element.hpp; path = include/OSMSpatialite/Element.hpp; sourceTree = "<group>"; };
+		30B767181BF558300088836B /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Node.hpp; path = include/OSMSpatialite/Node.hpp; sourceTree = "<group>"; };
+		30B767191BF558300088836B /* OverpassAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OverpassAPI.hpp; path = include/OSMSpatialite/OverpassAPI.hpp; sourceTree = "<group>"; };
+		30B7671A1BF558300088836B /* Relation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Relation.hpp; path = include/OSMSpatialite/Relation.hpp; sourceTree = "<group>"; };
+		30B7671B1BF558300088836B /* RestAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = RestAPI.hpp; path = include/OSMSpatialite/RestAPI.hpp; sourceTree = "<group>"; };
+		30B7671C1BF558300088836B /* Util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Util.hpp; path = include/OSMSpatialite/Util.hpp; sourceTree = "<group>"; };
+		30B7671D1BF558300088836B /* Way.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Way.hpp; path = include/OSMSpatialite/Way.hpp; sourceTree = "<group>"; };
+		30B7671E1BF558300088836B /* XmlParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = XmlParser.hpp; path = include/OSMSpatialite/XmlParser.hpp; sourceTree = "<group>"; };
+		30B767211BF55D190088836B /* DatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DatabaseBuilder.cpp; path = src/OSMSpatialite/DatabaseBuilder.cpp; sourceTree = "<group>"; };
+		30B767221BF55D190088836B /* EditingAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditingAPI.cpp; path = src/OSMSpatialite/EditingAPI.cpp; sourceTree = "<group>"; };
+		30B767231BF55D190088836B /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = src/OSMSpatialite/Element.cpp; sourceTree = "<group>"; };
+		30B767241BF55D190088836B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/OSMSpatialite/main.cpp; sourceTree = "<group>"; };
+		30B767251BF55D190088836B /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = src/OSMSpatialite/Node.cpp; sourceTree = "<group>"; };
+		30B767261BF55D190088836B /* OverpassAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OverpassAPI.cpp; path = src/OSMSpatialite/OverpassAPI.cpp; sourceTree = "<group>"; };
+		30B767271BF55D190088836B /* Relation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Relation.cpp; path = src/OSMSpatialite/Relation.cpp; sourceTree = "<group>"; };
+		30B767281BF55D190088836B /* RestAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RestAPI.cpp; path = src/OSMSpatialite/RestAPI.cpp; sourceTree = "<group>"; };
+		30B767291BF55D190088836B /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Util.cpp; path = src/OSMSpatialite/Util.cpp; sourceTree = "<group>"; };
+		30B7672A1BF55D190088836B /* Way.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Way.cpp; path = src/OSMSpatialite/Way.cpp; sourceTree = "<group>"; };
+		30B7672B1BF55D190088836B /* XmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XmlParser.cpp; path = src/OSMSpatialite/XmlParser.cpp; sourceTree = "<group>"; };
+		30B767471BF560450088836B /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = catch.hpp; path = test/catch.hpp; sourceTree = "<group>"; };
+		30B767481BF563550088836B /* OSMSpatialite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSMSpatialite; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CF71E81BF570FD00C7DB1D /* WKBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WKBParser.h; path = include/AmigoCloud/common/WKBParser.h; sourceTree = "<group>"; };
+		30CF71E91BF5710F00C7DB1D /* AmigoError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmigoError.h; path = include/AmigoCloud/core/AmigoError.h; sourceTree = "<group>"; };
+		30CF71EA1BF5710F00C7DB1D /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = include/AmigoCloud/core/Database.h; sourceTree = "<group>"; };
+		30CF71EB1BF5710F00C7DB1D /* GeometryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeometryHandler.h; path = include/AmigoCloud/core/GeometryHandler.h; sourceTree = "<group>"; };
+		30CF71EC1BF5710F00C7DB1D /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = include/AmigoCloud/core/Logger.h; sourceTree = "<group>"; };
+		30CF71ED1BF5710F00C7DB1D /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mutex.h; path = include/AmigoCloud/core/Mutex.h; sourceTree = "<group>"; };
+		30CF71EE1BF5710F00C7DB1D /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestClient.h; path = include/AmigoCloud/core/RestClient.h; sourceTree = "<group>"; };
+		30CF71EF1BF5710F00C7DB1D /* SystemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemConfig.h; path = include/AmigoCloud/core/SystemConfig.h; sourceTree = "<group>"; };
+		30CF71F01BF5710F00C7DB1D /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = include/AmigoCloud/core/Thread.h; sourceTree = "<group>"; };
+		30CF71F11BF5710F00C7DB1D /* Timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timestamp.h; path = include/AmigoCloud/core/Timestamp.h; sourceTree = "<group>"; };
+		30CF71F21BF5710F00C7DB1D /* VectorTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorTypes.h; path = include/AmigoCloud/core/VectorTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,14 +129,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B766E41BF551D90088836B /* libfreexl.1.dylib in Frameworks */,
+				30B766E51BF551D90088836B /* libgeos_c.1.dylib in Frameworks */,
+				30B766E61BF551D90088836B /* libgeos-3.4.2.dylib in Frameworks */,
+				30B766E71BF551D90088836B /* libproj.9.dylib in Frameworks */,
+				30B766E81BF551D90088836B /* libspatialite.7.dylib in Frameworks */,
+				30B766E91BF551D90088836B /* libsqlite3.0.dylib in Frameworks */,
+				30B766EA1BF551D90088836B /* libxml2.2.dylib in Frameworks */,
+				30B766EB1BF551D90088836B /* libz.1.dylib in Frameworks */,
 				01AD32411BE97F6200396DDD /* libcurl.tbd in Frameworks */,
-				01B2DA9B1BBDF49B001E656D /* libgeos_c.1.dylib in Frameworks */,
-				01B2DA9C1BBDF49B001E656D /* libgeos-3.4.2.dylib in Frameworks */,
-				01B2DA9E1BBDF49B001E656D /* libproj.9.dylib in Frameworks */,
-				01B2DA9F1BBDF49B001E656D /* libspatialite.7.dylib in Frameworks */,
-				01B2DAA01BBDF49B001E656D /* libsqlite3.0.dylib in Frameworks */,
-				01B2DAA11BBDF49B001E656D /* libxml2.2.dylib in Frameworks */,
-				01B2DAA21BBDF49B001E656D /* libz.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,122 +147,192 @@
 		01BF3D911BBDF40D000520AE = {
 			isa = PBXGroup;
 			children = (
+				30B766DA1BF551740088836B /* include */,
+				30B766EE1BF555CB0088836B /* lib */,
+				30B766D91BF5516F0088836B /* src */,
+				30B766D81BF551670088836B /* test */,
+				30B767481BF563550088836B /* OSMSpatialite */,
+			);
+			sourceTree = "<group>";
+		};
+		309720421BF657C200FB98A7 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				309720501BF657EA00FB98A7 /* WKBParser.cpp */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		309720431BF657C900FB98A7 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				309720441BF657DA00FB98A7 /* Database.cpp */,
+				309720451BF657DA00FB98A7 /* GeometryHandler.cpp */,
+				309720461BF657DA00FB98A7 /* Logger.cpp */,
+				309720471BF657DA00FB98A7 /* RestClient.cpp */,
+				309720481BF657DA00FB98A7 /* SystemConfig.cpp */,
+				309720491BF657DA00FB98A7 /* Thread.cpp */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		30B766D81BF551670088836B /* test */ = {
+			isa = PBXGroup;
+			children = (
+				30B767471BF560450088836B /* catch.hpp */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
+		30B766D91BF5516F0088836B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				30B767201BF55CF60088836B /* OSMSpatialite */,
+				30B7671F1BF55CEF0088836B /* AmigoCloud */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		30B766DA1BF551740088836B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				30B766EF1BF5562C0088836B /* AmigoCloud */,
+				30B766F11BF5563B0088836B /* Chaskii */,
+				30B766F01BF556330088836B /* OSMSpatialite */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		30B766EE1BF555CB0088836B /* lib */ = {
+			isa = PBXGroup;
+			children = (
 				01AD32401BE97F6200396DDD /* libcurl.tbd */,
-				01B2DA901BBDF49B001E656D /* libcharset.1.dylib */,
-				01B2DA911BBDF49B001E656D /* libgeos_c.1.dylib */,
-				01B2DA921BBDF49B001E656D /* libgeos-3.4.2.dylib */,
-				01B2DA931BBDF49B001E656D /* libiconv.2.dylib */,
-				01B2DA941BBDF49B001E656D /* libproj.9.dylib */,
-				01B2DA951BBDF49B001E656D /* libspatialite.7.dylib */,
-				01B2DA961BBDF49B001E656D /* libsqlite3.0.dylib */,
-				01B2DA971BBDF49B001E656D /* libxml2.2.dylib */,
-				01B2DA981BBDF49B001E656D /* libz.1.dylib */,
-				01B2DA991BBDF49B001E656D /* mod_spatialite.7.dylib */,
-				01BF3D9C1BBDF40D000520AE /* OSMSpatialite */,
-				01BF3D9B1BBDF40D000520AE /* Products */,
+				30B766DB1BF551D90088836B /* libfreexl.1.dylib */,
+				30B766DC1BF551D90088836B /* libgeos_c.1.dylib */,
+				30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */,
+				30B766DE1BF551D90088836B /* libproj.9.dylib */,
+				30B766DF1BF551D90088836B /* libspatialite.7.dylib */,
+				30B766E01BF551D90088836B /* libsqlite3.0.dylib */,
+				30B766E11BF551D90088836B /* libxml2.2.dylib */,
+				30B766E21BF551D90088836B /* libz.1.dylib */,
+				30B766E31BF551D90088836B /* mod_spatialite.7.dylib */,
 			);
+			name = lib;
 			sourceTree = "<group>";
 		};
-		01BF3D9B1BBDF40D000520AE /* Products */ = {
+		30B766EF1BF5562C0088836B /* AmigoCloud */ = {
 			isa = PBXGroup;
 			children = (
-				01BF3D9A1BBDF40D000520AE /* OSMSpatialite */,
+				30CF71E71BF570EE00C7DB1D /* common */,
+				30CF71E61BF570E600C7DB1D /* core */,
 			);
-			name = Products;
+			name = AmigoCloud;
 			sourceTree = "<group>";
 		};
-		01BF3D9C1BBDF40D000520AE /* OSMSpatialite */ = {
+		30B766F01BF556330088836B /* OSMSpatialite */ = {
 			isa = PBXGroup;
 			children = (
-				01F966D21BBDF65D00864D82 /* AmigoCloud */,
-				01BF3D9D1BBDF40D000520AE /* main.cpp */,
-				0166F6781BBDFE4400517ACC /* DatabaseBuilder.cpp */,
-				0166F6791BBDFE4400517ACC /* DatabaseBuilder.hpp */,
-				0166F6721BBDFD8B00517ACC /* Element.cpp */,
-				0166F6731BBDFD8B00517ACC /* Element.hpp */,
-				0166F6811BBDFE9800517ACC /* Node.cpp */,
-				0166F6821BBDFE9800517ACC /* Node.hpp */,
-				0166F6751BBDFDCB00517ACC /* Way.cpp */,
-				0166F6761BBDFDCB00517ACC /* Way.hpp */,
-				0166F67B1BBDFE5B00517ACC /* Relation.cpp */,
-				0166F67C1BBDFE5B00517ACC /* Relation.hpp */,
-				0166F67E1BBDFE8200517ACC /* XmlParser.cpp */,
-				0166F67F1BBDFE8200517ACC /* XmlParser.hpp */,
-				01ED63DB1BC5760F00766C92 /* Util.cpp */,
-				01ED63DC1BC5760F00766C92 /* Util.hpp */,
-				01AD32421BEA63A700396DDD /* RestAPI.cpp */,
-				01AD32431BEA63A700396DDD /* RestAPI.hpp */,
-				01AD32481BEA640C00396DDD /* EditingAPI.cpp */,
-				01AD32491BEA640C00396DDD /* EditingAPI.hpp */,
-				012802C31BEA7AAF003BAD1D /* OverpassAPI.cpp */,
-				012802C41BEA7AAF003BAD1D /* OverpassAPI.hpp */,
+				30B767151BF558300088836B /* DatabaseBuilder.hpp */,
+				30B767161BF558300088836B /* EditingAPI.hpp */,
+				30B767171BF558300088836B /* Element.hpp */,
+				30B767181BF558300088836B /* Node.hpp */,
+				30B767191BF558300088836B /* OverpassAPI.hpp */,
+				30B7671A1BF558300088836B /* Relation.hpp */,
+				30B7671B1BF558300088836B /* RestAPI.hpp */,
+				30B7671C1BF558300088836B /* Util.hpp */,
+				30B7671D1BF558300088836B /* Way.hpp */,
+				30B7671E1BF558300088836B /* XmlParser.hpp */,
 			);
-			path = OSMSpatialite;
+			name = OSMSpatialite;
 			sourceTree = "<group>";
 		};
-		01E8609E1BE143D700AA5A06 /* Chaskii */ = {
+		30B766F11BF5563B0088836B /* Chaskii */ = {
 			isa = PBXGroup;
 			children = (
-				01E860A11BE1443700AA5A06 /* Math */,
-				01E8609F1BE1442F00AA5A06 /* Chaskii.h */,
-				01E860A01BE1442F00AA5A06 /* Export.h */,
+				30B766FF1BF557700088836B /* Chaskii.h */,
+				30B767001BF557700088836B /* Export.h */,
+				30B766FE1BF557580088836B /* Math */,
 			);
 			name = Chaskii;
 			sourceTree = "<group>";
 		};
-		01E860A11BE1443700AA5A06 /* Math */ = {
+		30B766FE1BF557580088836B /* Math */ = {
 			isa = PBXGroup;
 			children = (
-				01E860A21BE1445000AA5A06 /* bound.h */,
-				01E860A31BE1445000AA5A06 /* boundD.h */,
-				01E860A41BE1445000AA5A06 /* iiMath.h */,
-				01E860A51BE1445000AA5A06 /* matrix.h */,
-				01E860A61BE1445000AA5A06 /* matrix3.h */,
-				01E860A71BE1445000AA5A06 /* matrix4.h */,
-				01E860A81BE1445000AA5A06 /* matrix4d.h */,
-				01E860A91BE1445000AA5A06 /* matrixDecompose.h */,
-				01E860AA1BE1445000AA5A06 /* matrixDecomposeD.h */,
-				01E860AB1BE1445000AA5A06 /* plane.h */,
-				01E860AC1BE1445000AA5A06 /* planed.h */,
-				01E860AD1BE1445000AA5A06 /* pos.h */,
-				01E860AE1BE1445000AA5A06 /* quat.h */,
-				01E860AF1BE1445000AA5A06 /* quatd.h */,
-				01E860B01BE1445000AA5A06 /* rect.h */,
-				01E860B11BE1445000AA5A06 /* vec2.h */,
-				01E860B21BE1445000AA5A06 /* vec3.h */,
-				01E860B31BE1445000AA5A06 /* vec3d.h */,
-				01E860B41BE1445000AA5A06 /* vec4.h */,
-				01E860B51BE1445000AA5A06 /* vec4d.h */,
+				30B767011BF557840088836B /* bound.h */,
+				30B767021BF557840088836B /* boundD.h */,
+				30B767031BF557840088836B /* iiMath.h */,
+				30B767041BF557840088836B /* matrix.h */,
+				30B767051BF557840088836B /* matrix3.h */,
+				30B767061BF557840088836B /* matrix4.h */,
+				30B767071BF557840088836B /* matrix4d.h */,
+				30B767081BF557840088836B /* matrixDecompose.h */,
+				30B767091BF557840088836B /* matrixDecomposeD.h */,
+				30B7670A1BF557840088836B /* plane.h */,
+				30B7670B1BF557840088836B /* planed.h */,
+				30B7670C1BF557840088836B /* pos.h */,
+				30B7670D1BF557840088836B /* quat.h */,
+				30B7670E1BF557840088836B /* quatd.h */,
+				30B7670F1BF557840088836B /* rect.h */,
+				30B767101BF557840088836B /* vec2.h */,
+				30B767111BF557840088836B /* vec3.h */,
+				30B767121BF557840088836B /* vec3d.h */,
+				30B767131BF557840088836B /* vec4.h */,
+				30B767141BF557840088836B /* vec4d.h */,
 			);
 			name = Math;
 			sourceTree = "<group>";
 		};
-		01F966D21BBDF65D00864D82 /* AmigoCloud */ = {
+		30B7671F1BF55CEF0088836B /* AmigoCloud */ = {
 			isa = PBXGroup;
 			children = (
-				0129736F1BE9530E000A3989 /* RestClient.cpp */,
-				012973701BE9530E000A3989 /* RestClient.h */,
-				0129736C1BE952F7000A3989 /* SystemConfig.cpp */,
-				0129736D1BE952F7000A3989 /* SystemConfig.h */,
-				0129736B1BE9527E000A3989 /* Mutex.h */,
-				01E8609E1BE143D700AA5A06 /* Chaskii */,
-				01E860981BE12F4B00AA5A06 /* VectorTypes.h */,
-				01E860951BE12E8700AA5A06 /* WKBParser.cpp */,
-				01E860961BE12E8700AA5A06 /* WKBParser.h */,
-				01E860921BE12E7500AA5A06 /* GeometryHandler.cpp */,
-				01E860931BE12E7500AA5A06 /* GeometryHandler.h */,
-				0166F6841BBE004E00517ACC /* AmigoError.h */,
-				0166F6851BBE007800517ACC /* Database.cpp */,
-				0166F6861BBE007800517ACC /* Database.h */,
-				0166F6881BBE008B00517ACC /* Logger.cpp */,
-				0166F6891BBE008B00517ACC /* Logger.h */,
-				0166F68B1BBE00A400517ACC /* Thread.cpp */,
-				0166F68C1BBE00A400517ACC /* Thread.h */,
-				0166F68E1BBE00C300517ACC /* Timestamp.h */,
-				01D66DDA1BC6A91B003281C3 /* SpatialiteInit.cpp */,
-				01D66DDB1BC6A91B003281C3 /* SpatialiteInit.h */,
+				309720431BF657C900FB98A7 /* core */,
+				309720421BF657C200FB98A7 /* common */,
 			);
 			name = AmigoCloud;
+			sourceTree = "<group>";
+		};
+		30B767201BF55CF60088836B /* OSMSpatialite */ = {
+			isa = PBXGroup;
+			children = (
+				30B767211BF55D190088836B /* DatabaseBuilder.cpp */,
+				30B767221BF55D190088836B /* EditingAPI.cpp */,
+				30B767231BF55D190088836B /* Element.cpp */,
+				30B767241BF55D190088836B /* main.cpp */,
+				30B767251BF55D190088836B /* Node.cpp */,
+				30B767261BF55D190088836B /* OverpassAPI.cpp */,
+				30B767271BF55D190088836B /* Relation.cpp */,
+				30B767281BF55D190088836B /* RestAPI.cpp */,
+				30B767291BF55D190088836B /* Util.cpp */,
+				30B7672A1BF55D190088836B /* Way.cpp */,
+				30B7672B1BF55D190088836B /* XmlParser.cpp */,
+			);
+			name = OSMSpatialite;
+			sourceTree = "<group>";
+		};
+		30CF71E61BF570E600C7DB1D /* core */ = {
+			isa = PBXGroup;
+			children = (
+				30CF71E91BF5710F00C7DB1D /* AmigoError.h */,
+				30CF71EA1BF5710F00C7DB1D /* Database.h */,
+				30CF71EB1BF5710F00C7DB1D /* GeometryHandler.h */,
+				30CF71EC1BF5710F00C7DB1D /* Logger.h */,
+				30CF71ED1BF5710F00C7DB1D /* Mutex.h */,
+				30CF71EE1BF5710F00C7DB1D /* RestClient.h */,
+				30CF71EF1BF5710F00C7DB1D /* SystemConfig.h */,
+				30CF71F01BF5710F00C7DB1D /* Thread.h */,
+				30CF71F11BF5710F00C7DB1D /* Timestamp.h */,
+				30CF71F21BF5710F00C7DB1D /* VectorTypes.h */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		30CF71E71BF570EE00C7DB1D /* common */ = {
+			isa = PBXGroup;
+			children = (
+				30CF71E81BF570FD00C7DB1D /* WKBParser.h */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +352,7 @@
 			);
 			name = OSMSpatialite;
 			productName = OSMSpatialite;
-			productReference = 01BF3D9A1BBDF40D000520AE /* OSMSpatialite */;
+			productReference = 30B767481BF563550088836B /* OSMSpatialite */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -308,7 +377,7 @@
 				en,
 			);
 			mainGroup = 01BF3D911BBDF40D000520AE;
-			productRefGroup = 01BF3D9B1BBDF40D000520AE /* Products */;
+			productRefGroup = 01BF3D911BBDF40D000520AE;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -322,25 +391,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0166F67A1BBDFE4400517ACC /* DatabaseBuilder.cpp in Sources */,
-				01AD324A1BEA640C00396DDD /* EditingAPI.cpp in Sources */,
-				0166F68A1BBE008B00517ACC /* Logger.cpp in Sources */,
-				012973711BE9530E000A3989 /* RestClient.cpp in Sources */,
-				012802C51BEA7AAF003BAD1D /* OverpassAPI.cpp in Sources */,
-				01AD32441BEA63A700396DDD /* RestAPI.cpp in Sources */,
-				0166F6741BBDFD8B00517ACC /* Element.cpp in Sources */,
-				0166F68D1BBE00A400517ACC /* Thread.cpp in Sources */,
-				0166F6871BBE007800517ACC /* Database.cpp in Sources */,
-				01E860971BE12E8700AA5A06 /* WKBParser.cpp in Sources */,
-				0166F6801BBDFE8200517ACC /* XmlParser.cpp in Sources */,
-				01ED63DD1BC5760F00766C92 /* Util.cpp in Sources */,
-				01D66DDC1BC6A91B003281C3 /* SpatialiteInit.cpp in Sources */,
-				01E860941BE12E7500AA5A06 /* GeometryHandler.cpp in Sources */,
-				01BF3D9E1BBDF40D000520AE /* main.cpp in Sources */,
-				0129736E1BE952F7000A3989 /* SystemConfig.cpp in Sources */,
-				0166F67D1BBDFE5B00517ACC /* Relation.cpp in Sources */,
-				0166F6771BBDFDCB00517ACC /* Way.cpp in Sources */,
-				0166F6831BBDFE9800517ACC /* Node.cpp in Sources */,
+				30B767341BF55D190088836B /* Util.cpp in Sources */,
+				3097204C1BF657DA00FB98A7 /* Logger.cpp in Sources */,
+				30B767361BF55D190088836B /* XmlParser.cpp in Sources */,
+				30B7672E1BF55D190088836B /* Element.cpp in Sources */,
+				30B767321BF55D190088836B /* Relation.cpp in Sources */,
+				3097204D1BF657DA00FB98A7 /* RestClient.cpp in Sources */,
+				30B7672C1BF55D190088836B /* DatabaseBuilder.cpp in Sources */,
+				309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */,
+				3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */,
+				30B7672F1BF55D190088836B /* main.cpp in Sources */,
+				30B767331BF55D190088836B /* RestAPI.cpp in Sources */,
+				30B7672D1BF55D190088836B /* EditingAPI.cpp in Sources */,
+				3097204B1BF657DA00FB98A7 /* GeometryHandler.cpp in Sources */,
+				30B767351BF55D190088836B /* Way.cpp in Sources */,
+				3097204E1BF657DA00FB98A7 /* SystemConfig.cpp in Sources */,
+				30B767301BF55D190088836B /* Node.cpp in Sources */,
+				3097204A1BF657DA00FB98A7 /* Database.cpp in Sources */,
+				30B767311BF55D190088836B /* OverpassAPI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,11 +499,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/OSMSpatialite/lib/include",
+					"$(PROJECT_DIR)/lib/include",
+					"$(PROJECT_DIR)/include",
+					"$(PROJECT_DIR)/include/AmigoCloud",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSMSpatialite/lib",
+					"$(PROJECT_DIR)/lib/osx",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -447,11 +517,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/OSMSpatialite/lib/include",
+					"$(PROJECT_DIR)/lib/include",
+					"$(PROJECT_DIR)/include",
+					"$(PROJECT_DIR)/include/AmigoCloud",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OSMSpatialite/lib",
+					"$(PROJECT_DIR)/lib/osx",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
