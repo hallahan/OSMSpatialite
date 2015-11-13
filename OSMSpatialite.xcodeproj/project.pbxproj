@@ -15,6 +15,8 @@
 		3097204E1BF657DA00FB98A7 /* SystemConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720481BF657DA00FB98A7 /* SystemConfig.cpp */; };
 		3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720491BF657DA00FB98A7 /* Thread.cpp */; };
 		309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720501BF657EA00FB98A7 /* WKBParser.cpp */; };
+		309720531BF678C400FB98A7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720521BF678C400FB98A7 /* main.cpp */; };
+		309720551BF682B300FB98A7 /* basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720541BF682B300FB98A7 /* basic.cpp */; };
 		30B766E41BF551D90088836B /* libfreexl.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DB1BF551D90088836B /* libfreexl.1.dylib */; };
 		30B766E51BF551D90088836B /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DC1BF551D90088836B /* libgeos_c.1.dylib */; };
 		30B766E61BF551D90088836B /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */; };
@@ -26,7 +28,6 @@
 		30B7672C1BF55D190088836B /* DatabaseBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767211BF55D190088836B /* DatabaseBuilder.cpp */; };
 		30B7672D1BF55D190088836B /* EditingAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767221BF55D190088836B /* EditingAPI.cpp */; };
 		30B7672E1BF55D190088836B /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767231BF55D190088836B /* Element.cpp */; };
-		30B7672F1BF55D190088836B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767241BF55D190088836B /* main.cpp */; };
 		30B767301BF55D190088836B /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767251BF55D190088836B /* Node.cpp */; };
 		30B767311BF55D190088836B /* OverpassAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767261BF55D190088836B /* OverpassAPI.cpp */; };
 		30B767321BF55D190088836B /* Relation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30B767271BF55D190088836B /* Relation.cpp */; };
@@ -57,6 +58,8 @@
 		309720481BF657DA00FB98A7 /* SystemConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SystemConfig.cpp; path = src/AmigoCloud/core/SystemConfig.cpp; sourceTree = "<group>"; };
 		309720491BF657DA00FB98A7 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/core/Thread.cpp; sourceTree = "<group>"; };
 		309720501BF657EA00FB98A7 /* WKBParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WKBParser.cpp; path = src/AmigoCloud/common/WKBParser.cpp; sourceTree = "<group>"; };
+		309720521BF678C400FB98A7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = test/main.cpp; sourceTree = "<group>"; };
+		309720541BF682B300FB98A7 /* basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = basic.cpp; path = test/basic.cpp; sourceTree = "<group>"; };
 		30B766DB1BF551D90088836B /* libfreexl.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreexl.1.dylib; path = lib/osx/libfreexl.1.dylib; sourceTree = "<group>"; };
 		30B766DC1BF551D90088836B /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = lib/osx/libgeos_c.1.dylib; sourceTree = "<group>"; };
 		30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "lib/osx/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		30B767211BF55D190088836B /* DatabaseBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DatabaseBuilder.cpp; path = src/OSMSpatialite/DatabaseBuilder.cpp; sourceTree = "<group>"; };
 		30B767221BF55D190088836B /* EditingAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EditingAPI.cpp; path = src/OSMSpatialite/EditingAPI.cpp; sourceTree = "<group>"; };
 		30B767231BF55D190088836B /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = src/OSMSpatialite/Element.cpp; sourceTree = "<group>"; };
-		30B767241BF55D190088836B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/OSMSpatialite/main.cpp; sourceTree = "<group>"; };
 		30B767251BF55D190088836B /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Node.cpp; path = src/OSMSpatialite/Node.cpp; sourceTree = "<group>"; };
 		30B767261BF55D190088836B /* OverpassAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OverpassAPI.cpp; path = src/OSMSpatialite/OverpassAPI.cpp; sourceTree = "<group>"; };
 		30B767271BF55D190088836B /* Relation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Relation.cpp; path = src/OSMSpatialite/Relation.cpp; sourceTree = "<group>"; };
@@ -179,7 +181,9 @@
 		30B766D81BF551670088836B /* test */ = {
 			isa = PBXGroup;
 			children = (
+				309720521BF678C400FB98A7 /* main.cpp */,
 				30B767471BF560450088836B /* catch.hpp */,
+				309720541BF682B300FB98A7 /* basic.cpp */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -298,7 +302,6 @@
 				30B767211BF55D190088836B /* DatabaseBuilder.cpp */,
 				30B767221BF55D190088836B /* EditingAPI.cpp */,
 				30B767231BF55D190088836B /* Element.cpp */,
-				30B767241BF55D190088836B /* main.cpp */,
 				30B767251BF55D190088836B /* Node.cpp */,
 				30B767261BF55D190088836B /* OverpassAPI.cpp */,
 				30B767271BF55D190088836B /* Relation.cpp */,
@@ -400,7 +403,6 @@
 				30B7672C1BF55D190088836B /* DatabaseBuilder.cpp in Sources */,
 				309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */,
 				3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */,
-				30B7672F1BF55D190088836B /* main.cpp in Sources */,
 				30B767331BF55D190088836B /* RestAPI.cpp in Sources */,
 				30B7672D1BF55D190088836B /* EditingAPI.cpp in Sources */,
 				3097204B1BF657DA00FB98A7 /* GeometryHandler.cpp in Sources */,
@@ -409,6 +411,8 @@
 				30B767301BF55D190088836B /* Node.cpp in Sources */,
 				3097204A1BF657DA00FB98A7 /* Database.cpp in Sources */,
 				30B767311BF55D190088836B /* OverpassAPI.cpp in Sources */,
+				309720531BF678C400FB98A7 /* main.cpp in Sources */,
+				309720551BF682B300FB98A7 /* basic.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
