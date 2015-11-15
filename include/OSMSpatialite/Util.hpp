@@ -13,26 +13,39 @@
 #include <stdlib.h>
 
 namespace OSM {
-    namespace Util {
-        
-        inline bool isLong(const std::string& s) {
-            if(s.empty() || ((!isdigit(s[0])) && (s[0] != '-') && (s[0] != '+'))) return false ;
-            
-            char *p;
-            strtol(s.c_str(), &p, 10);
-            
-            return (*p == 0);
-        }
-        
-        inline bool isDouble(const std::string& s) {
-            if(s.empty() || ((!isdigit(s[0])) && (s[0] != '-') && (s[0] != '+'))) return false ;
-            
-            char *p;
-            strtod(s.c_str(), &p);
-            
-            return (*p == 0);
-        }
-    }
+namespace Util {
+
+/**
+ *	The current working directory of the process.
+ */
+std::string cwd();
+
+/**
+ *  Creates a temporary directory.
+ *  Deletes the current directory if exits.
+ */
+std::string createTestTmpDir();
+
+    
+inline bool isLong(const std::string& s) {
+    if(s.empty() || ((!isdigit(s[0])) && (s[0] != '-') && (s[0] != '+'))) return false ;
+    
+    char *p;
+    strtol(s.c_str(), &p, 10);
+    
+    return (*p == 0);
+}
+
+inline bool isDouble(const std::string& s) {
+    if(s.empty() || ((!isdigit(s[0])) && (s[0] != '-') && (s[0] != '+'))) return false ;
+    
+    char *p;
+    strtod(s.c_str(), &p);
+    
+    return (*p == 0);
+}
+    
+}
 }
 
 #endif /* defined(__OSMSpatialite__Util__) */

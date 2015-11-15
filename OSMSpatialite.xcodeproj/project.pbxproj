@@ -16,7 +16,8 @@
 		3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720491BF657DA00FB98A7 /* Thread.cpp */; };
 		309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720501BF657EA00FB98A7 /* WKBParser.cpp */; };
 		309720531BF678C400FB98A7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720521BF678C400FB98A7 /* main.cpp */; };
-		309720551BF682B300FB98A7 /* basic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720541BF682B300FB98A7 /* basic.cpp */; };
+		309720551BF682B300FB98A7 /* basic_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720541BF682B300FB98A7 /* basic_test.cpp */; };
+		309720571BF910D200FB98A7 /* Way_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 309720561BF910D200FB98A7 /* Way_test.cpp */; };
 		30B766E41BF551D90088836B /* libfreexl.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DB1BF551D90088836B /* libfreexl.1.dylib */; };
 		30B766E51BF551D90088836B /* libgeos_c.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DC1BF551D90088836B /* libgeos_c.1.dylib */; };
 		30B766E61BF551D90088836B /* libgeos-3.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */; };
@@ -59,7 +60,8 @@
 		309720491BF657DA00FB98A7 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = src/AmigoCloud/core/Thread.cpp; sourceTree = "<group>"; };
 		309720501BF657EA00FB98A7 /* WKBParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WKBParser.cpp; path = src/AmigoCloud/common/WKBParser.cpp; sourceTree = "<group>"; };
 		309720521BF678C400FB98A7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = test/main.cpp; sourceTree = "<group>"; };
-		309720541BF682B300FB98A7 /* basic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = basic.cpp; path = test/basic.cpp; sourceTree = "<group>"; };
+		309720541BF682B300FB98A7 /* basic_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = basic_test.cpp; path = test/basic_test.cpp; sourceTree = "<group>"; };
+		309720561BF910D200FB98A7 /* Way_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Way_test.cpp; path = test/Way_test.cpp; sourceTree = "<group>"; };
 		30B766DB1BF551D90088836B /* libfreexl.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreexl.1.dylib; path = lib/osx/libfreexl.1.dylib; sourceTree = "<group>"; };
 		30B766DC1BF551D90088836B /* libgeos_c.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgeos_c.1.dylib; path = lib/osx/libgeos_c.1.dylib; sourceTree = "<group>"; };
 		30B766DD1BF551D90088836B /* libgeos-3.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgeos-3.4.2.dylib"; path = "lib/osx/libgeos-3.4.2.dylib"; sourceTree = "<group>"; };
@@ -183,7 +185,8 @@
 			children = (
 				309720521BF678C400FB98A7 /* main.cpp */,
 				30B767471BF560450088836B /* catch.hpp */,
-				309720541BF682B300FB98A7 /* basic.cpp */,
+				309720541BF682B300FB98A7 /* basic_test.cpp */,
+				309720561BF910D200FB98A7 /* Way_test.cpp */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				30B7672C1BF55D190088836B /* DatabaseBuilder.cpp in Sources */,
 				309720511BF657EA00FB98A7 /* WKBParser.cpp in Sources */,
 				3097204F1BF657DA00FB98A7 /* Thread.cpp in Sources */,
+				309720571BF910D200FB98A7 /* Way_test.cpp in Sources */,
 				30B767331BF55D190088836B /* RestAPI.cpp in Sources */,
 				30B7672D1BF55D190088836B /* EditingAPI.cpp in Sources */,
 				3097204B1BF657DA00FB98A7 /* GeometryHandler.cpp in Sources */,
@@ -412,7 +416,7 @@
 				3097204A1BF657DA00FB98A7 /* Database.cpp in Sources */,
 				30B767311BF55D190088836B /* OverpassAPI.cpp in Sources */,
 				309720531BF678C400FB98A7 /* main.cpp in Sources */,
-				309720551BF682B300FB98A7 /* basic.cpp in Sources */,
+				309720551BF682B300FB98A7 /* basic_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,26 @@
 
 #include <OSMSpatialite/Util.hpp>
 
-namespace OSM
-{
-namespace Util
-{
-    
-    
+#include <unistd.h>
+#include <sys/stat.h>
+
+namespace OSM {
+namespace Util {
+
+std::string cwd() {
+    char path[1024];
+    getcwd(path, sizeof(path));
+    return path;
+}
+
+std::string createTestTmpDir() {
+	std::string path = cwd() + "/test/tmp";
+	if(mkdir(path.c_str(), S_IRWXU) != 0) {
+		rmdir(path.c_str());
+		mkdir(path.c_str(), S_IRWXU);
+	}
+	return path;
+}
+
 }
 }
