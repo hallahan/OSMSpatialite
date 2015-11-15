@@ -9,6 +9,10 @@
 #include <OSMSpatialite/DatabaseBuilder.hpp>
 
 #include <iostream>
+#include <iostream>
+#include <iterator>
+#include <regex>
+
 #include <OSMSpatialite/Util.hpp>
 
 namespace OSM
@@ -235,7 +239,14 @@ namespace OSM
             k = "'" + kStr + "'";
         }
         if (!vStr.empty()) {
-            v = "'" + vStr + "'";
+            
+            // Sanitize `'` and replace with `''` to prevent bad escapes in query.
+            std::string vFix;
+            std::regex singleQuoteRe("'");
+            std::regex_replace(std::back_inserter(vFix),
+                               vStr.begin(), vStr.end(), singleQuoteRe, "''");
+            
+            v = "'" + vFix + "'";
         }
         
         std::string table;
