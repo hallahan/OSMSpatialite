@@ -1,0 +1,29 @@
+{
+  "name": "osmspatialite",
+  "version": "0.0.1",
+  "description": "An OpenStreetMap Spatialite module that parses and writes OSM XML data via a Spatialite database.",
+  "main": "index.js",
+  "gypfile": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hallahan/OSMSpatialite"
+  },
+  "keywords": [
+    "OSM",
+    "Spatialite",
+    "OSMSpatialite",
+    "SQLite"
+  ],
+  "author": "Nicholas Hallahan",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hallahan/OSMSpatialite/issues"
+  },
+  "homepage": "https://github.com/hallahan/OSMSpatialite",
+  "dependencies": {
+    "nan": "^2.1.0"
+  }
+}
